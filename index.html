@@ -48,11 +48,13 @@
   </script>
 </head>
 <body>
+  <img class="grain" src="assets/art/grain.svg" alt="" aria-hidden="true" />
   <a class="skip-link" href="#main" data-i18n="skip">Pular para o conteúdo</a>
 
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="#inicio">
+        <img class="brand-avatar" src="assets/avatar.png" alt="" width="30" height="30" decoding="async" />
         <span class="brand-mark" aria-hidden="true">K.</span>
         <span class="brand-name">Kayke Hub</span>
       </a>
@@ -84,6 +86,10 @@
             <a class="btn" href="https://www.instagram.com/kayke.dados/" target="_blank" rel="noopener">Instagram</a>
           </div>
         </div>
+        <figure class="hero-art">
+          <img src="assets/art/exercicios.svg" alt="Faixa de 86 quadrados: 85 preenchidos e o último em aberto" width="900" height="190" loading="eager" data-i18n-alt="art_exercises_alt" decoding="async" />
+          <figcaption data-i18n="art_exercises_caption">86 exercícios no Python-Journey: 85 resolvidos, 1 em aberto.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -104,12 +110,26 @@
           <p data-i18n="sobre_p3">O objetivo é claro: trabalhar com <strong>análise de dados</strong>. No caminho, vou juntando repertório — Excel, Word e PowerPoint no dia a dia, Windows como ambiente, e os próximos passos já planejados: POO, bancos de dados e análise de dados de verdade.</p>
         </div>
       </div>
+      <figure class="caderno">
+        <div class="caderno-bar"><span class="mono">06-funcoes / Ex103.py</span><span class="mono">Python</span></div>
+        <pre><code>def jogador(nome="&lt;desconhecido&gt;", gols=0):
+  print(f"O jogador {nome} marcou {gols} gols")
+
+print("-"*15)
+n = str(input("Nome: "))
+gol = str(input("Gols: "))</code></pre>
+        <figcaption data-i18n="code_caption">Trecho real de Ex103 — capítulo 06, funções.</figcaption>
+      </figure>
     </section>
 
     <!-- jornada -->
     <section class="jornada" id="jornada" aria-labelledby="jornada-title">
       <h2 id="jornada-title" data-i18n="jornada_title">Jornada de aprendizado</h2>
       <p class="section-intro" data-i18n="jornada_intro">Capítulos do Python-Journey — o número é a quantidade de exercícios resolvidos em cada um.</p>
+      <figure class="mapa">
+        <img src="assets/art/mapa-jornada.svg" alt="Mapa de sete capítulos: cinco concluídos, o sexto em andamento e o sétimo reservado" width="1000" height="210" loading="lazy" data-i18n-alt="art_map_alt" decoding="async" />
+        <figcaption data-i18n="art_map_caption">Mapa dos capítulos — 5 concluídos, 06 em andamento, 07 reservado.</figcaption>
+      </figure>
       <ol class="trail">
         <li class="track-row"><span class="track-name" data-i18n="track_1">01 — fundamentos</span><span class="track-count">12</span><span class="track-status" data-i18n="status_done">concluída</span></li>
         <li class="track-row"><span class="track-name" data-i18n="track_2">02 — condições</span><span class="track-count">16</span><span class="track-status" data-i18n="status_done">concluída</span></li>
@@ -128,6 +148,7 @@
       <p class="section-intro" data-i18n="projects_p1">Projetos reais, com situação e tecnologia de verdade — e o que ainda está por vir, separado com clareza.</p>
       <div class="proj-grid">
         <article class="proj proj-highlight">
+          <div class="proj-body">
           <div class="proj-head">
             <h3 class="proj-name"><a href="https://github.com/kayke-dados/Python-Journey" target="_blank" rel="noopener" data-i18n="proj_1_name">Python-Journey</a></h3>
             <span class="proj-status"><span class="spark" aria-hidden="true">●</span><span data-i18n="proj_1_status"> em construção</span></span>
@@ -135,8 +156,11 @@
           <p class="proj-desc" data-i18n="proj_1_desc">85 de 86 exercícios · cinco capítulos concluídos · faltando <code>ex105</code> no capítulo 06</p>
           <p class="proj-tech"><span class="proj-tech-label mono" data-i18n="proj_tech">stack</span><span class="chip">Python</span></p>
           <p class="proj-links"><a class="proj-link" href="https://github.com/kayke-dados/Python-Journey" target="_blank" rel="noopener" data-i18n="link_repo">repositório →</a></p>
+          </div>
+          <img class="proj-cover" src="assets/projects/python-journey.svg" alt="Capa ilustrada do Python-Journey com a árvore de capítulos e 85 de 86 exercícios" width="1200" height="675" loading="lazy" data-i18n-alt="cover_journey_alt" decoding="async" />
         </article>
         <article class="proj">
+          <div class="proj-body">
           <div class="proj-head">
             <h3 class="proj-name"><a href="https://kayke-dados.github.io/kayke-hub/" target="_blank" rel="noopener" data-i18n="proj_2_name">Kayke Hub</a></h3>
             <span class="proj-status"><span class="spark" aria-hidden="true">●</span><span data-i18n="proj_2_status"> no ar</span></span>
@@ -144,6 +168,8 @@
           <p class="proj-desc" data-i18n="proj_2_desc">Este site — cartão digital estático, publicado no GitHub Pages</p>
           <p class="proj-tech"><span class="proj-tech-label mono" data-i18n="proj_tech">stack</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></p>
           <p class="proj-links"><a class="proj-link" href="https://kayke-dados.github.io/kayke-hub/" target="_blank" rel="noopener" data-i18n="link_demo">ver no ar →</a><a class="proj-link" href="https://github.com/kayke-dados/kayke-hub" target="_blank" rel="noopener" data-i18n="link_repo">repositório →</a></p>
+          </div>
+          <img class="proj-cover" src="assets/projects/kayke-hub.svg" alt="Prévia ilustrada do Kayke Hub com o nome Kayke e a chamada do site" width="1200" height="675" loading="lazy" data-i18n-alt="cover_hub_alt" decoding="async" />
         </article>
       </div>
       <h3 class="mini-title" data-i18n="future_projects_title">Em desenvolvimento</h3>
@@ -157,6 +183,10 @@
     <!-- tecnologias -->
     <section class="tecnologias" id="tecnologias" aria-labelledby="tech-title">
       <h2 id="tech-title" data-i18n="tech_title">Tecnologias</h2>
+      <figure class="tech-art">
+        <img src="assets/art/tecnologias.svg" alt="Ilustração de um terminal Python, uma planilha e uma apresentação" width="1200" height="380" loading="lazy" data-i18n-alt="art_tech_alt" decoding="async" />
+        <figcaption data-i18n="art_tech_caption">As ferramentas do dia a dia — Python, planilhas e apresentações.</figcaption>
+      </figure>
       <div class="tech-block">
         <h3 class="mini-title" data-i18n="tech_now_title">Conhecimentos atuais</h3>
         <ul class="tech-groups" role="list">
@@ -209,6 +239,7 @@
 
   <footer class="footer">
     <div class="footer-inner">
+      <img class="footer-art" src="assets/art/exercicios.svg" alt="" width="900" height="190" loading="lazy" />
       <p class="footer-brand">Kayke Hub</p>
       <nav class="footer-links" aria-label="Links do rodapé" data-i18n-aria="footer_nav_label">
         <a href="#inicio" data-i18n="nav_home">Início</a>

@@ -20,6 +20,15 @@ const I18N = {
     moto: "Consistency &gt; intensity.",
     hero_note: "85 exercises solved · 5 chapters done",
     hero_note_open: "ex105 pending",
+    art_exercises_alt: "Strip of 86 squares: 85 filled and the last one open",
+    art_exercises_caption: "86 exercises in Python-Journey: 85 solved, 1 open.",
+    art_map_alt: "Map of seven chapters: five completed, the sixth in progress and the seventh reserved",
+    art_map_caption: "Chapter map — 5 completed, 06 in progress, 07 reserved.",
+    art_tech_alt: "Illustration of a Python terminal, a spreadsheet and a slide deck",
+    art_tech_caption: "Everyday tools — Python, spreadsheets and slides.",
+    code_caption: "Real excerpt from Ex103 — chapter 06, functions.",
+    cover_journey_alt: "Illustrated cover of Python-Journey with the chapter tree and 85 of 86 exercises",
+    cover_hub_alt: "Illustrated preview of Kayke Hub with the name Kayke and the site tagline",
     sobre_title: "About",
     fact_focus: "Python · data analysis",
     fact_base: "Curso em Vídeo, reorganized into chapters",
@@ -288,7 +297,7 @@ function initActiveSection() {
 
 function initReveals() {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const targets = document.querySelectorAll("section h2, section .section-intro, .trail, .proj, .tech-block, .contact-grid > *, .hero-identity > *");
+  const targets = document.querySelectorAll("section h2, section .section-intro, .trail, .proj, .tech-block, .contact-grid > *, .hero-identity > *, .hero-art, .caderno, .mapa, .tech-art");
   if (!targets.length || !("IntersectionObserver" in window)) return;
   targets.forEach((el) => el.classList.add("reveal"));
   const io = new IntersectionObserver((entries) => {

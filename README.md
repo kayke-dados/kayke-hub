@@ -13,12 +13,13 @@
 ![tests](https://github.com/kayke-dados/kayke-hub/actions/workflows/tests.yml/badge.svg)
 ![licença](https://img.shields.io/badge/licen%C3%A7a-MIT-141414?style=flat-square)
 
-Cartão digital e portfólio de aprendizado de **Kayke — Python e Dados**. Página única, estática e bilíngue, com direção editorial minimalista: ground grafite, ametista como único acento, texto primeiro e listas em vez de cartões.
+Cartão digital e portfólio de aprendizado de **Kayke — Python e Dados**. Página única, estática e bilíngue, com direção editorial minimalista: ground grafite, ametista como único acento, texto primeiro, listas em vez de cartões e imagens desenhadas a partir dos dados reais.
 
 ## O que tem
 
 - **Jornada real** — trilha com os capítulos do Python-Journey: 85 de 86 exercícios, capítulo 06 em 9/10 (`ex105` pendente), capítulo 07 reservado.
 - **Projetos e tecnologias** — o que existe de verdade, com "Em desenvolvimento" separado com clareza.
+- **Imagens com origem** — faixa de 86 exercícios, mapa dos capítulos, capas dos projetos e mesa de ferramentas desenhados em SVG; sem banco de imagens e sem mockup inventado.
 - **Compartilhar** — QR Code, copiar endereço e Web Share API.
 - **PT/EN** — inglês aplicado no navegador por um dicionário `data-i18n`.
 - **Acessibilidade** — contraste AA, foco visível, alvos de 44 px, `aria-current`, `prefers-reduced-motion` e menu funcional sem JavaScript.
@@ -35,8 +36,8 @@ HTML5, CSS3 e JavaScript puro — sem framework, bundler ou backend. Fontes Manr
 index.html          página única (PT inline; EN via js/main.js)
 css/style.css       design system + componentes
 js/main.js          i18n, navegação, copiar/compartilhar
-assets/             avatar, favicon, QR, og-image e imagens do README
-tools/              geração de assets e do pacote de entrega
+assets/             avatar, favicon, QR, og-image, art/ e capas dos projetos
+tools/              geração de assets, arte SVG e do pacote de entrega
 tests/              61 testes + 1 skip
 reports/            auditoria, testes, publicação e histórico (v2–v5)
 ```
@@ -55,7 +56,7 @@ node --check js/main.js
   <img src="assets/readme/palette.svg" alt="Paleta: #141414, #202020, #F5F3EF, #A6A29C, #9B8AC4, #343434" width="100%" />
 </p>
 
-Texto 16,6:1 · secundário 7,25:1 · acento 5,99:1 · botão sólido 5,99:1. Zero gradientes, zero sombras; bordas finas e listas com hairline.
+Texto 16,6:1 · secundário 7,25:1 · acento 5,99:1 · botão sólido 5,99:1. Zero gradientes, zero sombras; bordas finas, listas com hairline e ilustrações SVG feitas com a mesma paleta.
 
 ## Publicação
 
