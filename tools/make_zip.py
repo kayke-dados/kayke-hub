@@ -14,6 +14,8 @@ FILES = [
     "assets/favicon.svg",
     "assets/qr-code.svg",
     "assets/og-image.png",
+    "assets/readme/banner.svg",
+    "assets/readme/palette.svg",
     "tools/make_assets.py",
     "tools/make_zip.py",
     "tests/helpers.py",
