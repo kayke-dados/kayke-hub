@@ -35,6 +35,7 @@ FILES = [
     "reports/05-publicacao-github-pages.md",
     "reports/06-evolucao-v2.md",
     "reports/07-redesign-v3.md",
+    "reports/08-reformulacao-v4.md",
 ]
 
 with zipfile.ZipFile(dest, "w", zipfile.ZIP_DEFLATED) as z:

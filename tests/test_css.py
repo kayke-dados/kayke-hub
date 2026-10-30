@@ -6,16 +6,14 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSS_PATH = os.path.join(ROOT, "css", "style.css")
 
 TOKENS = {
-    "--bg": "#080B12",
-    "--bg-2": "#0E1420",
-    "--surface": "#131B29",
-    "--accent": "#60A5FA",
-    "--accent-deep": "#2563EB",
-    "--spark": "#FACC15",
-    "--muted": "#929CAD",
-    "--text": "#F4F7FB",
-    "--ink": "#ffffff",
-    "--border": "#263246",
+    "--bg": "#141414",
+    "--surface": "#202020",
+    "--accent": "#9B8AC4",
+    "--accent-hover": "#B0A0D0",
+    "--muted": "#A6A29C",
+    "--text": "#F5F3EF",
+    "--ink": "#F5F3EF",
+    "--border": "#343434",
 }
 
 
@@ -49,3 +47,14 @@ class TestCss(unittest.TestCase):
 
     def test_focus_visible(self):
         self.assertRegex(css_text(), r"focus-visible")
+
+    def test_botao_solido_usa_texto_do_ground_no_hover(self):
+        css = css_text()
+        m = re.search(r"\.btn-solid:hover,[^{]*\{([^}]*)\}", css)
+        self.assertIsNotNone(m, "regra .btn-solid:hover ausente")
+        self.assertIn("color: var(--bg)", m.group(1), "hover do botão sólido precisa de texto do ground (contraste AA)")
+
+    def test_menu_mobile_tem_fallback_sem_js(self):
+        css = css_text()
+        self.assertIn(".js .nav-toggle", css)
+        self.assertIn(".js .nav-menu", css)

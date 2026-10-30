@@ -74,7 +74,18 @@ class TestSecaoProjetos(unittest.TestCase):
 
     def test_kayke_hub_como_projeto_no_ar(self):
         self.assertIn("proj_2_name", HTML)
-        self.assertIn("● no ar", HTML)
+        self.assertIn("●", HTML)
+        self.assertIn("no ar", HTML)
+
+    def test_contagem_de_capitulos_coerente(self):
+        self.assertIn("5 capítulos concluídos", HTML)
+        self.assertIn("cinco capítulos concluídos", HTML)
+        self.assertNotIn("seis capítulos concluídos", HTML)
+        self.assertNotIn("6 capítulos concluídos", HTML)
+
+    def test_dados_declarados_como_manuais(self):
+        self.assertIn("dados atualizados manualmente", HTML)
+        self.assertNotIn("verdade em tempo real", HTML)
 
     def test_futuros_marcarados_em_desenvolvimento(self):
         self.assertIn("future_projects_title", HTML)

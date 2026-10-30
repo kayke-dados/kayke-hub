@@ -16,16 +16,20 @@
   <meta property="og:image" content="https://kayke-dados.github.io/kayke-hub/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Kayke Hub — cartão digital com QR Code para o site" />
   <meta property="og:locale" content="pt_BR" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Kayke Hub | Python e Dados" />
   <meta name="twitter:description" content="Python e análise de dados em construção — um dia por vez." />
   <meta name="twitter:image" content="https://kayke-dados.github.io/kayke-hub/assets/og-image.png" />
+  <meta name="twitter:image:alt" content="Kayke Hub — cartão digital com QR Code para o site" />
+  <meta name="theme-color" content="#141414" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&display=swap" /><!-- taste-skill-ignore: marca -->
   <link rel="preload" as="image" href="assets/avatar.png" />
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="css/style.css" />
   <script type="application/ld+json">
   {
@@ -37,25 +41,25 @@
     "url": "https://kayke-dados.github.io/kayke-hub/",
     "sameAs": [
       "https://github.com/kayke-dados",
-      "https://www.instagram.com/kayke.dados/",
-      "https://github.com/kayke-dados/Python-Journey"
-    ]
+      "https://www.instagram.com/kayke.dados/"
+    ],
+    "knowsAbout": ["Python", "Análise de Dados"]
   }
   </script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Pular para o conteúdo</a>
 
-  <header class="nav" id="topo">
+  <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="#inicio">
         <span class="brand-mark" aria-hidden="true">K.</span>
         <span class="brand-name">Kayke Hub</span>
       </a>
-      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu" data-i18n-aria="menu_open">
         <span class="nav-toggle-bar" aria-hidden="true"></span><span class="nav-toggle-bar" aria-hidden="true"></span>
       </button>
-      <nav class="nav-menu" id="nav-menu" aria-label="Navegação principal">
+      <nav class="nav-menu" id="nav-menu" aria-label="Navegação principal" data-i18n-aria="nav_label">
         <a class="nav-link" href="#inicio" data-i18n="nav_home">Início</a>
         <a class="nav-link" href="#sobre" data-i18n="nav_about">Sobre</a>
         <a class="nav-link" href="#jornada" data-i18n="nav_journey">Jornada</a>
@@ -70,7 +74,7 @@
     <section class="hero" id="inicio" aria-labelledby="nome-titulo">
       <div class="hero-inner">
         <div class="hero-identity">
-          <img src="assets/avatar.png" alt="Avatar de Kayke no GitHub" width="400" height="400" class="avatar" />
+          <img src="assets/avatar.png" alt="Avatar de Kayke no GitHub" width="400" height="400" class="avatar" data-i18n-alt="avatar_alt" />
           <h1 class="hero-name" id="nome-titulo">Kayke</h1>
           <p class="hero-role" data-i18n="tagline">Estudando para me tornar <strong>Analista de Dados</strong></p>
           <p class="hero-intro" data-i18n="hero_intro">Python do zero, com o aprendizado inteiro documentado no Python-Journey — um dia por vez, sem atalhos.</p>
@@ -81,18 +85,18 @@
             <a class="btn" href="https://www.instagram.com/kayke.dados/" target="_blank" rel="noopener">Instagram</a>
           </div>
         </div>
-        <div class="hero-visual" role="img" aria-label="Barras da jornada de estudos: capítulos 01 a 07 do Python-Journey com 12, 16, 25, 18, 5 e 9 de 10 exercícios concluídos; capítulo 07 reservado">
+        <div class="hero-visual">
           <p class="hero-visual-path"><span class="terminal-dot" aria-hidden="true"></span><span data-i18n="hero_path">~/python-journey</span></p>
           <ul class="bars" role="list">
-            <li class="bar-row"><span class="bar-tag mono" aria-hidden="true">fundamentos</span><span class="bar-track"><span class="bar" style="--w:48%"></span></span><span class="bar-count mono">12</span></li>
-            <li class="bar-row"><span class="bar-tag mono" aria-hidden="true">condições</span><span class="bar-track"><span class="bar" style="--w:64%"></span></span><span class="bar-count mono">16</span></li>
-            <li class="bar-row"><span class="bar-tag mono" aria-hidden="true">laços e lógica</span><span class="bar-track"><span class="bar" style="--w:100%"></span></span><span class="bar-count mono">25</span></li>
-            <li class="bar-row"><span class="bar-tag mono" aria-hidden="true">listas e tuplas</span><span class="bar-track"><span class="bar" style="--w:72%"></span></span><span class="bar-count mono">18</span></li>
-            <li class="bar-row"><span class="bar-tag mono" aria-hidden="true">dicionários</span><span class="bar-track"><span class="bar" style="--w:20%"></span></span><span class="bar-count mono">5</span></li>
-            <li class="bar-row bar-row-open"><span class="bar-tag mono" aria-hidden="true">funções</span><span class="bar-track"><span class="bar bar-partial" style="--w:90%"></span></span><span class="bar-count mono">9/10</span></li>
-            <li class="bar-row bar-row-open"><span class="bar-tag mono" aria-hidden="true">próximos</span><span class="bar-track"><span class="bar-placeholder"></span></span><span class="bar-count mono">—</span></li>
+            <li class="bar-row"><span class="bar-tag mono" data-i18n="chap_1">fundamentos</span><span class="bar-track"><span class="bar" style="--w:48%"></span></span><span class="bar-count mono">12</span></li>
+            <li class="bar-row"><span class="bar-tag mono" data-i18n="chap_2">condições</span><span class="bar-track"><span class="bar" style="--w:64%"></span></span><span class="bar-count mono">16</span></li>
+            <li class="bar-row"><span class="bar-tag mono" data-i18n="chap_3">laços e lógica</span><span class="bar-track"><span class="bar" style="--w:100%"></span></span><span class="bar-count mono">25</span></li>
+            <li class="bar-row"><span class="bar-tag mono" data-i18n="chap_4">listas e tuplas</span><span class="bar-track"><span class="bar" style="--w:72%"></span></span><span class="bar-count mono">18</span></li>
+            <li class="bar-row"><span class="bar-tag mono" data-i18n="chap_5">dicionários</span><span class="bar-track"><span class="bar" style="--w:20%"></span></span><span class="bar-count mono">5</span></li>
+            <li class="bar-row bar-row-open"><span class="bar-tag mono" data-i18n="chap_6">funções</span><span class="bar-track"><span class="bar bar-partial" style="--w:90%"></span></span><span class="bar-count mono">9/10</span></li>
+            <li class="bar-row bar-row-open"><span class="bar-tag mono" data-i18n="chap_7">próximos</span><span class="bar-track"><span class="bar-placeholder"></span></span><span class="bar-count mono">—</span></li>
           </ul>
-          <p class="hero-visual-note mono"><span data-i18n="hero_note">85 exercícios resolvidos · 6 capítulos concluídos</span> · <span class="spark" data-i18n="hero_note_open">ex105 pendente</span></p>
+          <p class="hero-visual-note mono"><span data-i18n="hero_note">85 exercícios resolvidos · 5 capítulos concluídos</span> · <span class="spark" data-i18n="hero_note_open">ex105 pendente</span></p>
         </div>
       </div>
     </section>
@@ -119,36 +123,36 @@
     <section class="jornada" id="jornada" aria-labelledby="jornada-title">
       <h2 id="jornada-title" data-i18n="jornada_title">Jornada de aprendizado</h2>
       <p class="section-intro" data-i18n="jornada_intro">Capítulos do Python-Journey — o número é a quantidade de exercícios resolvidos em cada um.</p>
-      <ol class="trail" role="list">
-        <li class="track-row"><span class="track-name">01 — fundamentos</span><span class="track-count">12</span><span class="track-status" data-i18n="status_done">concluída</span></li>
-        <li class="track-row"><span class="track-name">02 — condições</span><span class="track-count">16</span><span class="track-status" data-i18n="status_done">concluída</span></li>
-        <li class="track-row"><span class="track-name">03 — laços e lógica</span><span class="track-count">25</span><span class="track-status" data-i18n="status_done">concluída</span></li>
-        <li class="track-row"><span class="track-name">04 — listas e tuplas</span><span class="track-count">18</span><span class="track-status" data-i18n="status_done">concluída</span></li>
-        <li class="track-row"><span class="track-name">05 — dicionários</span><span class="track-count">5</span><span class="track-status" data-i18n="status_done">concluída</span></li>
-        <li class="track-row"><span class="track-name">06 — funções</span><span class="track-count">9/10</span><span class="track-status" data-i18n="status_partial">◐ em andamento</span></li>
-        <li class="track-row"><span class="track-name">07 — próximos</span><span class="track-count">—</span><span class="track-status" data-i18n="status_planned">espaço reservado</span></li>
+      <ol class="trail">
+        <li class="track-row"><span class="track-name" data-i18n="track_1">01 — fundamentos</span><span class="track-count">12</span><span class="track-status" data-i18n="status_done">concluída</span></li>
+        <li class="track-row"><span class="track-name" data-i18n="track_2">02 — condições</span><span class="track-count">16</span><span class="track-status" data-i18n="status_done">concluída</span></li>
+        <li class="track-row"><span class="track-name" data-i18n="track_3">03 — laços e lógica</span><span class="track-count">25</span><span class="track-status" data-i18n="status_done">concluída</span></li>
+        <li class="track-row"><span class="track-name" data-i18n="track_4">04 — listas e tuplas</span><span class="track-count">18</span><span class="track-status" data-i18n="status_done">concluída</span></li>
+        <li class="track-row"><span class="track-name" data-i18n="track_5">05 — dicionários</span><span class="track-count">5</span><span class="track-status" data-i18n="status_done">concluída</span></li>
+        <li class="track-row"><span class="track-name" data-i18n="track_6">06 — funções</span><span class="track-count">9/10</span><span class="track-status" data-i18n="status_partial">em andamento</span></li>
+        <li class="track-row"><span class="track-name" data-i18n="track_7">07 — próximos</span><span class="track-count">—</span><span class="track-status" data-i18n="status_planned">espaço reservado</span></li>
       </ol>
-      <p class="trail-note" data-i18n="trail_note">Falta apenas um exercício (<code>ex105</code>) para concluir o capítulo 06 — verdade em tempo real.</p>
+      <p class="trail-note" data-i18n="trail_note">Falta apenas um exercício (<code>ex105</code>) para concluir o capítulo 06 — dados atualizados manualmente.</p>
     </section>
 
     <!-- projetos -->
     <section class="projetos" id="projetos" aria-labelledby="projects-title">
       <h2 id="projects-title" data-i18n="projects_title">Projetos</h2>
-      <p class="section-intro" data-i18n="projects_p1">Só o que já existe de verdade — com situação real e tecnologia realmente usada.</p>
+      <p class="section-intro" data-i18n="projects_p1">Projetos reais, com situação e tecnologia de verdade — e o que ainda está por vir, separado com clareza.</p>
       <div class="proj-grid">
         <article class="proj proj-highlight">
           <div class="proj-head">
             <h3 class="proj-name"><a href="https://github.com/kayke-dados/Python-Journey" target="_blank" rel="noopener" data-i18n="proj_1_name">Python-Journey</a></h3>
             <span class="proj-status"><span class="spark" aria-hidden="true">●</span><span data-i18n="proj_1_status"> em construção</span></span>
           </div>
-          <p class="proj-desc" data-i18n="proj_1_desc">85 de 86 exercícios · seis capítulos concluídos · faltando <code>ex105</code> no capítulo 06</p>
+          <p class="proj-desc" data-i18n="proj_1_desc">85 de 86 exercícios · cinco capítulos concluídos · faltando <code>ex105</code> no capítulo 06</p>
           <p class="proj-tech"><span class="proj-tech-label mono" data-i18n="proj_tech">stack</span><span class="chip">Python</span></p>
           <p class="proj-links"><a class="proj-link" href="https://github.com/kayke-dados/Python-Journey" target="_blank" rel="noopener" data-i18n="link_repo">repositório →</a></p>
         </article>
         <article class="proj">
           <div class="proj-head">
             <h3 class="proj-name"><a href="https://kayke-dados.github.io/kayke-hub/" target="_blank" rel="noopener" data-i18n="proj_2_name">Kayke Hub</a></h3>
-            <span class="proj-status" data-i18n="proj_2_status">● no ar</span>
+            <span class="proj-status"><span class="spark" aria-hidden="true">●</span><span data-i18n="proj_2_status"> no ar</span></span>
           </div>
           <p class="proj-desc" data-i18n="proj_2_desc">Este site — cartão digital estático, publicado no GitHub Pages</p>
           <p class="proj-tech"><span class="proj-tech-label mono" data-i18n="proj_tech">stack</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></p>
@@ -204,8 +208,8 @@
           </div>
         </div>
         <div class="contact-share">
-          <h2 class="sr-only" data-i18n="share_title">Compartilhar este cartão</h2>
-          <img class="qr" src="assets/qr-code.svg" alt="QR Code para este cartão digital" width="220" height="220" />
+          <h3 class="sr-only" data-i18n="share_title">Compartilhar este cartão</h3>
+          <img class="qr" src="assets/qr-code.svg" alt="QR Code para este cartão digital" width="220" height="220" loading="lazy" data-i18n-alt="qr_alt" decoding="async" />
           <div class="share-actions">
             <button class="btn btn-solid" id="btn-copy" type="button" data-i18n="btn_copy">Copiar endereço</button>
             <button class="btn" id="btn-share" type="button" data-i18n="btn_share">Compartilhar</button>
@@ -219,7 +223,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <p class="footer-brand">Kayke Hub</p>
-      <nav class="footer-links" aria-label="Links do rodapé">
+      <nav class="footer-links" aria-label="Links do rodapé" data-i18n-aria="footer_nav_label">
         <a href="#inicio" data-i18n="nav_home">Início</a>
         <a href="#jornada" data-i18n="nav_journey">Jornada</a>
         <a href="#projetos" data-i18n="nav_projects">Projetos</a>

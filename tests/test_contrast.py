@@ -5,8 +5,8 @@ import unittest
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSS = os.path.join(ROOT, "css", "style.css")
 
-BG = (0x08, 0x0B, 0x12)
-SURFACE = (0x13, 0x1B, 0x29)
+BG = (0x14, 0x14, 0x14)
+SURFACE = (0x20, 0x20, 0x20)
 
 
 def hex_to_rgb(value):
@@ -56,13 +56,11 @@ class TestContrast(unittest.TestCase):
         self.assertGreaterEqual(contrast(accent, SURFACE), 4.5)
 
     def test_solid_button_text(self):
-        """Botão sólido: texto do ground sobre o accent, branco sobre o deep."""
+        """Botão sólido: texto do ground sobre o ametista."""
         self.assertGreater(contrast(BG, token("--accent")), 4.5)
-        self.assertGreater(contrast((0xFF, 0xFF, 0xFF), token("--accent-deep")), 4.5)
 
-    def test_spark_is_decoration_or_bold_size(self):
-        """#FACC15 só em detalhes: contraste alto garantido de qualquer forma."""
-        self.assertGreater(contrast(token("--spark"), BG), 4.5)
+    def test_accent_hover_still_readable(self):
+        self.assertGreater(contrast(BG, token("--accent-hover")), 4.5)
 
 
 if __name__ == "__main__":

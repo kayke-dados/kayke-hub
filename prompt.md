@@ -1,473 +1,523 @@
-PROJETO: REDESIGN COMPLETO DO KAYKE HUB — FRONT-END PREMIUM
+PROJETO: REFORMULAÇÃO COMPLETA DO KAYKE HUB
 
-1. SUA MISSÃO
+1. OBJETIVO PRINCIPAL
 
-Quero que você faça uma reformulação visual COMPLETA do Kayke Hub.
+Quero que você faça uma reformulação completa do meu site pessoal Kayke Hub, transformando-o em um portfólio moderno, minimalista, elegante e profissional.
 
-Não quero apenas corrigir alguns detalhes, trocar cores, aumentar fontes ou arredondar cartões.
+Não quero apenas pequenos ajustes, uma troca de cores ou uma reorganização superficial.
 
-Quero um novo projeto visual, com uma identidade forte, aparência profissional, excelente experiência de navegação e acabamento de alta qualidade.
+Quero uma evolução significativa na identidade visual, na experiência do usuário, na organização do conteúdo, na responsividade e na qualidade técnica do projeto.
 
-Você tem liberdade criativa para reconstruir o front-end inteiro.
+O resultado deve transmitir a qualidade de um portfólio cuidadosamente desenvolvido por profissionais experientes em UI/UX e frontend.
 
-O resultado deve parecer um site pessoal desenvolvido cuidadosamente por um designer de produto e um engenheiro Front-end experiente.
+Entretanto, mantenha a identidade verdadeira do proprietário: sou um estudante que está começando na programação, aprendendo Python e interessado em análise de dados.
 
-O projeto deve continuar representando minha identidade e minha realidade como estudante de programação.
+Não invente experiências profissionais, projetos, habilidades, certificados ou conhecimentos.
 
-2. IDENTIDADE DO PROJETO
+A proposta é apresentar minha jornada de aprendizado de maneira profissional, autêntica e organizada.
 
-Nome: Kayke Hub
+---
 
-Site atual:
-https://kayke-dados.github.io/kayke-hub/
+2. PRIMEIRA ETAPA OBRIGATÓRIA: AUDITORIA COMPLETA
 
-Repositório:
-https://github.com/kayke-dados/kayke-hub
+Antes de modificar qualquer arquivo, faça uma auditoria completa do ambiente e do projeto.
 
-Objetivo:
-Ser meu espaço pessoal na internet, reunindo minha apresentação, redes sociais, projetos, conhecimentos e jornada de aprendizado.
+2.1. Analise o projeto
 
-Minha direção profissional:
+- Explore toda a estrutura de diretórios.
+- Leia os arquivos HTML, CSS e JavaScript.
+- Identifique os componentes e suas responsabilidades.
+- Analise as imagens, fontes e demais recursos.
+- Identifique funcionalidades existentes.
+- Verifique problemas de organização, desempenho, acessibilidade e responsividade.
+- Identifique possíveis erros e inconsistências no conteúdo.
+- Verifique a compatibilidade atual com GitHub Pages.
 
-- Programação.
-- Python.
-- Análise de Dados.
-- Desenvolvimento de projetos.
-- Aprendizado contínuo.
+Não faça alterações antes de entender como o projeto funciona.
 
-Minha frase:
-"Consistência > intensidade."
+2.2. Explore todas as skills disponíveis
 
-Quero que o site transmita:
+Quero que você descubra e aproveite ao máximo as skills disponíveis no OpenCode.
 
-- Tecnologia.
-- Personalidade.
-- Curiosidade.
-- Evolução.
-- Organização.
-- Autenticidade.
-- Simplicidade sofisticada.
+Procure especialmente recursos relacionados a:
 
-Não quero parecer um desenvolvedor sênior. Quero mostrar minha evolução real.
-
-3. REFERÊNCIAS DE DESIGN
-
-Estude as seguintes referências:
-
-Brittany Chiang
-
-https://brittanychiang.com/
-
-Observe:
-
-- Hierarquia tipográfica.
-- Organização das informações.
-- Navegação.
-- Contraste.
-- Apresentação dos projetos.
-- Uso inteligente de espaços vazios.
-
-Tobias van Schneider
-
-https://vanschneider.com/
-
-Observe:
-
-- Identidade visual pessoal.
-- Composição editorial.
-- Tipografia expressiva.
-- Personalidade.
-- Organização assimétrica.
-- Uso de detalhes visuais.
-
-Metalab
-
-https://metalab.com/
-
-Observe:
-
-- Minimalismo sofisticado.
-- Consistência dos componentes.
-- Composição visual.
-- Espaçamento.
-- Qualidade dos detalhes.
-
-IMPORTANTE: use essas referências apenas como inspiração. Não copie layouts inteiros, marcas, imagens, textos ou elementos proprietários.
-
-Crie uma identidade original para o Kayke Hub.
-
-4. DIREÇÃO VISUAL
-
-Quero uma estética chamada:
-
-Dark Editorial Tech Portfolio
-
-A proposta mistura:
-
-- Portfólio editorial.
-- Interface tecnológica.
-- Minimalismo moderno.
-- Tipografia marcante.
-- Composição assimétrica.
-- Detalhes inspirados em interfaces de desenvolvimento.
-
-Paleta sugerida
-
-Use como ponto de partida:
-
-- Fundo principal: #080B12.
-- Fundo secundário: #0E1420.
-- Superfícies: #131B29.
-- Texto principal: #F4F7FB.
-- Texto secundário: #929CAD.
-- Azul principal: #60A5FA.
-- Azul escuro: #2563EB.
-- Amarelo de destaque: #FACC15.
-- Bordas: #263246.
-
-Não utilize todas as cores com a mesma intensidade.
-
-O azul deve ser o destaque principal. O amarelo deve aparecer apenas em pequenos detalhes.
-
-Tipografia
-
-Escolha uma combinação profissional.
-
-Sugestões:
-
-- Manrope.
-- Inter.
-- Geist.
-- Space Grotesk.
-- IBM Plex Mono para pequenos detalhes técnicos.
-
-Use:
-
-- Títulos grandes e expressivos.
-- Textos de leitura confortável.
-- Labels pequenos e discretos.
-- Tipografia monoespaçada apenas em detalhes técnicos.
-
-Evite misturar muitas famílias tipográficas.
-
-5. NOVA ESTRUTURA VISUAL
-
-Reconstrua a experiência visual considerando as seguintes seções.
-
-A. Header / Navegação
-
-Crie um cabeçalho refinado com:
-
-- Marca Kayke Hub.
-- Navegação para Início, Sobre, Jornada e Projetos.
-- Alternador PT/EN.
-- Indicador discreto da seção atual.
-- Menu mobile bem desenvolvido.
-
-O cabeçalho pode ser fixo ou apresentar comportamento inteligente durante a rolagem.
-
-Não deixe a navegação ocupar espaço excessivo.
-
-B. Hero — A primeira impressão
-
-Essa é uma das partes mais importantes.
-
-Quero um hero marcante, que não pareça um cartão de links comum.
-
-Explore uma composição assimétrica, com duas áreas:
-
-Área de identidade:
-
-- Nome Kayke.
-- Uma apresentação curta.
-- Objetivo: estudante de programação interessado em Python e análise de dados.
-- Uma pequena frase de personalidade.
-- Links para GitHub e Instagram.
-
-Área visual:
-
-- Elementos gráficos abstratos inspirados em dados e programação.
-- Pequenos detalhes tipográficos.
-- Indicadores visuais discretos.
-- Uma representação visual original da minha jornada tecnológica.
-
-Não invente estatísticas, experiência ou conhecimentos.
-
-O hero precisa ter presença visual sem ficar poluído.
-
-C. Sobre mim
-
-Crie uma seção editorial com uma apresentação humana e natural.
-
-O conteúdo deve explicar:
-
-- Que estou aprendendo programação.
-- Meu interesse por Python.
-- Minha vontade de trabalhar com análise de dados.
-- Minha iniciativa de desenvolver projetos e registrar minha evolução.
-
-Não use frases genéricas de marketing.
-
-D. Jornada de aprendizado
-
-Transforme a jornada Python-Journey em uma seção visual interessante.
-
-Pode usar:
-
-- Linha do tempo.
-- Lista de capítulos.
-- Indicadores de progresso.
-- Etapas concluídas.
-- Etapas em andamento.
-
-Use somente dados reais encontrados no projeto.
-
-Não invente porcentagens nem números.
-
-A seção deve ter aparência de uma documentação pessoal moderna, não de um painel administrativo.
-
-E. Projetos
-
-Crie uma seção de projetos com apresentação visual de qualidade.
-
-Destaque os projetos reais encontrados nos repositórios.
-
-Cada projeto deve ter:
-
-- Nome.
-- Descrição.
-- Situação atual.
-- Tecnologias realmente utilizadas.
-- Link para o repositório.
-- Link para demonstração, quando existir.
-
-Use imagens, previews ou composições gráficas quando forem úteis.
-
-Não invente screenshots ou resultados de projetos.
-
-F. Tecnologias e conhecimentos
-
-Apresente meus conhecimentos de forma honesta.
-
-Separe:
-
-- Conhecimentos atuais.
-- Ferramentas que estou aprendendo.
-- Próximas tecnologias que pretendo estudar.
-
-Não utilize barras de porcentagem inventadas.
-
-Evite classificações exageradas.
-
-G. Redes e contato
-
-Crie uma seção final visualmente marcante.
-
-Inclua:
-
-- GitHub.
-- Instagram.
-- E-mail, se houver um endereço público confirmado no projeto.
-- Compartilhamento.
-- QR Code.
-
-Os botões devem ter ícones consistentes e feedback visual.
-
-H. Footer
-
-Crie um rodapé minimalista com:
-
-- Kayke Hub.
-- Ano atualizado automaticamente.
-- Links principais.
-- Aviso transparente sobre o uso de IA no desenvolvimento do código.
-
-6. ELEMENTOS VISUAIS E INTERAÇÕES
-
-Quero um site com acabamento premium.
-
-Explore:
-
-- Animações suaves de entrada.
-- Transições entre estados.
-- Hover elegante.
-- Microinterações.
-- Bordas sutis.
-- Sombras controladas.
-- Elementos gráficos decorativos.
-- Separadores editoriais.
-- Pequenos detalhes monoespaçados.
-- Estados de foco bem desenhados.
-
-Pode usar uma composição Bento Grid quando fizer sentido, mas não transforme todas as seções em cartões.
-
-Evite:
-
-- Layout genérico de template.
-- Muitos cartões iguais.
-- Gradientes em todos os elementos.
-- Glassmorphism excessivo.
-- Efeitos neon exagerados.
-- Animações demoradas.
-- Elementos decorativos sem propósito.
-- Textos gigantes sem hierarquia.
-
-As animações devem respeitar prefers-reduced-motion.
-
-7. RESPONSIVIDADE
-
-O projeto deve ser pensado primeiro para dispositivos móveis, mas com uma excelente versão desktop.
-
-Verifique:
-
-- 360px.
-- 390px.
-- 430px.
-- 768px.
-- 1024px.
-- 1440px.
-
-Não basta diminuir o tamanho dos elementos.
-
-Reorganize a composição de acordo com cada tela.
-
-No celular:
-
-- Navegação simples.
-- Hero bem organizado.
-- Textos legíveis.
-- Botões fáceis de tocar.
-- Sem rolagem horizontal.
-- Espaçamento confortável.
-
-No desktop:
-
-- Aproveite melhor a largura.
-- Utilize grids e composições assimétricas.
-- Evite deixar o conteúdo excessivamente estreito.
-- Crie uma experiência visual mais rica.
-
-8. TECNOLOGIA E ARQUITETURA
-
-Antes de implementar:
-
-1. Analise o projeto atual.
-2. Identifique sua arquitetura.
-3. Leia os arquivos e documentação.
-4. Identifique os componentes e funcionalidades existentes.
-5. Consulte as skills disponíveis.
-
-Procure e utilize, quando disponíveis:
-
-- frontend-design.
-- UI/UX Design.
-- Web Design Guidelines.
-- Accessibility.
-- Responsive Design.
+- Frontend development.
+- UI/UX design.
+- Web design.
+- Design systems.
+- Responsividade.
+- Acessibilidade.
 - SEO.
 - Performance.
-- Code Review.
-- Browser Testing.
+- HTML, CSS e JavaScript.
+- Testes automatizados.
+- Revisão de código.
+- Qualidade de software.
 
-Se houver ferramentas de navegador, utilize-as para comparar o site atual e a versão reconstruída.
+Leia as instruções completas das skills relevantes antes de utilizá-las.
 
-Não invente skills ou ferramentas que não estejam instaladas.
+Não se limite às skills mencionadas aqui. Explore as demais disponíveis e identifique oportunidades de melhorar o projeto.
 
-Restrições técnicas
+2.3. Explore plugins, MCPs e integrações
 
-- Continue usando HTML, CSS e JavaScript puro.
-- Não migre para React ou Next.js.
-- Não adicione backend.
-- Não adicione banco de dados.
-- Não adicione autenticação.
-- Preserve a compatibilidade com GitHub Pages.
-- Utilize caminhos compatíveis com a publicação em /kayke-hub/.
-- Não adicione dependências desnecessárias.
+Verifique os recursos disponíveis no ambiente:
 
-Você pode reorganizar completamente os arquivos e componentes se isso melhorar a qualidade do projeto.
+- Plugins.
+- MCPs.
+- Agentes especializados.
+- Ferramentas de navegador.
+- Ferramentas de inspeção visual.
+- Ferramentas de testes.
+- Ferramentas de análise de código.
+- Integrações externas.
 
-9. FUNCIONALIDADES QUE DEVEM SER PRESERVADAS
+Utilize os recursos que realmente agregarem valor.
 
-O redesign não pode quebrar:
+Não presuma que uma ferramenta está instalada ou disponível. Verifique antes.
 
-- Alternador de idiomas.
-- Links externos.
+Não invente capacidades de ferramentas.
+
+2.4. Utilize agentes especializados quando possível
+
+Se o ambiente permitir execução de agentes paralelos, distribua tarefas independentes entre eles.
+
+Sugestão:
+
+1. Agente UI/UX: analisar referências e propor a identidade visual.
+2. Agente Frontend: analisar a arquitetura e implementação.
+3. Agente de acessibilidade: identificar problemas de usabilidade.
+4. Agente SEO e performance: analisar otimizações.
+5. Agente de testes: verificar funcionalidades e compatibilidade.
+
+O agente principal deve coordenar o trabalho, revisar as recomendações e resolver conflitos.
+
+Não utilize agentes apenas para aumentar a quantidade de tarefas. Priorize resultados úteis.
+
+---
+
+3. IDENTIDADE VISUAL DEFINITIVA
+
+A nova identidade visual deve seguir esta direção:
+
+Minimalista + Editorial + Sofisticada + Profissional + Moderna.
+
+Quero um portfólio visualmente elegante, com personalidade própria e sem aparência de template genérico.
+
+3.1. Paleta oficial
+
+Utilize exatamente esta paleta como identidade principal:
+
+Elemento| Cor
+Fundo principal| #141414
+Superfícies e cartões| #202020
+Cor de destaque| #9B8AC4
+Texto principal| #F5F3EF
+Texto secundário| #A6A29C
+Bordas| #343434
+
+3.2. Regras de utilização
+
+- O preto deve dominar a interface.
+- O branco suave deve ser utilizado nos títulos e textos principais.
+- O cinza deve organizar informações secundárias.
+- O roxo ametista deve aparecer somente em detalhes importantes.
+- Utilize o roxo em botões, links, indicadores de progresso e estados interativos.
+- Evite utilizar a cor de destaque em grandes áreas.
+- Preserve uma aparência equilibrada.
+
+Não utilize azul, verde ou laranja como cores de identidade.
+
+Não adicione outras cores de destaque sem justificativa técnica e visual.
+
+---
+
+4. MINIMALISMO: PRINCÍPIO FUNDAMENTAL
+
+O minimalismo é obrigatório em todas as partes do projeto.
+
+Quero uma interface limpa, com bastante espaço negativo, poucos elementos e excelente organização visual.
+
+Princípios obrigatórios
+
+- Menos elementos, mais intenção.
+- Composição equilibrada.
+- Hierarquia visual clara.
+- Tipografia como protagonista.
+- Espaçamento generoso.
+- Navegação simples.
+- Ícones discretos.
+- Bordas finas.
+- Animações sutis.
+- Conteúdo objetivo.
+- Elementos visuais com propósito.
+
+Evite completamente
+
+- Excesso de cartões e caixas.
+- Muitos elementos flutuantes.
+- Gradientes chamativos.
+- Efeitos neon.
+- Animações constantes.
+- Ícones em excesso.
+- Sombras pesadas.
+- Bordas exageradas.
+- Elementos repetitivos.
+- Aparência de dashboard administrativo.
+- Elementos decorativos sem função.
+- Layouts excessivamente carregados.
+
+Cada elemento deve ter uma função clara.
+
+Se um componente não melhorar a experiência, a comunicação ou a organização, não o adicione.
+
+O objetivo é transmitir sofisticação através da simplicidade.
+
+---
+
+5. PESQUISA DE REFERÊNCIAS PROFISSIONAIS
+
+Antes de definir a interface, pesquise e analise portfólios reais de desenvolvedores, designers e profissionais de tecnologia.
+
+Procure referências de qualidade em:
+
+- Awwwards.
+- Behance.
+- Dribbble.
+- Portfólios independentes.
+- Sites pessoais de desenvolvedores.
+- Projetos editoriais minimalistas.
+
+Observe:
+
+- Hierarquia visual.
+- Tipografia.
+- Espaçamento.
+- Navegação.
+- Composição.
+- Apresentação de projetos.
+- Uso de cores.
+- Responsividade.
+- Microinterações.
+- Experiência mobile.
+
+Utilize essas referências como inspiração, mas não copie nenhum site integralmente.
+
+Crie uma identidade própria para o Kayke Hub.
+
+---
+
+6. TIPOGRAFIA E COMPOSIÇÃO
+
+Escolha uma combinação tipográfica profissional.
+
+Considere:
+
+- Inter.
+- Manrope.
+- Geist.
+- DM Sans.
+
+Utilize uma fonte principal consistente.
+
+Se necessário, utilize uma fonte monoespaçada para pequenos detalhes técnicos.
+
+Trabalhe cuidadosamente:
+
+- Tamanhos dos títulos.
+- Pesos tipográficos.
+- Altura das linhas.
+- Espaçamento entre letras.
+- Margens.
+- Largura máxima dos textos.
+- Alinhamento.
+- Proporções entre os elementos.
+
+Evite títulos exageradamente grandes e textos pequenos demais.
+
+A tipografia deve contribuir para a identidade editorial do site.
+
+---
+
+7. ESTRUTURA E ORGANIZAÇÃO DO CONTEÚDO
+
+Analise o conteúdo existente e reorganize as informações para apresentar minha jornada na tecnologia.
+
+O site deve comunicar que sou estudante, estou aprendendo programação, especialmente Python, e tenho interesse em análise de dados.
+
+Avalie a organização destas áreas:
+
+1. Apresentação inicial.
+2. Sobre mim.
+3. Minha jornada na programação.
+4. Conhecimentos e tecnologias.
+5. Projetos.
+6. Python Journey.
+7. Contato e redes sociais.
+
+Não crie seções desnecessárias.
+
+Não invente informações.
+
+Não apresente conhecimentos básicos como experiência profissional avançada.
+
+Mantenha uma comunicação natural, direta e autêntica.
+
+---
+
+8. FUNCIONALIDADES EXISTENTES
+
+Antes de implementar qualquer mudança, faça um inventário das funcionalidades atuais.
+
+Preserve e teste todas as funcionalidades existentes, quando presentes:
+
+- Alternância entre português e inglês.
+- Navegação entre seções.
+- Links para projetos.
+- Links para redes sociais.
 - QR Code.
 - Compartilhamento.
-- Copiar endereço do site.
-- Navegação.
-- Informações da jornada.
-- Links dos projetos.
+- Cópia de URL.
+- Histórico ou progresso da jornada Python.
+- Interações e animações.
 - Responsividade.
 
-Se encontrar funcionalidades defeituosas, corrija.
+Não remova funcionalidades que estejam funcionando sem uma justificativa técnica.
 
-Não remova funcionalidades sem justificativa.
+Se identificar bugs, corrija-os.
 
-10. PROCESSO DE EXECUÇÃO
+Se identificar oportunidades de melhoria, implemente-as sem comprometer a essência do projeto.
 
-Não pare depois de apresentar sugestões.
+Verifique também inconsistências numéricas e textuais da Python Journey. Não altere números de exercícios ou progresso sem conferir os dados reais.
 
-Execute o trabalho.
+---
 
-Etapa 1: auditoria e planejamento.
+9. RESPONSIVIDADE E MOBILE-FIRST
 
-Etapa 2: definição da nova identidade visual.
+O site precisa funcionar muito bem em:
 
-Etapa 3: reconstrução completa do HTML.
+- Android.
+- iPhone.
+- Tablets.
+- Notebooks.
+- Monitores grandes.
 
-Etapa 4: reconstrução completa do CSS.
+Priorize o desenvolvimento mobile-first.
 
-Etapa 5: revisão e implementação do JavaScript.
+Verifique especialmente:
 
-Etapa 6: testes de responsividade e acessibilidade.
+- Menu em telas pequenas.
+- Navegação.
+- Tamanho dos botões.
+- Espaçamento.
+- Quebras de texto.
+- Cartões.
+- Imagens.
+- Tipografia.
+- Legibilidade.
+- Elementos interativos.
 
-Etapa 7: testes funcionais.
+Não basta que o site abra no celular. Ele precisa oferecer uma experiência realmente bem projetada para dispositivos móveis.
 
-Etapa 8: revisão visual final.
+---
 
-Etapa 9: atualização da documentação.
+10. ACESSIBILIDADE
 
-Após implementar, abra a versão local com o navegador disponível, tire screenshots e avalie o resultado.
+Implemente boas práticas de acessibilidade:
 
-Se encontrar problemas visuais, corrija e faça outra avaliação.
+- HTML semântico.
+- Navegação por teclado.
+- Estados de foco visíveis.
+- Contraste adequado.
+- Textos alternativos.
+- Atributos ARIA quando necessários.
+- Labels apropriados.
+- Respeito à preferência por movimento reduzido.
+- Elementos interativos acessíveis.
+- Estrutura de títulos organizada.
 
-Não considere o trabalho finalizado apenas porque o código compila.
+Não sacrifique a acessibilidade em nome da estética.
 
-11. CRITÉRIOS DE ACEITAÇÃO
+---
 
-O trabalho só estará concluído quando:
+11. SEO E DESEMPENHO
 
-- O visual antigo tiver sido realmente substituído.
-- O hero tiver uma composição nova e marcante.
-- Todas as seções tiverem identidade visual consistente.
-- O site estiver excelente no celular.
-- A versão desktop estiver bem aproveitada.
-- Os links e funcionalidades estiverem funcionando.
-- Não existirem erros críticos no console.
-- Os testes existentes passarem.
-- O GitHub Pages continuar funcionando.
-- O conteúdo continuar fiel à minha realidade.
+Otimize o site para mecanismos de busca e compartilhamento.
 
-12. ENTREGA
+Implemente ou revise:
 
-Ao terminar, apresente:
+- Title.
+- Meta description.
+- Open Graph.
+- Favicon.
+- Metadados.
+- URLs.
+- Estrutura semântica.
+- Carregamento de fontes.
+- Otimização de imagens.
+- Lazy loading quando apropriado.
+- Minificação quando aplicável.
+- Organização dos arquivos.
+- Carregamento de JavaScript.
 
-1. Resumo da nova identidade visual.
-2. Principais mudanças de design.
-3. Arquivos criados, alterados e removidos.
-4. Funcionalidades preservadas.
-5. Testes realizados e resultados.
-6. Screenshots da versão desktop e mobile, se a ferramenta permitir.
-7. Problemas que ainda precisam de atenção.
-8. Instruções para publicar no GitHub Pages.
+Evite dependências desnecessárias.
 
-DIRETRIZ FINAL:
+Não adicione bibliotecas pesadas sem necessidade.
 
-Não quero um site que apenas funcione.
+---
 
-Quero um site que tenha personalidade, direção de arte, hierarquia visual, consistência e acabamento.
+12. TECNOLOGIAS E LIMITAÇÕES
 
-Tenha coragem para abandonar a aparência antiga e criar uma experiência visual realmente nova.
+O projeto deve continuar compatível com GitHub Pages.
 
-Não faça uma simples maquiagem no projeto. Reconstrua o front-end inteiro com qualidade de produto profissional, mantendo minha identidade e minha história reais.
+Priorize:
+
+- HTML.
+- CSS.
+- JavaScript puro.
+
+Não migre para React, Next.js, Vue ou outro framework sem necessidade técnica comprovada e sem minha autorização.
+
+Não adicione:
+
+- Backend.
+- Autenticação.
+- Banco de dados.
+- Dependências de servidor.
+- Funcionalidades que exijam infraestrutura incompatível com GitHub Pages.
+
+Mantenha a possibilidade de publicação como site estático.
+
+---
+
+13. TESTES E REVISÃO VISUAL
+
+Não considere o projeto concluído apenas porque o código compila.
+
+Execute os testes disponíveis no ambiente.
+
+Utilize, quando disponíveis:
+
+- Testes automatizados.
+- Verificações de HTML.
+- Verificações de CSS e JavaScript.
+- Ferramentas de acessibilidade.
+- Ferramentas de SEO.
+- Inspeção no navegador.
+- Screenshots.
+- Testes em diferentes tamanhos de tela.
+
+Verifique se:
+
+- Todos os botões funcionam.
+- Todos os links estão corretos.
+- A navegação funciona.
+- A tradução funciona.
+- O compartilhamento funciona.
+- A cópia de URL funciona.
+- O QR Code funciona.
+- Não existem erros no console.
+- Não existem elementos quebrados.
+- Não existem problemas de overflow horizontal.
+- O site continua compatível com GitHub Pages.
+
+Se encontrar problemas, corrija e teste novamente.
+
+Faça uma revisão visual final e compare o resultado com a direção de design definida.
+
+---
+
+14. ETAPAS DE EXECUÇÃO
+
+Siga esta sequência:
+
+1. Auditoria do projeto.
+2. Inventário das funcionalidades.
+3. Exploração das skills, plugins e MCPs.
+4. Pesquisa de referências.
+5. Planejamento da identidade visual.
+6. Definição da arquitetura.
+7. Reformulação da interface.
+8. Implementação das melhorias.
+9. Responsividade.
+10. Acessibilidade.
+11. SEO e otimização.
+12. Testes funcionais.
+13. Revisão visual.
+14. Correção dos problemas.
+15. Validação final.
+
+Não pule etapas importantes.
+
+Não fique preso ao planejamento: depois da auditoria, execute efetivamente a implementação.
+
+---
+
+15. REGRAS DE SEGURANÇA E PRESERVAÇÃO
+
+- Não apague arquivos importantes sem necessidade.
+- Não sobrescreva informações sem verificar.
+- Não invente conteúdo.
+- Não substitua links reais por links fictícios.
+- Não deixe botões sem funcionalidade.
+- Não entregue apenas um protótipo.
+- Não esconda erros.
+- Não ignore problemas de responsividade.
+- Não exponha tokens, senhas ou informações privadas.
+- Não comprometa a compatibilidade com GitHub Pages.
+- Não publique o site automaticamente.
+- Não faça push ou alterações externas sem minha autorização.
+
+Se necessário, crie um backup ou utilize Git para permitir a recuperação das alterações.
+
+---
+
+16. ENTREGA FINAL
+
+Quando concluir, apresente um relatório contendo:
+
+1. Resumo das mudanças.
+2. Melhorias visuais realizadas.
+3. Funcionalidades preservadas.
+4. Novas funcionalidades.
+5. Skills utilizadas e sua finalidade.
+6. Plugins, MCPs e ferramentas utilizados.
+7. Agentes utilizados, se houver.
+8. Testes executados.
+9. Resultados dos testes.
+10. Problemas encontrados e corrigidos.
+11. Problemas que ainda precisam de atenção.
+12. Compatibilidade com GitHub Pages.
+13. Instruções para publicação.
+
+Não declare testes como aprovados se eles não foram executados.
+
+Se alguma ferramenta não estiver disponível, informe isso no relatório.
+
+---
+
+RESULTADO ESPERADO
+
+Quero que o Kayke Hub tenha uma identidade visual própria e seja reconhecido por uma estética:
+
+- Minimalista.
+- Editorial.
+- Sofisticada.
+- Profissional.
+- Moderna.
+- Escura.
+- Elegante.
+- Responsiva.
+
+A paleta deve permanecer em preto, branco suave, cinza e roxo ametista discreto.
+
+O site deve ter excelente experiência mobile, navegação intuitiva, tipografia bem trabalhada e conteúdo organizado.
+
+Não quero um site exagerado, cheio de efeitos, cartões, animações ou elementos decorativos.
+
+Quero qualidade através da simplicidade.
+
+PRIORIDADE ABSOLUTA: entregar uma reformulação real, completa, funcional e visualmente refinada, preservando a identidade e a história do Kayke Hub.
+
+Comece pela auditoria, explore os recursos disponíveis e depois execute o trabalho até a validação final.
+
+Não pare apenas na apresentação de sugestões ou de um plano de desenvolvimento.

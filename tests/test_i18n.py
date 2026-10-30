@@ -11,7 +11,7 @@ MAIN = os.path.join(ROOT, "js", "main.js")
 def html_keys():
     with open(INDEX, encoding="utf-8") as f:
         raw = f.read()
-    keys = set(re.findall(r'data-i18n(?:-aria)?="([^"]+)"', raw))
+    keys = set(re.findall(r'data-i18n(?:-aria|-alt)?="([^"]+)"', raw))
     return keys
 
 

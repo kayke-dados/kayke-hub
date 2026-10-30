@@ -1,10 +1,10 @@
 # Kayke Hub — Portfólio de Aprendizado
 
-Espaço pessoal de **Kayke | Python e Dados** — portfólio editorial dark ("Dark Editorial Tech Portfolio"): apresentação, redes, projetos, jornada de aprendizado e contato. 100% estático (HTML + CSS + JS puro, sem framework, sem backend), pronto para o **GitHub Pages**.
+Espaço pessoal de **Kayke | Python e Dados** — cartão editorial minimalista (reformulação v4): ground grafite `#141414`, ametista `#9B8AC4` como único acento, hierarquia por tipografia e espaço. 100% estático (HTML + CSS + JS puro, sem framework, sem backend), pronto para o **GitHub Pages**.
 
 > 🔗 Endereço final: **https://kayke-dados.github.io/kayke-hub/**
 
-Tudo que aparece no cartão é verdade em tempo real: capítulos do [Python-Journey](https://github.com/kayke-dados/Python-Journey) com o estado real, links para o GitHub e o Instagram, e um QR Code para compartilhar o cartão de qualquer celular.
+Os números são **atualizados manualmente** a partir do [Python-Journey](https://github.com/kayke-dados/Python-Journey) e conferidos por testes: capítulos com o estado real, links para o GitHub e o Instagram, e um QR Code para compartilhar o cartão de qualquer celular.
 
 ## O que tem no site
 
@@ -17,19 +17,20 @@ Tudo que aparece no cartão é verdade em tempo real: capítulos do [Python-Jour
 - **Redes e contato** — GitHub, Instagram, e-mail, QR Code, Copiar endereço e Compartilhar (Web Share API com fallback)
 - **Transparência sobre IA** — o rodapé declara que o código foi desenvolvido com 100% de auxílio de inteligência artificial, com link para o repositório
 - **Alternador PT/EN** (o inglês é aplicado no navegador; rastreadores indexam o PT — limitação documentada, não omissão)
-- SEO + Open Graph (`og:site_name` incluído), favicon SVG, acessibilidade AA, `prefers-reduced-motion` respeitado, animações de entrada que só existem se o JavaScript ligar
+- **Acessibilidade** — foco visível, alvos de toque de 44px nos controles, `aria-current` na seção ativa, rótulos e alts traduzidos junto com o idioma, menu funcional mesmo sem JavaScript, `prefers-reduced-motion` respeitado
+- SEO + Open Graph/Twitter (com `image:alt`), `theme-color`, favicon SVG, animações de entrada que só existem se o JavaScript ligar
 
 ## Estrutura
 
 ```
 index.html        página única em 7 seções (conteúdo em PT inline; EN via js/main.js)
-css/style.css     tokens v3 (Dark Editorial Tech Portfolio) + todos os componentes
-js/main.js        SITE_URL, dicionário EN, menu mobile, seção ativa, reveals, copiar/compartilhar, digitação
-assets/           avatar, favicon.svg, qr-code.svg, og-image.png (paleta v3)
+css/style.css     tokens v4 (editorial minimalista, ametista) + todos os componentes
+js/main.js        SITE_URL, dicionário EN, menu mobile, seção ativa (aria-current), reveals, copiar/compartilhar, digitação, storage seguro
+assets/           avatar, favicon.svg, qr-code.svg, og-image.png (paleta v4)
 tools/            scripts que geram os assets (segno/assets)
-tests/            57 testes + 1 skipped (python3 -m pytest tests/ ou python3 -m unittest discover -s tests)
+tests/            61 testes + 1 skipped (python3 -m pytest tests/ ou python3 -m unittest discover -s tests)
 docs/             design + plano (docs/superpowers/)
-reports/          auditoria, skills, MCPs, testes, publicação, evolução v2 e redesign v3
+reports/          auditoria, skills, MCPs, testes, publicação, evolução v2, redesign v3 e reformulação v4
 ```
 
 ## Como editar
@@ -57,4 +58,5 @@ reports/          auditoria, skills, MCPs, testes, publicação, evolução v2 e
 - O código todo foi desenvolvido com **100% de auxílio de IA** — declarado no rodapé do site e assumido aqui.
 - **Números auditados, não copiados**: a trilha do site é comparada ao estado real do repositório Python-Journey pelos testes automatizados (`tests/test_v2.py`); ela reflete o branch `main` do repo.
 - `og-image.png` foi gerada por script (sem Pillow no ambiente de desenvolvimento); para uma arte mais rica, substitua por um PNG 1200×630 de sua criação.
-- Auditoria Lighthouse/navegador real não pôde rodar neste ambiente (Android/Termux, sem Chrome); os testes funcionais estão em `reports/04-relatorio-testes.md` e a auditoria da v2 em `reports/06-evolucao-v2.md`.
+- Auditoria Lighthouse/navegador real não pôde rodar neste ambiente (Android/Termux, sem Chrome); os testes funcionais estão em `reports/04-relatorio-testes.md`, a auditoria da v2 em `reports/06-evolucao-v2.md` e a reformulação v4 em `reports/08-reformulacao-v4.md`.
+- A paleta e o contraste (AA) são verificados por teste (`tests/test_contrast.py`): texto 16.6:1, secundário 7.25:1/6.42:1, acento 5.99:1/5.30:1 e botão sólido 5.99:1 (texto do ground sobre o ametista).
