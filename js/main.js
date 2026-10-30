@@ -21,53 +21,73 @@ const I18N = {
   en: {
     skip: "Skip to content",
     lang_label: "PT",
+    nav_home: "Home",
+    nav_about: "About",
+    nav_journey: "Journey",
+    nav_projects: "Projects",
     tagline: 'Studying to become a <strong>Data Analyst</strong>',
+    hero_intro: "Python from zero, with every step documented in Python-Journey — one day at a time, no shortcuts.",
     moto: "Consistency &gt; intensity.",
-    links_title: "Link cards",
-    link_github: "GitHub",
-    link_github_desc: "code and ship's log",
-    link_instagram: "Instagram",
-    link_instagram_desc: "@kayke.dados",
-    link_journey: "Python-Journey",
-    link_journey_desc: "85 exercises · 7 chapters",
-    link_email: "E-mail",
-    link_email_desc: "to talk",
-    trail_title: "Trail in progress",
-    about_p1: "This profile is my <strong>ship's log</strong>, not a show window. Studying Python from zero, no shortcuts, with an IT base and Office in my bag.",
-    about_p2: "Each folder is one stage; each file, one explained concept. Base: Curso em Vídeo.",
+    hero_path: "~/python-journey",
+    hero_note: "85 exercises solved · 6 chapters done",
+    hero_note_open: "ex105 pending",
+    sobre_title: "About",
+    fact_focus: "Python · data analysis",
+    fact_base: "Curso em Vídeo, reorganized into chapters",
+    fact_now: "chapter 06 · functions (ex105 left)",
+    fact_next: "OOP · databases · data analysis",
+    sobre_p1: "I am starting out in programming. No career to show off yet — just an honest study log: every folder in the repository is a concept practiced, debugged and explained, in the order I learned it.",
+    sobre_p2: 'Python is where I invest most. I follow the <strong>Curso em Vídeo</strong> base, organizing everything into chapters in <a href="https://github.com/kayke-dados/Python-Journey" target="_blank" rel="noopener">Python-Journey</a> — today with 85 exercises solved and chapter 06 nearly closed.',
+    sobre_p3: 'The goal is clear: to work with <strong>data analysis</strong>. Along the way I collect tools — Excel, Word and PowerPoint for everyday work, Windows as my environment, and the next steps already planned: OOP, databases and real data analysis.',
+    jornada_title: "Learning journey",
+    jornada_intro: "Chapters of Python-Journey — the number is how many exercises are solved in each one.",
     status_done: "done",
     status_partial: "◐ in progress",
     status_planned: "reserved slot",
     trail_note: "Chapter 06 needs just one exercise (<code>ex105</code>) to be complete — truth in real time.",
-    tech_title: "Current stack",
-    tech_note: "Python is the current focus — Excel, Word and PowerPoint sustain the path, at a beginner's pace.",
+    projects_title: "Projects",
+    projects_p1: "Only what truly exists — with its real status and the technology actually used.",
+    proj_1_name: "Python-Journey",
+    proj_1_status: " in the making",
+    proj_1_desc: "85 of 86 exercises · six chapters done · one left (<code>ex105</code>) in chapter 06",
+    proj_tech: "stack",
+    link_repo: "repository →",
+    proj_2_name: "Kayke Hub",
+    proj_2_status: "● live",
+    proj_2_desc: "This site — my static digital card, published on GitHub Pages",
+    link_demo: "see it live →",
+    future_projects_title: "In development",
+    future_proj_1: "data portfolio",
+    future_proj_2: "data analysis project",
+    future_proj_3: "indicators dashboard",
+    tech_title: "Technologies",
+    tech_now_title: "Current knowledge",
     tech_cat_prog: "Programming",
     chip_note_prog: "learning",
     tech_cat_system: "System & environment",
     tech_cat_office: "Productivity",
     chip_note_office: "basic level",
-    future_title: "On the way",
-    future_1: "OOP and databases",
-    future_2: "complete Python projects",
-    future_3: "data analysis · web",
-    projects_title: "Projects",
-    projects_p1: "What already exists for real: a repository that documents the whole trail, and this card — published and live.",
-    proj_1_name: "Python-Journey",
-    proj_1_status: "◐ in the making",
-    proj_1_desc: "85 of 86 exercises · six chapters done · one left (<code>ex105</code>) in chapter 06",
-    proj_2_name: "Kayke Hub",
-    proj_2_status: "● live",
-    proj_2_desc: "This digital card — a static site published with GitHub Pages",
-    future_projects_title: "In development",
-    future_proj_1: "data portfolio",
-    future_proj_2: "data analysis project",
-    future_proj_3: "indicators dashboard",
-    ai_note: 'This site\'s code was developed with 100% AI assistance — <a href="https://github.com/kayke-dados/kayke-hub" target="_blank" rel="noopener">documented in the repository</a>.',
+    tech_learning_title: "Learning now",
+    learn_1: "functions · chapter 06",
+    learn_2: "OOP · next step",
+    future_title: "Next on the radar",
+    future_1: "databases · SQLite",
+    future_2: "data analysis",
+    future_3: "web · Flask/Django",
+    contact_title: "Networks and contact",
+    contact_p1: "This card is my fixed address on the internet. Write to me or find me on the networks:",
+    link_github: "GitHub",
+    link_github_desc: "/code and ship's log",
+    link_instagram: "Instagram",
+    link_instagram_desc: "@kayke.dados",
+    link_email: "E-mail",
+    link_email_desc: "kayke0812@proton.me",
     share_title: "Share this card",
-    share_hint: "Scan the code or copy the address.",
     btn_copy: "Copy address",
     btn_share: "Share",
+    share_hint: "Scan the code or copy the address.",
     footer_note: "made at the pace of someone who is learning · ",
+    ai_note: 'This site\'s code was developed with 100% AI assistance — <a href="https://github.com/kayke-dados/kayke-hub" target="_blank" rel="noopener">documented in the repository</a>.',
   },
 };
 
@@ -92,7 +112,6 @@ function applyLang(lang) {
   currentLang = lang;
   localStorage.setItem("kd-lang", lang);
   document.documentElement.lang = lang === "en" ? "en" : "pt-BR";
-  dictFor(lang);
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
     const value = (lang === "en" ? I18N.en[key] : TAGLINE_HTML[key] || defaultLangValue(el));
@@ -116,10 +135,6 @@ function cacheDefaults() {
       el.setAttribute("data-default-pt", el.innerHTML);
     }
   });
-}
-
-function dictFor() {
-  return I18N.en;
 }
 
 function showToast(message) {
@@ -160,8 +175,8 @@ function fallbackCopy(okMessage) {
 
 async function shareCard() {
   const shareData = {
-    title: "Kayke | Python e Dados",
-    text: document.querySelector(".tagline").textContent,
+    title: "Kayke Hub | Python e Dados",
+    text: document.querySelector(".hero-role").textContent,
     url: SITE_URL,
   };
   if (navigator.share) {
@@ -174,6 +189,8 @@ async function shareCard() {
   }
   copyLink();
 }
+
+/* ---- digitação (a coisa viva do hero) ---- */
 
 let typingTimer = null;
 
@@ -205,6 +222,67 @@ function typeLoop(el, phrases, pi, ci) {
   typingTimer = setTimeout(() => typeLoop(el, phrases, pi, ci), delay);
 }
 
+/* ---- menu mobile ---- */
+
+function initNav() {
+  const nav = document.querySelector(".nav");
+  const toggle = document.getElementById("nav-toggle");
+  if (!nav || !toggle) return;
+  toggle.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    const menu = document.getElementById("nav-menu");
+    const label = open ? (currentLang === "en" ? "Close menu" : "Fechar menu") : (currentLang === "en" ? "Open menu" : "Abrir menu");
+    toggle.setAttribute("aria-label", label);
+  });
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+/* ---- seção ativa na navegação ---- */
+
+function initActiveSection() {
+  const links = Array.from(document.querySelectorAll(".nav-link"));
+  if (!links.length || !("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const byId = new Map(links.map((l) => [l.getAttribute("href").slice(1), l]));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      links.forEach((l) => l.classList.remove("is-active"));
+      const link = byId.get(entry.target.id);
+      if (link) link.classList.add("is-active");
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  ["inicio", "sobre", "jornada", "projetos"].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) io.observe(el);
+  });
+}
+
+/* ---- reveals de entrada (só quando o JS liga) ---- */
+
+function initReveals() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const targets = document.querySelectorAll("section h2, section .section-intro, .trail, .proj, .tech-block, .contact-grid > *, .hero-identity > *");
+  if (!targets.length || !("IntersectionObserver" in window)) return;
+  targets.forEach((el) => el.classList.add("reveal"));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      el.style.setProperty("--d", (Array.from(el.parentNode.children).indexOf(el) % 6) * 70 + "ms");
+      el.classList.add("in");
+      io.unobserve(el);
+    });
+  }, { threshold: 0.15 });
+  targets.forEach((el) => io.observe(el));
+}
+
 function init() {
   cacheDefaults();
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -213,6 +291,9 @@ function init() {
   document.getElementById("lang-toggle").addEventListener("click", () => {
     applyLang(currentLang === "en" ? "pt" : "en");
   });
+  initNav();
+  initActiveSection();
+  initReveals();
   if (currentLang === "en") {
     applyLang("en");
   } else {

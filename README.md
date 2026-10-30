@@ -1,34 +1,35 @@
-# Kayke.Dados — Cartão Digital
+# Kayke Hub — Portfólio de Aprendizado
 
-Cartão digital pessoal de **Kayke | Python e Dados**, com cara de portfólio de estudante — um "diário de bordo" em código, 100% estático (HTML + CSS + JS puro, sem framework, sem backend), pronto para o **GitHub Pages**.
+Espaço pessoal de **Kayke | Python e Dados** — portfólio editorial dark ("Dark Editorial Tech Portfolio"): apresentação, redes, projetos, jornada de aprendizado e contato. 100% estático (HTML + CSS + JS puro, sem framework, sem backend), pronto para o **GitHub Pages**.
 
 > 🔗 Endereço final: **https://kayke-dados.github.io/kayke-hub/**
 
 Tudo que aparece no cartão é verdade em tempo real: capítulos do [Python-Journey](https://github.com/kayke-dados/Python-Journey) com o estado real, links para o GitHub e o Instagram, e um QR Code para compartilhar o cartão de qualquer celular.
 
-## O que tem no cartão
+## O que tem no site
 
-- **Apresentação pessoal** com headline e bordões reais do perfil ("Consistência > intensidade")
-- **Cartões de links** para GitHub, Instagram, Python-Journey e e-mail
-- **Trilha em construção** — estado real dos capítulos do Python-Journey, com números auditados contra o repositório (85 exercícios resolvidos de 86; capítulo 06 em 9/10, faltando `ex105`; capítulo 07 reservado)
-- **Tecnologias de agora** em categorias honestas: Programação (Python, em aprendizado) · Sistema e ambiente (Windows) · Produtividade (Excel, Word e PowerPoint, nível básico)
-- **Seção Projetos** — Python-Journey (em construção, com números reais) e este próprio site (no ar), além dos planos "em desenvolvimento" claramente marcados
+- **Header com navegação** (Início · Sobre · Jornada · Projetos), menu mobile e **seção ativa** destacada durante a rolagem
+- **Hero assimétrico** — identidade à esquerda; à direita, a arte é a **jornada real**: barras com os exercícios de cada capítulo do Python-Journey (12 · 16 · 25 · 18 · 5 · 9/10 · reservado)
+- **Sobre** editorial com fatos reais ao lado (foco · base · agora · depois)
+- **Jornada de aprendizado** — capítulos com números auditados (85 de 86; capítulo 06 em 9/10, faltando `ex105`; capítulo 07 reservado)
+- **Projetos** — Python-Journey (em construção, números reais) e este site (no ar), com "Em desenvolvimento" claramente marcado
+- **Tecnologias** em três blocos honestos: Conhecimentos atuais · Aprendendo agora · Próximas no radar (Excel, Word e PowerPoint, nível básico — nada além disso)
+- **Redes e contato** — GitHub, Instagram, e-mail, QR Code, Copiar endereço e Compartilhar (Web Share API com fallback)
 - **Transparência sobre IA** — o rodapé declara que o código foi desenvolvido com 100% de auxílio de inteligência artificial, com link para o repositório
-- **QR Code** do endereço + botões **Copiar endereço** e **Compartilhar** (Web Share API com fallback)
 - **Alternador PT/EN** (o inglês é aplicado no navegador; rastreadores indexam o PT — limitação documentada, não omissão)
-- SEO + Open Graph (`og:site_name` incluído), favicon SVG, acessibilidade AA, `prefers-reduced-motion` respeitado
+- SEO + Open Graph (`og:site_name` incluído), favicon SVG, acessibilidade AA, `prefers-reduced-motion` respeitado, animações de entrada que só existem se o JavaScript ligar
 
 ## Estrutura
 
 ```
-index.html        página única (conteúdo em PT inline; EN via js/main.js)
-css/style.css     tokens da marca (cores/fontes) + estilos "quiet-instrument"
-js/main.js        SITE_URL, dicionário EN, copiar/compartilhar, digitação
-assets/           avatar, favicon.svg, qr-code.svg, og-image.png
+index.html        página única em 7 seções (conteúdo em PT inline; EN via js/main.js)
+css/style.css     tokens v3 (Dark Editorial Tech Portfolio) + todos os componentes
+js/main.js        SITE_URL, dicionário EN, menu mobile, seção ativa, reveals, copiar/compartilhar, digitação
+assets/           avatar, favicon.svg, qr-code.svg, og-image.png (paleta v3)
 tools/            scripts que geram os assets (segno/assets)
-tests/            55 testes + 1 skipped (python3 -m pytest tests/ ou python3 -m unittest discover -s tests)
+tests/            57 testes + 1 skipped (python3 -m pytest tests/ ou python3 -m unittest discover -s tests)
 docs/             design + plano (docs/superpowers/)
-reports/          auditoria, skills, MCPs, testes, publicação
+reports/          auditoria, skills, MCPs, testes, publicação, evolução v2 e redesign v3
 ```
 
 ## Como editar
@@ -38,8 +39,8 @@ reports/          auditoria, skills, MCPs, testes, publicação
 | Cores da marca | `css/style.css` → `:root` |
 | Textos PT | direto no `index.html` (`data-i18n` guarda o padrão) |
 | Textos EN | `js/main.js` → `const I18N` |
-| URL do cartão | `js/main.js` → `SITE_URL` (+ `tools/make_assets.py` para regerar o QR) |
-| Capítulos da trilha | `index.html` → `<ol class="trail">` |
+| URL do site | `js/main.js` → `SITE_URL` (+ `tools/make_assets.py` para regerar o QR) |
+| Capítulos do hero e da jornada | `index.html` → `.bars` e `<ol class="trail">` |
 | Regenerar assets | `python3 tools/make_assets.py` |
 
 ## Publicar no GitHub Pages (passo a passo)

@@ -5,17 +5,8 @@ import unittest
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSS = os.path.join(ROOT, "css", "style.css")
 
-BG = (0x0D, 0x0D, 0x0D)
-SURFACE_RGB = (0xA7, 0x8B, 0xFA)
-SURFACE_ALPHA = 0.08
-
-
-def compositing_base():
-    """Fundo real de .track-row ímpar: rgba(167,139,250,.08) sobre #0d0d0d."""
-    return tuple(
-        fg * SURFACE_ALPHA + bg * (1 - SURFACE_ALPHA)
-        for fg, bg in zip(SURFACE_RGB, BG)
-    )
+BG = (0x08, 0x0B, 0x12)
+SURFACE = (0x13, 0x1B, 0x29)
 
 
 def hex_to_rgb(value):
@@ -40,25 +31,38 @@ def contrast(a, b):
 def token(name):
     with open(CSS, encoding="utf-8") as f:
         css = f.read()
-    return hex_to_rgb(re.search(re.escape(name) + r": (#([0-9a-f]{6}))", css).group(1))
+    return hex_to_rgb(
+        re.search(
+            re.escape(name) + r": (#([0-9a-fA-F]{6}))(?![0-9a-fA-F])", css
+        ).group(1)
+        .lower()
+    )
 
 
 class TestContrast(unittest.TestCase):
     def test_body_text_token(self):
         self.assertGreater(contrast(token("--text"), BG), 4.5)
 
-    def test_muted_token_readable_over_solid_and_striped_rows(self):
-        """I3: --muted é usado em texto pequeno (track-status, link-desc):
-        precisa passar 4.5:1 sobre o ground sólido e sobre a linha listrada."""
+    def test_muted_token_readable_over_ground_and_panel(self):
+        """--muted é usado em texto pequeno: precisa passar 4.5:1 sobre o ground
+        sólido e sobre o painel --surface."""
         muted = token("--muted")
         self.assertGreaterEqual(contrast(muted, BG), 4.5)
-        self.assertGreaterEqual(contrast(muted, compositing_base()), 4.5)
+        self.assertGreaterEqual(contrast(muted, SURFACE), 4.5)
 
-    def test_small_text_css_uses_readable_token(self):
-        """#8b5cf6 é só decoração: nenhum seletor pode corar texto com ele."""
-        with open(CSS, encoding="utf-8") as f:
-            css = f.read()
-        self.assertNotIn("color: var(--muted-deco)", css)
+    def test_accent_on_dark_surfaces(self):
+        accent = token("--accent")
+        self.assertGreaterEqual(contrast(accent, BG), 4.5)
+        self.assertGreaterEqual(contrast(accent, SURFACE), 4.5)
+
+    def test_solid_button_text(self):
+        """Botão sólido: texto do ground sobre o accent, branco sobre o deep."""
+        self.assertGreater(contrast(BG, token("--accent")), 4.5)
+        self.assertGreater(contrast((0xFF, 0xFF, 0xFF), token("--accent-deep")), 4.5)
+
+    def test_spark_is_decoration_or_bold_size(self):
+        """#FACC15 só em detalhes: contraste alto garantido de qualquer forma."""
+        self.assertGreater(contrast(token("--spark"), BG), 4.5)
 
 
 if __name__ == "__main__":

@@ -114,10 +114,11 @@ if __name__ == "__main__":
 
 
 class TestReviewFixes(unittest.TestCase):
-    def test_fira_code_is_really_loaded(self):
-        """I1: a fonte da marca precisa de um <link> real do Google Fonts."""
+    def test_brand_fonts_are_really_loaded(self):
+        """v3: as fontes da nova identidade precisam de <link> real do Google Fonts."""
         raw, _ = collect()
-        self.assertIn("fonts.googleapis.com/css2?family=Fira+Code", raw)
+        self.assertIn("family=IBM+Plex+Mono", raw)
+        self.assertIn("family=Manrope", raw)
         self.assertIn("display=swap", raw)
 
     def test_year_span_outside_i18n_span(self):

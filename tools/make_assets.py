@@ -17,9 +17,9 @@ ASSETS = os.path.join(ROOT, "assets")
 SITE_URL = "https://kayke-dados.github.io/kayke-hub/"
 AVATAR_URL = "https://avatars.githubusercontent.com/u/318036195?s=400&v=4"
 
-BG = (0x0D, 0x0D, 0x0D)
+BG = (0x08, 0x0B, 0x12)
 WHITE = (0xFF, 0xFF, 0xFF)
-ACCENT = (0xA7, 0x8B, 0xFA)
+ACCENT = (0x60, 0xA5, 0xFA)
 TEXT = (0xE0, 0xD7, 0xFF)
 
 
@@ -30,9 +30,9 @@ def download_avatar(dest):
 def write_favicon(dest):
     svg = (
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
-        '<rect width="64" height="64" rx="12" fill="#0d0d0d"/>'
+        '<rect width="64" height="64" rx="12" fill="#080B12"/>'
         '<text x="32" y="44" font-family="monospace" font-size="30" '
-        'font-weight="700" fill="#a78bfa" text-anchor="middle">K.</text>'
+        'font-weight="700" fill="#60a5fa" text-anchor="middle">K.</text>'
         "</svg>"
     )
     with open(dest, "w", encoding="utf-8") as f:
@@ -41,7 +41,7 @@ def write_favicon(dest):
 
 def write_qr(dest):
     qr = segno.make(SITE_URL, error="m")
-    qr.save(dest, kind="svg", scale=20, border=4, dark="#0d0d0d", light="#ffffff")
+    qr.save(dest, kind="svg", scale=20, border=4, dark="#080B12", light="#ffffff")
     with open(dest, encoding="utf-8") as f:
         content = f.read()
     content = content.replace(
