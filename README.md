@@ -10,6 +10,9 @@
   <a href="mailto:kayke0812@proton.me">E-mail</a>
 </p>
 
+![tests](https://github.com/kayke-dados/kayke-hub/actions/workflows/tests.yml/badge.svg)
+![licença](https://img.shields.io/badge/licen%C3%A7a-MIT-141414?style=flat-square)
+
 Cartão digital e portfólio de aprendizado de **Kayke — Python e Dados**. Página única, estática e bilíngue, com direção editorial minimalista: ground grafite, ametista como único acento e hierarquia por tipografia e espaço.
 
 ## O que tem
@@ -67,3 +70,5 @@ Texto 16,6:1 · secundário 7,25:1 · acento 5,99:1 · botão sólido 5,99:1. Ze
 ---
 
 Feito no ritmo de quem está aprendendo — consistência > intensidade.
+
+[Kayke](https://github.com/kayke-dados) · [Python-Journey](https://github.com/kayke-dados/Python-Journey) · MIT

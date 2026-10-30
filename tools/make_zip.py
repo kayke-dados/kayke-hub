@@ -6,6 +6,9 @@ dest = os.path.join(root, "kayke-dados-cartao-digital.zip")
 
 FILES = [
     "index.html",
+    "robots.txt",
+    "sitemap.xml",
+    "LICENSE",
     "README.md",
     "prompt.md",
     "css/style.css",
