@@ -5,7 +5,7 @@ Executado em 2026-10-30 · Comando-base: `python3 -m unittest discover -s tests 
 ## Resultado consolidado
 
 ```
-Ran 31 tests in ~1.3s →  OK (skipped=1)
+Ran 39 tests in ~1.4s →  OK (skipped=1)
 ```
 
 | Suíte | Testes | Cobertura |
@@ -37,7 +37,7 @@ Ran 31 tests in ~1.3s →  OK (skipped=1)
 
 ## Acessibilidade (verificada estruturalmente)
 - landmarks `header/main/footer/section`, `skip-link` funcional, `role=status` toast
-- contraste: texto `#e0d7ff`/`#0d0d0d` ≈ 13.4:1 · `#a78bfa` em texto grande/foco ≈ 7.9:1
+- contraste (calculado nos testes, `tests/test_contrast.py`): texto `#e0d7ff`/`#0d0d0d` ≈ 14.2:1 · acento `#a78bfa` ≈ 7.1:1 · texto pequeno `--muted: #c4b5fd` ≥ 4.5:1 sobre ground sólido **e** sobre linhas listradas (`#8b5cf6` ficou restrito a decoração)
 - `prefers-reduced-motion` respeto (typewriter estático, anim 0.01ms)
 - alvo de toque ≥44px nas linhas (52px) e botões (42px+padding)
 

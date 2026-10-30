@@ -8,7 +8,8 @@ CSS_PATH = os.path.join(ROOT, "css", "style.css")
 TOKENS = {
     "--bg": "#0d0d0d",
     "--accent": "#a78bfa",
-    "--muted": "#8b5cf6",
+    "--muted": "#c4b5fd",
+    "--muted-deco": "#8b5cf6",
     "--text": "#e0d7ff",
     "--ink": "#ffffff",
 }

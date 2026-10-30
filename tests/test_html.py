@@ -111,3 +111,18 @@ class TestHtml(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestReviewFixes(unittest.TestCase):
+    def test_fira_code_is_really_loaded(self):
+        """I1: a fonte da marca precisa de um <link> real do Google Fonts."""
+        raw, _ = collect()
+        self.assertIn("fonts.googleapis.com/css2?family=Fira+Code", raw)
+        self.assertIn("display=swap", raw)
+
+    def test_year_span_outside_i18n_span(self):
+        """I2: o <span id=year> não pode ser filho do elemento data-i18n footer_note."""
+        raw, _ = collect()
+        m = re.search(r'<span data-i18n="footer_note">(.*?)</span>', raw, re.S)
+        self.assertIsNotNone(m)
+        self.assertNotIn('id="year"', m.group(0))

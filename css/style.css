@@ -1,11 +1,13 @@
 /* Kayke.Dados — cartão digital
    Direção: "quiet-instrument" (coluna única, understatement radical)
-   Marca do GitHub @kayke-dados: ground #0d0d0d · acento #a78bfa · Fira Code /* taste-skill-ignore: marca */ */
+   Marca do GitHub @kayke-dados: ground #0d0d0d · acento #a78bfa · Fira Code */ /* taste-skill-ignore: marca */
+
 
 :root {
   --bg: #0d0d0d;
   --accent: #a78bfa; /* taste-skill-ignore: marca @kayke-dados */
-  --muted: #8b5cf6; /* taste-skill-ignore: marca @kayke-dados */
+  --muted: #c4b5fd; /* roxo legível p/ texto pequeno (AA ≥ 4.5:1) */
+  --muted-deco: #8b5cf6; /* acento secundário da marca: só decoração, nunca texto pequeno */ /* taste-skill-ignore: marca */
   --text: #e0d7ff;
   --ink: #ffffff;
   --surface: rgba(167, 139, 250, 0.08);
