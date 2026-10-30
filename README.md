@@ -13,11 +13,11 @@
 ![tests](https://github.com/kayke-dados/kayke-hub/actions/workflows/tests.yml/badge.svg)
 ![licença](https://img.shields.io/badge/licen%C3%A7a-MIT-141414?style=flat-square)
 
-Cartão digital e portfólio de aprendizado de **Kayke — Python e Dados**. Página única, estática e bilíngue, com direção editorial minimalista: ground grafite, ametista como único acento e hierarquia por tipografia e espaço.
+Cartão digital e portfólio de aprendizado de **Kayke — Python e Dados**. Página única, estática e bilíngue, com direção editorial minimalista: ground grafite, ametista como único acento, texto primeiro e listas em vez de cartões.
 
 ## O que tem
 
-- **Jornada real** — barras e trilha com os capítulos do Python-Journey: 85 de 86 exercícios, capítulo 06 em 9/10 (`ex105` pendente), capítulo 07 reservado.
+- **Jornada real** — trilha com os capítulos do Python-Journey: 85 de 86 exercícios, capítulo 06 em 9/10 (`ex105` pendente), capítulo 07 reservado.
 - **Projetos e tecnologias** — o que existe de verdade, com "Em desenvolvimento" separado com clareza.
 - **Compartilhar** — QR Code, copiar endereço e Web Share API.
 - **PT/EN** — inglês aplicado no navegador por um dicionário `data-i18n`.
@@ -34,11 +34,11 @@ HTML5, CSS3 e JavaScript puro — sem framework, bundler ou backend. Fontes Manr
 ```
 index.html          página única (PT inline; EN via js/main.js)
 css/style.css       design system + componentes
-js/main.js          i18n, navegação, digitação, copiar/compartilhar
+js/main.js          i18n, navegação, copiar/compartilhar
 assets/             avatar, favicon, QR, og-image e imagens do README
 tools/              geração de assets e do pacote de entrega
 tests/              61 testes + 1 skip
-reports/            auditoria, testes, publicação e histórico (v2–v4)
+reports/            auditoria, testes, publicação e histórico (v2–v5)
 ```
 
 ## Rodar e testar

@@ -2,21 +2,6 @@
 
 const SITE_URL = "https://kayke-dados.github.io/kayke-hub/";
 
-const TYPED_PHRASES = {
-  pt: [
-    "python do zero, sem atalhos",
-    "85 exercícios e contando",
-    "consistência > intensidade",
-    "um dia por vez",
-  ],
-  en: [
-    "python from zero, no shortcuts",
-    "85 exercises and counting",
-    "consistency > intensity",
-    "one day at a time",
-  ],
-};
-
 const I18N = {
   en: {
     skip: "Skip to content",
@@ -33,16 +18,8 @@ const I18N = {
     tagline: 'Studying to become a <strong>Data Analyst</strong>',
     hero_intro: "Python from zero, with every step documented in Python-Journey — one day at a time, no shortcuts.",
     moto: "Consistency &gt; intensity.",
-    hero_path: "~/python-journey",
     hero_note: "85 exercises solved · 5 chapters done",
     hero_note_open: "ex105 pending",
-    chap_1: "fundamentals",
-    chap_2: "conditions",
-    chap_3: "loops & logic",
-    chap_4: "lists & tuples",
-    chap_5: "dictionaries",
-    chap_6: "functions",
-    chap_7: "next up",
     sobre_title: "About",
     fact_focus: "Python · data analysis",
     fact_base: "Curso em Vídeo, reorganized into chapters",
@@ -177,7 +154,6 @@ function applyLang(lang) {
   });
   document.getElementById("lang-toggle").textContent = lang === "en" ? "PT" : "EN";
   syncNavToggle();
-  restartTyping(lang);
 }
 
 function cacheDefaults() {
@@ -251,41 +227,6 @@ async function shareCard() {
     }
   }
   copyLink();
-}
-
-/* ---- digitação (a coisa viva do hero) ---- */
-
-let typingTimer = null;
-let typingGen = 0;
-
-function restartTyping(lang) {
-  const el = document.getElementById("typed");
-  if (!el) return;
-  typingGen += 1;
-  clearTimeout(typingTimer);
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const phrases = TYPED_PHRASES[lang] || TYPED_PHRASES.pt;
-    el.textContent = phrases[0];
-    return;
-  }
-  typeLoop(el, TYPED_PHRASES[lang] || TYPED_PHRASES.pt, 0, 0, typingGen);
-}
-
-function typeLoop(el, phrases, pi, ci, gen) {
-  if (gen !== typingGen) return;
-  const phrase = phrases[pi];
-  el.textContent = phrase.slice(0, ci);
-  let delay = 55;
-  if (ci < phrase.length) {
-    ci += 1;
-  } else {
-    delay = 2200;
-    ci = 0;
-    pi = (pi + 1) % phrases.length;
-    typingTimer = setTimeout(() => typeLoop(el, phrases, pi, 0, gen), delay);
-    return;
-  }
-  typingTimer = setTimeout(() => typeLoop(el, phrases, pi, ci, gen), delay);
 }
 
 /* ---- menu mobile ---- */
