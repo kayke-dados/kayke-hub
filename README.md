@@ -10,11 +10,13 @@ Tudo que aparece no cartão é verdade em tempo real: capítulos do [Python-Jour
 
 - **Apresentação pessoal** com headline e bordões reais do perfil ("Consistência > intensidade")
 - **Cartões de links** para GitHub, Instagram, Python-Journey e e-mail
-- **Trilha em construção** — estado real dos capítulos 01–07 do Python-Journey
-- **Tecnologias de agora** (Python · Windows · Office) e o que está "a caminho"
+- **Trilha em construção** — estado real dos capítulos do Python-Journey, com números auditados contra o repositório (85 exercícios resolvidos de 86; capítulo 06 em 9/10, faltando `ex105`; capítulo 07 reservado)
+- **Tecnologias de agora** em categorias honestas: Programação (Python, em aprendizado) · Sistema e ambiente (Windows) · Produtividade (Excel, Word e PowerPoint, nível básico)
+- **Seção Projetos** — Python-Journey (em construção, com números reais) e este próprio site (no ar), além dos planos "em desenvolvimento" claramente marcados
+- **Transparência sobre IA** — o rodapé declara que o código foi desenvolvido com 100% de auxílio de inteligência artificial, com link para o repositório
 - **QR Code** do endereço + botões **Copiar endereço** e **Compartilhar** (Web Share API com fallback)
 - **Alternador PT/EN** (o inglês é aplicado no navegador; rastreadores indexam o PT — limitação documentada, não omissão)
-- SEO + Open Graph, favicon SVG, acessibilidade AA, `prefers-reduced-motion` respeitado
+- SEO + Open Graph (`og:site_name` incluído), favicon SVG, acessibilidade AA, `prefers-reduced-motion` respeitado
 
 ## Estrutura
 
@@ -24,7 +26,7 @@ css/style.css     tokens da marca (cores/fontes) + estilos "quiet-instrument"
 js/main.js        SITE_URL, dicionário EN, copiar/compartilhar, digitação
 assets/           avatar, favicon.svg, qr-code.svg, og-image.png
 tools/            scripts que geram os assets (segno/assets)
-tests/            31 testes (python3 -m unittest discover -s tests)
+tests/            55 testes + 1 skipped (python3 -m pytest tests/ ou python3 -m unittest discover -s tests)
 docs/             design + plano (docs/superpowers/)
 reports/          auditoria, skills, MCPs, testes, publicação
 ```
@@ -51,5 +53,7 @@ reports/          auditoria, skills, MCPs, testes, publicação
 ## Notas honestas
 
 - O **EN só aparece com JavaScript ligado** (rastreadores e no-JS veem PT — é o conteúdo que indexa).
+- O código todo foi desenvolvido com **100% de auxílio de IA** — declarado no rodapé do site e assumido aqui.
+- **Números auditados, não copiados**: a trilha do site é comparada ao estado real do repositório Python-Journey pelos testes automatizados (`tests/test_v2.py`); ela reflete o branch `main` do repo.
 - `og-image.png` foi gerada por script (sem Pillow no ambiente de desenvolvimento); para uma arte mais rica, substitua por um PNG 1200×630 de sua criação.
-- Auditoria Lighthouse/navegador real não pôde rodar neste ambiente (Android/Termux, sem Chrome); os testes funcionais estão em `reports/04-relatorio-testes.md`.
+- Auditoria Lighthouse/navegador real não pôde rodar neste ambiente (Android/Termux, sem Chrome); os testes funcionais estão em `reports/04-relatorio-testes.md` e a auditoria da v2 em `reports/06-evolucao-v2.md`.

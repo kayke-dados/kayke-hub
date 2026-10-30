@@ -1,204 +1,243 @@
-MISSÃO: DESENVOLVIMENTO PROFISSIONAL DO KAYKE.DADOS
+MISSÃO: AUDITORIA E EVOLUÇÃO COMPLETA DO KAYKE HUB
 
-Você será responsável por desenvolver meu cartão digital pessoal, transformando-o em um projeto profissional, moderno e completo.
+Você é um engenheiro de software sênior, especialista em Front-end, UI/UX Design, acessibilidade, SEO, performance e desenvolvimento de sites estáticos.
 
-O projeto deverá seguir a identidade visual do meu GitHub:
-https://github.com/kayke-dados
+Sua missão é analisar, melhorar e finalizar o projeto Kayke Hub, um cartão digital pessoal que também funciona como apresentação da minha trajetória de aprendizado em programação e análise de dados.
 
-Instagram:
-https://www.instagram.com/kayke.dados/
+1. Informações do projeto
 
-O objetivo é criar um cartão digital com aparência de um portfólio pessoal de desenvolvedor, utilizando programação e hospedagem gratuita no GitHub Pages.
+- Nome: Kayke Hub
+- Site publicado: https://kayke-dados.github.io/kayke-hub/
+- Repositório: https://github.com/kayke-dados/kayke-hub
+- Hospedagem: GitHub Pages
+- Tecnologias atuais: HTML, CSS e JavaScript puro.
+- Idioma principal: Português brasileiro.
+- Segundo idioma: Inglês.
 
-FASE 1 — AUDITORIA COMPLETA DO AMBIENTE
+O site representa um estudante que está aprendendo programação e deseja se tornar Analista de Dados.
 
-ANTES DE ESCREVER QUALQUER CÓDIGO:
+Importante: não quero parecer um profissional experiente. Quero transmitir autenticidade, dedicação, curiosidade e evolução.
 
-Faça um inventário completo do ambiente de desenvolvimento.
+2. Primeira etapa: auditoria completa
 
-Investigue:
+Antes de modificar qualquer arquivo:
 
-1. Todas as skills já instaladas.
-2. Todas as skills disponíveis nos diretórios de configuração.
-3. Todas as skills existentes no projeto.
-4. Todos os plugins instalados.
-5. Todos os MCPs disponíveis.
-6. Todos os agentes especializados disponíveis.
-7. Todos os comandos e ferramentas de desenvolvimento.
-8. Todas as ferramentas de design, programação, testes e revisão.
+1. Analise todo o repositório.
+2. Leia o README, documentação, relatórios e instruções existentes.
+3. Inspecione o HTML, CSS e JavaScript.
+4. Analise todas as imagens e recursos visuais.
+5. Acesse o site publicado e avalie sua aparência em dispositivos móveis e desktops, se houver ferramenta de navegador disponível.
+6. Identifique problemas de layout, responsividade, acessibilidade, SEO e performance.
+7. Execute os testes existentes.
+8. Verifique se há inconsistências entre as informações do site e os projetos vinculados.
+9. Identifique funcionalidades que estão incompletas ou que não funcionam corretamente.
 
-Não ignore nenhuma ferramenta que já existia antes desta solicitação.
+Não invente resultados de testes nem declare que verificou algo que não conseguiu executar.
 
-Não remova, substitua ou desative ferramentas existentes.
+3. Melhorias de conteúdo
 
-Crie um relatório contendo:
+Revise todo o conteúdo sem alterar minha identidade pessoal.
 
-- Nome da ferramenta.
-- Descrição.
-- Finalidade.
-- Disponibilidade.
-- Como ela pode contribuir para o projeto.
+Apresentação
 
-FASE 2 — SELEÇÃO E UTILIZAÇÃO DAS SKILLS
+Mantenha:
 
-Investigue e procure skills especializadas nas seguintes áreas:
+- Kayke
+- Python e Dados
+- Estudando para me tornar Analista de Dados
+- Consistência > intensidade.
 
-- Frontend Design.
-- UI/UX Design.
-- Web Design Guidelines.
-- Responsive Design.
-- Accessibility.
-- SEO.
-- Web Performance.
-- HTML5.
-- CSS3.
-- JavaScript.
-- TypeScript, caso necessário.
-- GitHub Pages.
-- Git Workflow.
-- Code Review.
-- Browser Testing.
-- Quality Assurance.
-- Image Optimization.
+Melhore a organização e a apresentação dessas informações.
 
-IMPORTANTE:
+Jornada de aprendizado
 
-Não se limite aos nomes apresentados nesta lista.
+Revise a seção de capítulos do Python-Journey.
 
-Procure outras skills que possam melhorar o resultado.
+Confira especialmente:
 
-Preserve todas as skills existentes.
+- Quantidade de exercícios.
+- Capítulos concluídos.
+- Capítulo em andamento.
+- Exercícios pendentes.
+- Próximas etapas.
 
-Utilize TODAS as skills que forem realmente aplicáveis ao projeto, inclusive as que já estavam instaladas anteriormente.
+Corrija a frase "Capítulo 06 pendendo um exercício" para uma expressão natural, como "Falta apenas um exercício para concluir o capítulo 06".
 
-Não basta mencionar que uma skill existe: leia suas instruções e aplique suas recomendações durante o desenvolvimento.
+Investigue a diferença entre os 85 exercícios anunciados e a soma das quantidades exibidas nos capítulos. Não invente números. Utilize os dados reais do repositório Python-Journey quando estiverem disponíveis.
 
-Se uma skill não for aplicável, explique o motivo.
+Não apresente capítulos futuros como concluídos.
 
-Não instale versões duplicadas ou incompatíveis.
+Tecnologias
 
-FASE 3 — PLUGINS E MCPs
+Organize as tecnologias em categorias:
 
-Investigue os plugins e integrações disponíveis no ambiente.
+- Programação: Python (básico/em aprendizado).
+- Sistema e ambiente: Windows.
+- Produtividade: Excel, Word e PowerPoint (nível básico).
 
-Procure ferramentas para:
+Não adicione tecnologias que eu não conheço.
 
-1. GitHub e gerenciamento de repositórios.
-2. Navegação e testes com navegador.
-3. Playwright e testes automatizados.
-4. Consulta de documentação com Context7.
-5. Auditoria Lighthouse.
-6. Otimização de imagens.
-7. Análise de acessibilidade.
-8. Verificação de qualidade do código.
+Projetos
 
-Verifique também os plugins que já estavam instalados.
+Crie uma seção visual para apresentar projetos.
 
-Preserve e utilize os que forem úteis.
+Destaque o Python-Journey como projeto de aprendizado.
 
-Não instale ferramentas sem verificar sua compatibilidade e necessidade.
+Crie espaço para projetos futuros, mas identifique claramente os que ainda estão em desenvolvimento.
 
-Se uma ferramenta exigir autorização, solicite antes de utilizá-la.
+Não invente projetos, experiências profissionais, certificações ou resultados.
 
-Não invente ferramentas ou capacidades.
+Transparência sobre inteligência artificial
 
-FASE 4 — PLANEJAMENTO
+Mantenha a transparência de que o código deste site foi desenvolvido 100% com auxílio de inteligência artificial.
 
-Antes da implementação:
+Não apresente o código como se tivesse sido escrito manualmente por mim.
 
-- Analise a identidade visual do meu GitHub.
-- Identifique cores, tipografia e características visuais.
-- Planeje a arquitetura.
-- Defina a estrutura dos arquivos.
-- Defina os componentes.
-- Planeje a experiência para dispositivos móveis.
-- Escolha as tecnologias mais adequadas.
+A descrição deve ser discreta, clara e honesta, sem prejudicar a apresentação pessoal.
 
-Priorize HTML, CSS e JavaScript, salvo justificativa técnica para outra arquitetura.
+4. Melhorias de UI/UX
 
-FASE 5 — DESENVOLVIMENTO
+Quero um design moderno, elegante, minimalista e com personalidade.
 
-Desenvolva o projeto completo.
+O site deve transmitir tecnologia sem parecer um template genérico.
 
-Requisitos:
+Trabalhe em:
 
-- Identidade visual consistente com meu GitHub.
-- Interface minimalista e moderna.
-- Design responsivo.
-- Animações suaves.
-- Cartões de links interativos.
-- Apresentação pessoal.
-- Seção sobre tecnologias e estudos.
+- Hierarquia visual.
+- Tipografia.
+- Espaçamento.
+- Alinhamento.
+- Consistência dos componentes.
+- Cartões de links.
+- Ícones.
+- Estados de interação.
+- Navegação.
+- Versão mobile.
+- Versão desktop.
+
+Use uma identidade visual consistente com meu perfil de Python e Dados.
+
+Evite:
+
+- Animações exageradas.
+- Gradientes excessivos.
+- Muitos efeitos luminosos.
+- Elementos desnecessários.
+- Textos exagerados.
+- Aparência de painel administrativo.
+- Informações que não correspondam à minha realidade.
+
+5. Funcionalidades
+
+Revise e melhore:
+
 - Links para GitHub e Instagram.
-- Acesso ao meu repositório Python Journey, após identificá-lo.
-- QR Code funcional.
-- Compartilhamento do cartão.
-- Botão para copiar o endereço.
-- SEO e Open Graph.
-- Favicon personalizado.
-- Acessibilidade.
-- Excelente desempenho.
+- Link para o Python-Journey.
+- Contato por e-mail.
+- Alternador PT/EN.
+- QR Code.
+- Botão de copiar endereço.
+- Compartilhamento usando Web Share API.
+- Fallback para navegadores sem suporte ao compartilhamento.
 
-Não invente informações pessoais, experiências ou conhecimentos.
+Todos os botões devem funcionar de verdade.
 
-FASE 6 — TESTES E REVISÃO
+Não deixe botões decorativos ou links quebrados.
 
-Utilize as skills e ferramentas de testes disponíveis.
+Confira se o QR Code aponta para o endereço publicado correto.
 
-Execute:
+6. Responsividade e acessibilidade
 
-- Testes de responsividade.
-- Testes de navegação.
-- Verificação dos links.
-- Verificação do QR Code.
-- Testes de acessibilidade.
-- Auditoria Lighthouse, se disponível.
-- Verificação de desempenho.
-- Verificação de erros no console.
-- Testes de caminhos relativos.
-- Testes de publicação no GitHub Pages.
+O site precisa funcionar muito bem em:
 
-Corrija os problemas encontrados.
+- Android.
+- iPhone.
+- Tablets.
+- Notebooks.
+- Monitores grandes.
 
-Não declare testes como concluídos sem executá-los.
+Implemente ou revise:
 
-FASE 7 — PUBLICAÇÃO
+- Layout responsivo.
+- Navegação por teclado.
+- Foco visível.
+- Textos alternativos nas imagens.
+- Contraste adequado.
+- HTML semântico.
+- Atributos ARIA quando necessários.
+- Respeito a prefers-reduced-motion.
+- Botões com áreas de toque adequadas.
 
-Prepare o projeto para GitHub Pages.
+7. SEO e compartilhamento
 
-Garanta:
+Revise:
 
-- Compatibilidade com hospedagem estática.
-- HTTPS.
-- Funcionamento em subdiretórios.
-- Ausência de dependências de backend.
-- Documentação de publicação.
+- Title.
+- Meta description.
+- Open Graph.
+- Twitter Cards.
+- Favicon.
+- Imagem de compartilhamento.
+- URL canônica.
+- Estrutura semântica.
 
-Não publique nem altere meu repositório sem minha autorização explícita.
+A imagem de compartilhamento deve ter boa aparência quando o endereço for enviado pelo WhatsApp, Instagram ou outras plataformas.
 
-FASE 8 — ENTREGA
+Não exponha informações pessoais desnecessárias.
 
-Entregue:
+8. Performance e qualidade
 
-1. Projeto completo.
-2. Código-fonte organizado.
-3. README.md.
-4. Arquivo ZIP.
-5. Relatório das skills utilizadas.
-6. Relatório dos plugins e MCPs utilizados.
-7. Relatório de testes.
-8. Instruções para publicação.
+- Otimize imagens.
+- Evite dependências desnecessárias.
+- Reduza CSS e JavaScript redundantes.
+- Evite scripts bloqueantes.
+- Verifique erros no console quando houver navegador disponível.
+- Verifique caminhos relativos para GitHub Pages.
+- Preserve a compatibilidade com hospedagem estática.
+- Não introduza backend ou banco de dados.
 
-REGRA PRINCIPAL
+9. Restrições obrigatórias
 
-Não escolha atalhos que prejudiquem a qualidade.
+- Preserve o HTML, CSS e JavaScript puro.
+- Não migre para React, Next.js ou outros frameworks.
+- Não adicione backend.
+- Não adicione autenticação.
+- Não adicione banco de dados.
+- Não coloque segredos ou tokens no código.
+- Não remova funcionalidades que já funcionam.
+- Não altere links válidos sem necessidade.
+- Não invente informações sobre mim.
+- Não altere o nome Kayke Hub.
+- Não transforme o site em um portfólio profissional que não representa minha experiência atual.
 
-Utilize as ferramentas e especializações disponíveis de maneira coordenada.
+10. Testes e validação
 
-Não ignore skills antigas, não remova configurações existentes e não instale duplicatas.
+Após as modificações:
 
-O objetivo é aproveitar o máximo possível do ambiente, respeitando a função de cada ferramenta.
+1. Execute os 31 testes existentes.
+2. Corrija falhas provocadas pelas alterações.
+3. Adicione testes para funcionalidades novas ou corrigidas.
+4. Verifique os caminhos dos arquivos.
+5. Teste a versão em português e inglês.
+6. Confira os links.
+7. Confira QR Code, copiar e compartilhar.
+8. Faça uma auditoria de acessibilidade e responsividade.
+9. Utilize Lighthouse ou ferramenta equivalente se estiver disponível.
 
-Quero um projeto real, funcional e bem acabado, não apenas um protótipo visual.
+Não declare aprovação em testes que não foram executados.
 
-Trabalhe com autonomia durante a implementação, mas peça autorização antes de ações externas ou destrutivas.
+11. Entrega final
+
+Ao terminar:
+
+- Entregue o projeto completo.
+- Preserve a estrutura organizada.
+- Atualize o README.
+- Atualize os relatórios de auditoria.
+- Informe os arquivos modificados.
+- Liste os problemas encontrados e corrigidos.
+- Informe os testes executados e seus resultados.
+- Informe o que não foi possível verificar.
+- Explique como publicar a nova versão no GitHub Pages.
+
+Objetivo final: transformar o Kayke Hub em um cartão digital bonito, moderno, rápido, acessível e profissional, mas que continue representando fielmente uma pessoa que está começando na programação e documentando sua evolução.
