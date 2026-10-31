@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme/banner.svg" alt="Kayke Hub — cartão digital de Python e Dados" width="100%" />
+  <img src="assets/readme/banner.svg" alt="Kayke Hub — caderno de exercícios de Python e dados" width="100%" />
 </p>
 
 <p align="center">
@@ -13,16 +13,16 @@
 ![tests](https://github.com/kayke-dados/kayke-hub/actions/workflows/tests.yml/badge.svg)
 ![licença](https://img.shields.io/badge/licen%C3%A7a-MIT-141414?style=flat-square)
 
-Cartão digital e portfólio de aprendizado de **Kayke — Python e Dados**. Página única, estática e bilíngue, com a direção `type-only-statement`: o nome em duas linhas e o tipo como imagem, ground grafite, ametista como único acento, contato em campo claro invertido e imagens desenhadas a partir dos dados reais.
+Portfólio e diário de aprendizado de **Kayke — Python e Dados**. Página única, estática e bilíngue, construída como um **caderno de exercícios**: capa de papel sobre o grafite, fichas de progresso, pastas de projeto com abas, diário em folha de registro e contato em cupom destacável. O caderno é o Python-Journey; o site é a sua mesa de trabalho.
 
 ## O que tem
 
-- **Jornada real** — trilha com os capítulos do Python-Journey: 85 de 86 exercícios, capítulo 06 em 9/10 (`ex105` pendente), capítulo 07 reservado.
-- **Projetos** — Python-Journey e Kayke Hub detalhados, com "Em desenvolvimento" separado com clareza.
+- **Capa com identidade real** — nome, ficha de estudante, 85 de 86 exercícios, 5 capítulos concluídos e o ex105 em aberto.
+- **Jornada verificada** — ficha de progresso com a faixa dos 86 exercícios, mapa dos capítulos e o registro capítulo por capítulo (12, 16, 25, 18, 5, 9/10, reservado).
+- **Projetos como pastas** — Python-Journey e Kayke Hub com abas, capa, objetivo, tecnologias, aprendizado e links; "Em desenvolvimento" separado com clareza.
 - **GitHub ao vivo** — repositórios públicos via API, cache de 10 min e fallback para o perfil.
-- **Imagens com origem** — faixa de 86 exercícios, mapa dos capítulos, capas dos projetos e QR desenhados em SVG; sem banco de imagens e sem mockup inventado.
-- **Diário e agora** — marcos reais sem datas inventadas e o radar do que vem.
-- **Contato** — e-mail como display, links, QR, copiar endereço e Web Share API.
+- **Diário e agora** — três marcos reais sem datas inventadas, o que está aberto agora e o radar do que vem.
+- **Contato em cupom** — e-mail real, links, QR, copiar endereço e Web Share API, com picote e marca de recorte.
 - **PT/EN** — inglês aplicado no navegador por um dicionário `data-i18n`.
 - **Acessibilidade** — contraste AA, foco visível, alvos de 44 px, `aria-current`, `prefers-reduced-motion` e menu funcional sem JavaScript.
 
@@ -32,16 +32,16 @@ Cartão digital e portfólio de aprendizado de **Kayke — Python e Dados**. Pá
 
 ## Stack e estrutura
 
-HTML5, CSS3 e JavaScript puro — sem framework, bundler ou backend. Fontes Manrope e IBM Plex Mono. Publicado no GitHub Pages.
+HTML5, CSS3 e JavaScript puro — sem framework, bundler ou backend. Fontes Newsreader (voz do caderno), Manrope (interface) e IBM Plex Mono (apenas código real). Publicado no GitHub Pages.
 
 ```
 index.html          página única (PT inline; EN via js/main.js)
-css/style.css       design system + componentes
-js/main.js          i18n, navegação, copiar/compartilhar
+css/style.css       design system + caderno, fichas, pastas e cupom
+js/main.js          i18n, navegação, copiar/compartilhar e GitHub
 assets/             avatar, favicon, QR, og-image, art/ e capas dos projetos
-tools/              geração de assets, arte SVG e do pacote de entrega
+tools/              geração de assets, arte SVG e pacote de entrega
 tests/              61 testes + 1 skip
-reports/            auditoria, testes, publicação e histórico (v2–v6)
+reports/            auditoria, testes, publicação e histórico (v2–v7)
 ```
 
 ## Rodar e testar
@@ -58,7 +58,7 @@ node --check js/main.js
   <img src="assets/readme/palette.svg" alt="Paleta: #141414, #202020, #F5F3EF, #A6A29C, #9B8AC4, #343434" width="100%" />
 </p>
 
-Texto 16,6:1 · secundário 7,25:1 · acento 5,99:1 · botão sólido 5,99:1. Zero gradientes, zero sombras; bordas finas, listas com hairline e ilustrações SVG feitas com a mesma paleta. O contato inverte para `#F5F3EF` com texto `#141414`; o QR usa `mix-blend-mode: multiply` para sumir com o fundo branco.
+A direção é **the page is the object**: o site é o próprio caderno. O grafite `#141414` é a mesa; as folhas `#F5F3EF` e `#EAE6DE` são o papel; o lilás `#9B8AC4` é a fita, a aba e o carimbo. Texto principal 16,6:1 sobre o papel e sobre o grafite; secundário 6,37:1 no papel e 7,25:1 no escuro; acento 5,99:1 no escuro e 5,4:1 no papel. Zero gradientes, zero sombras; bordas desenhadas com `clip-path` (abas, picote e recorte do cupom) e um picote pontilhado no contato. As imagens de dados são os SVGs reais do Python-Journey, colados como recortes escuros no papel.
 
 ## Publicação
 
@@ -70,6 +70,7 @@ Texto 16,6:1 · secundário 7,25:1 · acento 5,99:1 · botão sólido 5,99:1. Ze
 - Os números são **atualizados manualmente** e conferidos pelos testes — sem promessa de tempo real.
 - A API do GitHub é pública e sem token; se falhar ou limitar, o bloco mostra o link para o perfil.
 - Sem Chrome e sem Pillow no ambiente: a verificação é por testes e lint, não por Lighthouse; o teste de dimensões de imagem fica skipado. Nenhum dado, projeto ou certificação é inventado.
+- O código do site foi desenvolvido com auxílio de IA; o processo está documentado no repositório.
 
 ---
 

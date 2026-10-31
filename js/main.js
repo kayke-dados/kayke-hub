@@ -8,14 +8,14 @@ const GITHUB_CACHE_TTL = 10 * 60 * 1000;
 
 const I18N = {
   en: {
+    about_figure_caption: "GitHub portrait, updated by me.",
     agora_1_text: "Parameters, return and scope. ex105 is the next exercise.",
     agora_1_title: "Python · chapter 06",
     agora_2_text: "Every Python-Journey exercise is a small dose of logic.",
     agora_2_title: "Programming logic",
     agora_3_text: "The goal. The fundamentals come after closing the Python base.",
     agora_3_title: "Data analysis",
-    agora_intro: "What is open now, without turning study into a résumé.",
-    agora_title: "Currently",
+    agora_title: "Now",
     ai_note: 'This site\'s code was developed with 100% AI assistance, <a href="https://github.com/kayke-dados/kayke-hub" target="_blank" rel="noopener">documented in the repository</a>.',
     art_exercises_alt: "Strip of 86 squares: 85 filled and the last one open",
     art_exercises_caption: "86 exercises in Python-Journey: 85 solved, 1 open.",
@@ -44,7 +44,8 @@ const I18N = {
     contact_title: "Let's talk.",
     cover_hub_alt: "Illustrated preview of Kayke Hub with the name Kayke and the site tagline",
     cover_journey_alt: "Illustrated cover of Python-Journey with the chapter tree and 85 of 86 exercises",
-    diario_intro: "Real learning milestones, with no invented dates. New entries go in when they happen.",
+    cover_stamp: "in progress",
+    diario_intro: "Real learning milestones, with no invented dates: what I studied, what I learned and what I am still trying to understand. New entries go in when they happen.",
     diario_note: "No comments, likes or database: just the record of what happened.",
     diario_title: "Diary",
     diary_1_learned: "Functions with optional parameters and return.",
@@ -70,23 +71,30 @@ const I18N = {
     fact_next_label: "Next",
     fact_now: "Chapter 06, functions (ex105 open)",
     fact_now_label: "Now",
-    footer_nav_label: "Footer links",
-    footer_note: "made at the pace of someone who is learning · ",
+    footer_find: "Where to find me",
+    footer_imprint: "Kayke Hub · HTML, CSS and JavaScript",
+    footer_note: "Consistency > intensity.",
+    footer_sign: "Made at the pace of someone who is learning.",
     future_1: "data portfolio",
     future_2: "data analysis project",
     future_3: "indicators dashboard",
     future_intro: "Ideas on the radar, no public code yet.",
+    future_note: "Nothing here is published: these are the next notebooks, still blank.",
     future_title: "In development",
     github_all: "See all on GitHub →",
     github_intro: "Public repositories loaded straight from the GitHub API, with local cache and a link fallback.",
     github_loading: "Loading public repositories…",
     github_title: "From GitHub",
+    goal_text: "Close chapter 06 with ex105 and move on to OOP.",
+    goal_title: "Next goal",
     hero_intro: "I am building my path in technology, one exercise at a time. Here are my projects, my journey and what I am learning now.",
     hero_motto: "Consistency > intensity.",
     hero_name_1: "Kayke",
     hero_name_2: "Hub",
-    hero_role: "Python and data analysis student",
-    hero_status: "85 of 86 exercises · 5 chapters done · ex105 open",
+    hero_role: "Student · technology, programming and data analysis",
+    hero_status: "85 of 86 exercises",
+    hero_status_2: "5 chapters completed",
+    hero_status_3: "ex105 open",
     jornada_intro: "The path so far, with no invented dates: five chapters completed and the sixth in progress.",
     jornada_title: "Journey",
     lang_label: "Switch to Portuguese",
@@ -102,11 +110,9 @@ const I18N = {
     nav_about: "About",
     nav_contact: "Contact",
     nav_diary: "Diary",
-    nav_home: "Home",
     nav_journey: "Journey",
     nav_label: "Main navigation",
     nav_projects: "Projects",
-    pj_intro: "The complete record, chapter by chapter. The numbers are updated by hand.",
     pj_map_alt: "Map of seven chapters: five completed, the sixth in progress and the seventh reserved",
     pj_map_caption: "Chapter map: 5 completed, 06 in progress, 07 reserved.",
     pj_note: "Chapter 06 needs just one exercise (ex105) to be complete; data updated by hand.",
@@ -142,22 +148,17 @@ const I18N = {
     share_hint: "Scan the code or copy the address.",
     share_title: "Share this site",
     skip: "Skip to content",
+    sobre_intro: "Who is behind the notebook, in first person and without shortcuts.",
     sobre_p1: "I am Kayke. I started programming without rushing and without shortcuts: every concept I study becomes an exercise solved, corrected and explained in Python-Journey.",
     sobre_p2: 'Python is where I invest most. I follow the <strong>Curso em Vídeo</strong> base and organize everything into chapters, in the order I learn. Today there are 85 exercises solved and chapter 06, on functions, nearly closed.',
     sobre_p3: 'My goal is to work with <strong>data analysis</strong>. Every day I use Excel, Word and PowerPoint at a basic level; the next steps are already planned: OOP, databases and real data analysis.',
+    sobre_p4: "I use artificial intelligence as a study and development tool: I test, analyse and understand what goes into the project. This site's code is part of that process, documented in the repository.",
+    sobre_sign: "Kayke, student",
     sobre_title: "About",
-    tagline: "Python & data portfolio",
     status_done: "done",
     status_partial: "in progress",
     status_planned: "reserved slot",
-    step_1_text: "Chapters 01 to 03: 53 exercises on variables, conditions and loops.",
-    step_1_title: "First, the fundamentals.",
-    step_2_text: "Chapters 04 and 05: 23 exercises on lists, tuples and dictionaries.",
-    step_2_title: "Then, the structures.",
-    step_3_text: "Chapter 06: 9 of 10 exercises solved; ex105 is still open.",
-    step_3_title: "Now, functions.",
-    step_4_text: "OOP, databases and data analysis. The goal is to work with data.",
-    step_4_title: "The next step.",
+    tagline: "Python & data portfolio",
   },
 };
 
@@ -312,7 +313,7 @@ function fallbackCopy(okMessage) {
 }
 
 async function shareCard() {
-  const role = document.querySelector(".hero-role");
+  const role = document.querySelector(".cover-role");
   const shareData = {
     title: currentLang === "en" ? "Kayke Hub | Python & Data" : "Kayke Hub | Python e Dados",
     text: role ? role.textContent : "Kayke Hub",
@@ -389,7 +390,7 @@ function initActiveSection() {
 function initReveals() {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const targets = document.querySelectorAll(
-    "section h2, section .section-intro, .hero-role, .hero-intro, .hero-status, .hero-actions, .hero-motto, .sobre-grid, .caderno, .proj-media, .proj-body, .future, .github, .step, .python-journey, .agora-list, .radar, .diario-list, .contact-top, .contact-email, .contact-bottom, .footer-name, .footer-grid"
+    "section .section-head, .about-grid, .code-plate, .folder, .github-sheet, .progress-sheet, .goal-slip, .diary-sheet, .coupon, .footer-letter, .footer-address, .footer-bottom"
   );
   if (!targets.length || !("IntersectionObserver" in window)) return;
   targets.forEach((el) => el.classList.add("reveal"));

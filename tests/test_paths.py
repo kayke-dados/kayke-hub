@@ -35,7 +35,14 @@ class TestPaths(unittest.TestCase):
             self.assertTrue(os.path.isfile(path), f"não existe: {ref}")
 
     def test_css_no_absolute_urls(self):
-        self.assertEqual(css_urls(), [], "CSS não pode ter url() absoluta")
+        urls = css_urls()
+        absolute = [u for _, u in urls if u.startswith(("http://", "https://", "/"))]
+        self.assertFalse(absolute, f"CSS não pode ter url() absoluta: {absolute}")
+        for _, url in urls:
+            if url.startswith(("data:", "http://", "https://", "/")):
+                continue
+            path = os.path.join(ROOT, "css", url.split("#")[0])
+            self.assertTrue(os.path.isfile(path), f"CSS aponta para arquivo inexistente: {url}")
 
     def test_refs_survive_subdirectory(self):
         with open(os.path.join(ROOT, "index.html"), encoding="utf-8") as f:
