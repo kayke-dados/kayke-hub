@@ -13,14 +13,16 @@
 ![tests](https://github.com/kayke-dados/kayke-hub/actions/workflows/tests.yml/badge.svg)
 ![licença](https://img.shields.io/badge/licen%C3%A7a-MIT-141414?style=flat-square)
 
-Cartão digital e portfólio de aprendizado de **Kayke — Python e Dados**. Página única, estática e bilíngue, com direção editorial minimalista: ground grafite, ametista como único acento, texto primeiro, listas em vez de cartões e imagens desenhadas a partir dos dados reais.
+Cartão digital e portfólio de aprendizado de **Kayke — Python e Dados**. Página única, estática e bilíngue, com a direção `type-only-statement`: o nome em duas linhas e o tipo como imagem, ground grafite, ametista como único acento, contato em campo claro invertido e imagens desenhadas a partir dos dados reais.
 
 ## O que tem
 
 - **Jornada real** — trilha com os capítulos do Python-Journey: 85 de 86 exercícios, capítulo 06 em 9/10 (`ex105` pendente), capítulo 07 reservado.
-- **Projetos e tecnologias** — o que existe de verdade, com "Em desenvolvimento" separado com clareza.
-- **Imagens com origem** — faixa de 86 exercícios, mapa dos capítulos, capas dos projetos e mesa de ferramentas desenhados em SVG; sem banco de imagens e sem mockup inventado.
-- **Compartilhar** — QR Code, copiar endereço e Web Share API.
+- **Projetos** — Python-Journey e Kayke Hub detalhados, com "Em desenvolvimento" separado com clareza.
+- **GitHub ao vivo** — repositórios públicos via API, cache de 10 min e fallback para o perfil.
+- **Imagens com origem** — faixa de 86 exercícios, mapa dos capítulos, capas dos projetos e QR desenhados em SVG; sem banco de imagens e sem mockup inventado.
+- **Diário e agora** — marcos reais sem datas inventadas e o radar do que vem.
+- **Contato** — e-mail como display, links, QR, copiar endereço e Web Share API.
 - **PT/EN** — inglês aplicado no navegador por um dicionário `data-i18n`.
 - **Acessibilidade** — contraste AA, foco visível, alvos de 44 px, `aria-current`, `prefers-reduced-motion` e menu funcional sem JavaScript.
 
@@ -39,7 +41,7 @@ js/main.js          i18n, navegação, copiar/compartilhar
 assets/             avatar, favicon, QR, og-image, art/ e capas dos projetos
 tools/              geração de assets, arte SVG e do pacote de entrega
 tests/              61 testes + 1 skip
-reports/            auditoria, testes, publicação e histórico (v2–v5)
+reports/            auditoria, testes, publicação e histórico (v2–v6)
 ```
 
 ## Rodar e testar
@@ -56,7 +58,7 @@ node --check js/main.js
   <img src="assets/readme/palette.svg" alt="Paleta: #141414, #202020, #F5F3EF, #A6A29C, #9B8AC4, #343434" width="100%" />
 </p>
 
-Texto 16,6:1 · secundário 7,25:1 · acento 5,99:1 · botão sólido 5,99:1. Zero gradientes, zero sombras; bordas finas, listas com hairline e ilustrações SVG feitas com a mesma paleta.
+Texto 16,6:1 · secundário 7,25:1 · acento 5,99:1 · botão sólido 5,99:1. Zero gradientes, zero sombras; bordas finas, listas com hairline e ilustrações SVG feitas com a mesma paleta. O contato inverte para `#F5F3EF` com texto `#141414`; o QR usa `mix-blend-mode: multiply` para sumir com o fundo branco.
 
 ## Publicação
 
@@ -66,7 +68,8 @@ Texto 16,6:1 · secundário 7,25:1 · acento 5,99:1 · botão sólido 5,99:1. Ze
 
 - O **EN depende de JavaScript**; rastreadores e navegadores sem JS veem o PT.
 - Os números são **atualizados manualmente** e conferidos pelos testes — sem promessa de tempo real.
-- Sem Chrome no ambiente de desenvolvimento: a verificação é por testes e lint, não por Lighthouse. Nenhum dado, projeto ou certificação é inventado.
+- A API do GitHub é pública e sem token; se falhar ou limitar, o bloco mostra o link para o perfil.
+- Sem Chrome e sem Pillow no ambiente: a verificação é por testes e lint, não por Lighthouse; o teste de dimensões de imagem fica skipado. Nenhum dado, projeto ou certificação é inventado.
 
 ---
 

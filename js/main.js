@@ -1,98 +1,163 @@
 "use strict";
 
 const SITE_URL = "https://kayke-dados.github.io/kayke-hub/";
+const GITHUB_USER = "kayke-dados";
+const GITHUB_API = "https://api.github.com/users/kayke-dados/repos?sort=pushed&per_page=6";
+const GITHUB_CACHE_KEY = "kd-gh-repos-v1";
+const GITHUB_CACHE_TTL = 10 * 60 * 1000;
 
 const I18N = {
   en: {
-    skip: "Skip to content",
-    lang_label: "PT",
-    nav_label: "Main navigation",
-    footer_nav_label: "Footer links",
-    menu_open: "Open menu",
-    nav_home: "Home",
-    nav_about: "About",
-    nav_journey: "Journey",
-    nav_projects: "Projects",
-    avatar_alt: "Kayke's GitHub avatar",
-    qr_alt: "QR Code for this digital card",
-    tagline: 'Studying to become a <strong>Data Analyst</strong>',
-    hero_intro: "Python from zero, with every step documented in Python-Journey — one day at a time, no shortcuts.",
-    moto: "Consistency &gt; intensity.",
-    hero_note: "85 exercises solved · 5 chapters done",
-    hero_note_open: "ex105 pending",
+    agora_1_text: "Parameters, return and scope. ex105 is the next exercise.",
+    agora_1_title: "Python · chapter 06",
+    agora_2_text: "Every Python-Journey exercise is a small dose of logic.",
+    agora_2_title: "Programming logic",
+    agora_3_text: "The goal. The fundamentals come after closing the Python base.",
+    agora_3_title: "Data analysis",
+    agora_intro: "What is open now, without turning study into a résumé.",
+    agora_title: "Currently",
+    ai_note: 'This site\'s code was developed with 100% AI assistance, <a href="https://github.com/kayke-dados/kayke-hub" target="_blank" rel="noopener">documented in the repository</a>.',
     art_exercises_alt: "Strip of 86 squares: 85 filled and the last one open",
     art_exercises_caption: "86 exercises in Python-Journey: 85 solved, 1 open.",
-    art_map_alt: "Map of seven chapters: five completed, the sixth in progress and the seventh reserved",
-    art_map_caption: "Chapter map — 5 completed, 06 in progress, 07 reserved.",
-    art_tech_alt: "Illustration of a Python terminal, a spreadsheet and a slide deck",
-    art_tech_caption: "Everyday tools — Python, spreadsheets and slides.",
-    code_caption: "Real excerpt from Ex103 — chapter 06, functions.",
-    cover_journey_alt: "Illustrated cover of Python-Journey with the chapter tree and 85 of 86 exercises",
+    avatar_alt: "Kayke's GitHub avatar",
+    back_top: "Back to top ↑",
+    btn_copy: "Copy address",
+    btn_journey: "My journey",
+    btn_projects: "See projects",
+    btn_share: "Share",
+    chapter_1_desc: "Variables, types, operators, input and output.",
+    chapter_1_name: "Fundamentals",
+    chapter_2_desc: "if, elif and else: decisions inside the program.",
+    chapter_2_name: "Conditions",
+    chapter_3_desc: "for, while and break: repetition with a purpose.",
+    chapter_3_name: "Loops and logic",
+    chapter_4_desc: "Collections, indexes and unpacking.",
+    chapter_4_name: "Lists and tuples",
+    chapter_5_desc: "Key-value structures, methods and iteration.",
+    chapter_5_name: "Dictionaries",
+    chapter_6_desc: "Parameters, return and scope; ex105 is still open.",
+    chapter_6_name: "Functions",
+    chapter_7_desc: "OOP, databases and data analysis.",
+    chapter_7_name: "Next up",
+    code_caption: "Real excerpt from Ex103, chapter 06: functions.",
+    contact_intro: "Open to conversations about Python, data and learning.",
+    contact_title: "Let's talk.",
     cover_hub_alt: "Illustrated preview of Kayke Hub with the name Kayke and the site tagline",
+    cover_journey_alt: "Illustrated cover of Python-Journey with the chapter tree and 85 of 86 exercises",
+    diario_intro: "Real learning milestones, with no invented dates. New entries go in when they happen.",
+    diario_note: "No comments, likes or database: just the record of what happened.",
+    diario_title: "Diary",
+    diary_1_learned: "Functions with optional parameters and return.",
+    diary_1_subject: "Python-Journey",
+    diary_1_summary: "Chapter 06 reached 9 of 10 exercises; ex105 is left.",
+    diary_1_title: "85 of 86 exercises solved",
+    diary_2_learned: "Key-value structures, methods and iteration.",
+    diary_2_subject: "Python",
+    diary_2_summary: "Five exercises closed the dictionaries chapter.",
+    diary_2_title: "Chapter 05 done: dictionaries",
+    diary_3_learned: "Semantic HTML, CSS, plain JavaScript and publishing on Pages.",
+    diary_3_subject: "Web",
+    diary_3_summary: "The site was published on GitHub Pages as a static page.",
+    diary_3_title: "Kayke Hub is live",
+    diary_learned_label: "What I learned:",
+    diary_link: "see it in the repository →",
+    diary_link_live: "see it live →",
+    fact_base: "Curso em Vídeo, in chapters",
+    fact_base_label: "Base",
+    fact_focus: "Python and data analysis",
+    fact_focus_label: "Focus",
+    fact_next: "OOP, databases and data analysis",
+    fact_next_label: "Next",
+    fact_now: "Chapter 06, functions (ex105 open)",
+    fact_now_label: "Now",
+    footer_nav_label: "Footer links",
+    footer_note: "made at the pace of someone who is learning · ",
+    future_1: "data portfolio",
+    future_2: "data analysis project",
+    future_3: "indicators dashboard",
+    future_intro: "Ideas on the radar, no public code yet.",
+    future_title: "In development",
+    github_all: "See all on GitHub →",
+    github_intro: "Public repositories loaded straight from the GitHub API, with local cache and a link fallback.",
+    github_loading: "Loading public repositories…",
+    github_title: "From GitHub",
+    hero_intro: "I am building my path in technology, one exercise at a time. Here are my projects, my journey and what I am learning now.",
+    hero_motto: "Consistency > intensity.",
+    hero_name_1: "Kayke",
+    hero_name_2: "Hub",
+    hero_role: "Python and data analysis student",
+    hero_status: "85 of 86 exercises · 5 chapters done · ex105 open",
+    jornada_intro: "The path so far, with no invented dates: five chapters completed and the sixth in progress.",
+    jornada_title: "Journey",
+    lang_label: "Switch to Portuguese",
+    link_demo: "see it live →",
+    link_email: "Email",
+    link_email_desc: "kayke0812@proton.me",
+    link_github: "GitHub",
+    link_github_desc: "/kayke-dados",
+    link_instagram: "Instagram",
+    link_instagram_desc: "@kayke.dados",
+    link_repo: "repository →",
+    menu_open: "Open menu",
+    nav_about: "About",
+    nav_contact: "Contact",
+    nav_diary: "Diary",
+    nav_home: "Home",
+    nav_journey: "Journey",
+    nav_label: "Main navigation",
+    nav_projects: "Projects",
+    pj_intro: "The complete record, chapter by chapter. The numbers are updated by hand.",
+    pj_map_alt: "Map of seven chapters: five completed, the sixth in progress and the seventh reserved",
+    pj_map_caption: "Chapter map: 5 completed, 06 in progress, 07 reserved.",
+    pj_note: "Chapter 06 needs just one exercise (ex105) to be complete; data updated by hand.",
+    pj_progress_aria: "85 of 86 exercises solved",
+    pj_title: "Python Journey",
+    pj_total: "exercises solved",
+    proj_1_desc: "My Python study log: every Curso em Vídeo exercise, organized by chapter, in the order I learned it.",
+    proj_1_learned: "Logic, conditions, loops, lists, tuples, dictionaries and functions.",
+    proj_1_name: "Python-Journey",
+    proj_1_objective: "Practice logic and data structures with small exercises, committed one at a time.",
+    proj_1_role: "Author and maintainer: exercises, folder organization and commits.",
+    proj_1_status: "In the making",
+    proj_1_tech: "Python",
+    proj_2_desc: "This site: portfolio and learning diary on a static page, published on GitHub Pages.",
+    proj_2_learned: "Semantic HTML, CSS, accessibility, i18n and static publishing.",
+    proj_2_name: "Kayke Hub",
+    proj_2_objective: "Bring projects, journey and contact together at a fixed address, without a backend.",
+    proj_2_role: "Author and maintainer of the content, design and code.",
+    proj_2_status: "Live",
+    proj_2_tech: "HTML, CSS and JavaScript",
+    proj_learned_label: "What I learned",
+    proj_objective_label: "Goal",
+    proj_role_label: "My role",
+    proj_tech_label: "Technologies",
+    projects_intro: "Two real projects, with what already exists and what is still being built.",
+    projects_title: "Projects",
+    qr_alt: "QR Code for this site",
+    radar_1: "OOP",
+    radar_2: "databases · SQLite",
+    radar_3: "data analysis",
+    radar_4: "web · Flask/Django",
+    radar_title: "On the radar",
+    share_hint: "Scan the code or copy the address.",
+    share_title: "Share this site",
+    skip: "Skip to content",
+    sobre_p1: "I am Kayke. I started programming without rushing and without shortcuts: every concept I study becomes an exercise solved, corrected and explained in Python-Journey.",
+    sobre_p2: 'Python is where I invest most. I follow the <strong>Curso em Vídeo</strong> base and organize everything into chapters, in the order I learn. Today there are 85 exercises solved and chapter 06, on functions, nearly closed.',
+    sobre_p3: 'My goal is to work with <strong>data analysis</strong>. Every day I use Excel, Word and PowerPoint at a basic level; the next steps are already planned: OOP, databases and real data analysis.',
     sobre_title: "About",
-    fact_focus: "Python · data analysis",
-    fact_base: "Curso em Vídeo, reorganized into chapters",
-    fact_now: "chapter 06 · functions (ex105 left)",
-    fact_next: "OOP · databases · data analysis",
-    sobre_p1: "I am starting out in programming. No career to show off yet — just an honest study log: every folder in the repository is a concept practiced, debugged and explained, in the order I learned it.",
-    sobre_p2: 'Python is where I invest most. I follow the <strong>Curso em Vídeo</strong> base, organizing everything into chapters in <a href="https://github.com/kayke-dados/Python-Journey" target="_blank" rel="noopener">Python-Journey</a> — today with 85 exercises solved and chapter 06 nearly closed.',
-    sobre_p3: 'The goal is clear: to work with <strong>data analysis</strong>. Along the way I collect tools — Excel, Word and PowerPoint for everyday work, Windows as my environment, and the next steps already planned: OOP, databases and real data analysis.',
-    jornada_title: "Learning journey",
-    jornada_intro: "Chapters of Python-Journey — the number is how many exercises are solved in each one.",
-    track_1: "01 — fundamentals",
-    track_2: "02 — conditions",
-    track_3: "03 — loops & logic",
-    track_4: "04 — lists & tuples",
-    track_5: "05 — dictionaries",
-    track_6: "06 — functions",
-    track_7: "07 — next up",
+    tagline: "Python & data portfolio",
     status_done: "done",
     status_partial: "in progress",
     status_planned: "reserved slot",
-    trail_note: "Chapter 06 needs just one exercise (<code>ex105</code>) to be complete — data updated by hand.",
-    projects_title: "Projects",
-    projects_p1: "Real projects, with real status and technology — and what is still ahead, clearly separated.",
-    proj_1_name: "Python-Journey",
-    proj_1_status: " in the making",
-    proj_1_desc: "85 of 86 exercises · five chapters done · one left (<code>ex105</code>) in chapter 06",
-    proj_tech: "stack",
-    link_repo: "repository →",
-    proj_2_name: "Kayke Hub",
-    proj_2_status: " live",
-    proj_2_desc: "This site — my static digital card, published on GitHub Pages",
-    link_demo: "see it live →",
-    future_projects_title: "In development",
-    future_proj_1: "data portfolio",
-    future_proj_2: "data analysis project",
-    future_proj_3: "indicators dashboard",
-    tech_title: "Technologies",
-    tech_now_title: "Current knowledge",
-    tech_cat_prog: "Programming",
-    chip_note_prog: "learning",
-    tech_cat_system: "System & environment",
-    tech_cat_office: "Productivity",
-    chip_note_office: "basic level",
-    tech_learning_title: "Learning now",
-    learn_1: "functions · chapter 06",
-    learn_2: "OOP · next step",
-    future_title: "Next on the radar",
-    future_1: "databases · SQLite",
-    future_2: "data analysis",
-    future_3: "web · Flask/Django",
-    contact_title: "Networks and contact",
-    contact_p1: "This card is my fixed address on the internet. Write to me or find me on the networks:",
-    link_github: "GitHub",
-    link_github_desc: "/code and ship's log",
-    link_instagram: "Instagram",
-    link_instagram_desc: "@kayke.dados",
-    link_email: "E-mail",
-    link_email_desc: "kayke0812@proton.me",
-    share_title: "Share this card",
-    btn_copy: "Copy address",
-    btn_share: "Share",
-    share_hint: "Scan the code or copy the address.",
-    footer_note: "made at the pace of someone who is learning · ",
-    ai_note: 'This site\'s code was developed with 100% AI assistance — <a href="https://github.com/kayke-dados/kayke-hub" target="_blank" rel="noopener">documented in the repository</a>.',
+    step_1_text: "Chapters 01 to 03: 53 exercises on variables, conditions and loops.",
+    step_1_title: "First, the fundamentals.",
+    step_2_text: "Chapters 04 and 05: 23 exercises on lists, tuples and dictionaries.",
+    step_2_title: "Then, the structures.",
+    step_3_text: "Chapter 06: 9 of 10 exercises solved; ex105 is still open.",
+    step_3_title: "Now, functions.",
+    step_4_text: "OOP, databases and data analysis. The goal is to work with data.",
+    step_4_title: "The next step.",
   },
 };
 
@@ -105,17 +170,37 @@ const ARIA_LABELS = {
   en: {
     lang_label: "Switch to Portuguese",
     menu_open: "Open menu",
+    menu_close: "Close menu",
   },
 };
 
 const MESSAGES = {
   pt: {
     toast_copied: "Endereço copiado!",
-    toast_fail: "Não foi possível copiar — o endereço é " + SITE_URL,
+    toast_fail: "Não foi possível copiar; o endereço é " + SITE_URL,
   },
   en: {
     toast_copied: "Address copied!",
-    toast_fail: "Could not copy — the address is " + SITE_URL,
+    toast_fail: "Could not copy; the address is " + SITE_URL,
+  },
+};
+
+const GITHUB_TEXT = {
+  pt: {
+    loading: "Carregando repositórios públicos…",
+    empty: "Nenhum repositório público encontrado.",
+    error: "Não foi possível carregar os repositórios agora.",
+    no_desc: "Sem descrição.",
+    no_lang: "sem linguagem",
+    view: "Ver no GitHub →",
+  },
+  en: {
+    loading: "Loading public repositories…",
+    empty: "No public repositories found.",
+    error: "Could not load the repositories right now.",
+    no_desc: "No description.",
+    no_lang: "no language",
+    view: "See it on GitHub →",
   },
 };
 
@@ -137,6 +222,8 @@ function storageSet(key, value) {
 }
 
 let currentLang = storageGet("kd-lang") || "pt";
+let githubRepos = null;
+let githubState = "idle";
 
 function applyLang(lang) {
   currentLang = lang;
@@ -161,8 +248,10 @@ function applyLang(lang) {
     const value = lang === "en" ? I18N.en[key] : el.getAttribute("data-default-alt");
     if (value != null) el.setAttribute("alt", value);
   });
-  document.getElementById("lang-toggle").textContent = lang === "en" ? "PT" : "EN";
+  const langToggle = document.getElementById("lang-toggle");
+  if (langToggle) langToggle.textContent = lang === "en" ? "PT" : "EN";
   syncNavToggle();
+  if (githubState !== "idle") renderGithub();
 }
 
 function cacheDefaults() {
@@ -185,6 +274,7 @@ function cacheDefaults() {
 
 function showToast(message) {
   const toast = document.getElementById("toast");
+  if (!toast) return;
   toast.textContent = message;
   toast.hidden = false;
   clearTimeout(toast._t);
@@ -222,9 +312,10 @@ function fallbackCopy(okMessage) {
 }
 
 async function shareCard() {
+  const role = document.querySelector(".hero-role");
   const shareData = {
     title: currentLang === "en" ? "Kayke Hub | Python & Data" : "Kayke Hub | Python e Dados",
-    text: document.querySelector(".hero-role").textContent,
+    text: role ? role.textContent : "Kayke Hub",
     url: SITE_URL,
   };
   if (navigator.share) {
@@ -286,8 +377,8 @@ function initActiveSection() {
         link.setAttribute("aria-current", "location");
       }
     });
-  }, { rootMargin: "-45% 0px -50% 0px" });
-  ["inicio", "sobre", "jornada", "projetos"].forEach((id) => {
+  }, { rootMargin: "-40% 0px -55% 0px" });
+  ["inicio", "sobre", "projetos", "jornada", "diario", "contato"].forEach((id) => {
     const el = document.getElementById(id);
     if (el) io.observe(el);
   });
@@ -297,7 +388,9 @@ function initActiveSection() {
 
 function initReveals() {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const targets = document.querySelectorAll("section h2, section .section-intro, .trail, .proj, .tech-block, .contact-grid > *, .hero-identity > *, .hero-art, .caderno, .mapa, .tech-art");
+  const targets = document.querySelectorAll(
+    "section h2, section .section-intro, .hero-role, .hero-intro, .hero-status, .hero-actions, .hero-motto, .sobre-grid, .caderno, .proj-media, .proj-body, .future, .github, .step, .python-journey, .agora-list, .radar, .diario-list, .contact-top, .contact-email, .contact-bottom, .footer-name, .footer-grid"
+  );
   if (!targets.length || !("IntersectionObserver" in window)) return;
   targets.forEach((el) => el.classList.add("reveal"));
   const io = new IntersectionObserver((entries) => {
@@ -308,22 +401,187 @@ function initReveals() {
       el.classList.add("in");
       io.unobserve(el);
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.12 });
   targets.forEach((el) => io.observe(el));
+}
+
+/* ---- GitHub: API pública, sem token, com cache e fallback ---- */
+
+function cleanText(value) {
+  if (!value) return "";
+  return value
+    .replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}]/gu, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function formatDate(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "";
+  return date.toLocaleDateString(currentLang === "en" ? "en-US" : "pt-BR", {
+    year: "numeric",
+    month: "short",
+  });
+}
+
+function readGithubCache() {
+  try {
+    const raw = sessionStorage.getItem(GITHUB_CACHE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || !Array.isArray(parsed.repos)) return null;
+    if (Date.now() - parsed.at > GITHUB_CACHE_TTL) return null;
+    return parsed.repos;
+  } catch (e) {
+    return null;
+  }
+}
+
+function writeGithubCache(repos) {
+  try {
+    sessionStorage.setItem(GITHUB_CACHE_KEY, JSON.stringify({ at: Date.now(), repos }));
+  } catch (e) {
+    /* sem cache: segue sem quebrar */
+  }
+}
+
+function renderGithub() {
+  const root = document.getElementById("github-repos");
+  if (!root) return;
+  const text = GITHUB_TEXT[currentLang] || GITHUB_TEXT.pt;
+  root.replaceChildren();
+  root.dataset.state = githubState;
+
+  if (githubState === "idle" || githubState === "loading") {
+    const status = document.createElement("p");
+    status.className = "github-status";
+    status.textContent = text.loading;
+    root.append(status);
+    return;
+  }
+
+  if (githubState === "error") {
+    const status = document.createElement("p");
+    status.className = "github-status";
+    status.textContent = text.error + " ";
+    const link = document.createElement("a");
+    link.href = "https://github.com/" + GITHUB_USER + "?tab=repositories";
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = text.view;
+    status.append(link);
+    root.append(status);
+    return;
+  }
+
+  if (!githubRepos || !githubRepos.length) {
+    const status = document.createElement("p");
+    status.className = "github-status";
+    status.textContent = text.empty;
+    root.append(status);
+    return;
+  }
+
+  const list = document.createElement("ul");
+  list.className = "repo-list";
+  githubRepos.forEach((repo) => {
+    const item = document.createElement("li");
+    item.className = "repo";
+    const link = document.createElement("a");
+    link.href = repo.html_url;
+    link.target = "_blank";
+    link.rel = "noopener";
+
+    const name = document.createElement("span");
+    name.className = "repo-name";
+    name.textContent = repo.name;
+
+    const desc = document.createElement("span");
+    desc.className = "repo-desc";
+    desc.textContent = cleanText(repo.description) || text.no_desc;
+
+    const meta = document.createElement("span");
+    meta.className = "repo-meta";
+    meta.textContent = (repo.language || text.no_lang) + " · " + formatDate(repo.pushed_at);
+
+    link.append(name, desc, meta);
+    item.append(link);
+    list.append(item);
+  });
+  root.append(list);
+}
+
+async function loadGithub() {
+  if (githubState === "loading" || githubState === "done") return;
+
+  const cached = readGithubCache();
+  if (cached) {
+    githubRepos = cached;
+    githubState = "done";
+    renderGithub();
+    return;
+  }
+
+  githubState = "loading";
+  renderGithub();
+
+  try {
+    const response = await fetch(GITHUB_API, {
+      headers: { Accept: "application/vnd.github+json" },
+    });
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    const data = await response.json();
+    githubRepos = Array.isArray(data)
+      ? data.filter((repo) => !repo.fork).slice(0, 6)
+      : [];
+    writeGithubCache(githubRepos);
+    githubState = "done";
+    renderGithub();
+  } catch (error) {
+    githubState = "error";
+    renderGithub();
+  }
+}
+
+function initGithub() {
+  const root = document.getElementById("github-repos");
+  if (!root) return;
+  if (!("IntersectionObserver" in window)) {
+    loadGithub();
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    if (entries.some((entry) => entry.isIntersecting)) {
+      io.disconnect();
+      loadGithub();
+    }
+  }, { rootMargin: "300px" });
+  io.observe(root);
 }
 
 function init() {
   cacheDefaults();
-  document.getElementById("year").textContent = new Date().getFullYear();
-  document.getElementById("btn-copy").addEventListener("click", copyLink);
-  document.getElementById("btn-share").addEventListener("click", shareCard);
-  document.getElementById("lang-toggle").addEventListener("click", () => {
-    applyLang(currentLang === "en" ? "pt" : "en");
-  });
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+  const copyBtn = document.getElementById("btn-copy");
+  const shareBtn = document.getElementById("btn-share");
+  const langBtn = document.getElementById("lang-toggle");
+  if (copyBtn) copyBtn.addEventListener("click", copyLink);
+  if (shareBtn) shareBtn.addEventListener("click", shareCard);
+  if (langBtn) {
+    langBtn.addEventListener("click", () => {
+      applyLang(currentLang === "en" ? "pt" : "en");
+    });
+  }
   initNav();
   initActiveSection();
   initReveals();
   applyLang(currentLang);
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.documentElement.classList.add("motion-ready");
+  }
+  initGithub();
 }
 
 document.addEventListener("DOMContentLoaded", init);

@@ -4,32 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark" />
-  <title>Kayke Hub | Python e Dados — portfólio de aprendizado</title>
-  <meta name="description" content="Kayke Hub — espaço pessoal de Kayke: Python e análise de dados em construção, um dia por vez. Projetos, jornada de aprendizado e contato." />
+  <title>Kayke Hub | Python e dados, portfólio de aprendizado</title>
+  <meta name="description" content="Portfólio pessoal de Kayke: projetos reais em Python, jornada de aprendizado, diário técnico e contato. Um exercício por vez." />
   <meta name="author" content="Kayke" />
   <link rel="canonical" href="https://kayke-dados.github.io/kayke-hub/" />
   <meta property="og:type" content="profile" />
   <meta property="og:site_name" content="Kayke Hub" />
-  <meta property="og:title" content="Kayke Hub | Python e Dados" />
-  <meta property="og:description" content="Estudando para me tornar Analista de Dados — consistência > intensidade." />
+  <meta property="og:title" content="Kayke Hub | Python e dados" />
+  <meta property="og:description" content="Projetos reais, jornada de aprendizado e diário técnico de um estudante de Python e análise de dados." />
   <meta property="og:url" content="https://kayke-dados.github.io/kayke-hub/" />
   <meta property="og:image" content="https://kayke-dados.github.io/kayke-hub/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Kayke Hub — cartão digital com QR Code para o site" />
+  <meta property="og:image:alt" content="Kayke Hub, cartão digital com QR Code para o site" />
   <meta property="og:locale" content="pt_BR" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kayke Hub | Python e Dados" />
-  <meta name="twitter:description" content="Python e análise de dados em construção — um dia por vez." />
+  <meta name="twitter:title" content="Kayke Hub | Python e dados" />
+  <meta name="twitter:description" content="Projetos reais, jornada de aprendizado e diário técnico." />
   <meta name="twitter:image" content="https://kayke-dados.github.io/kayke-hub/assets/og-image.png" />
-  <meta name="twitter:image:alt" content="Kayke Hub — cartão digital com QR Code para o site" />
+  <meta name="twitter:image:alt" content="Kayke Hub, cartão digital com QR Code para o site" />
   <meta name="theme-color" content="#141414" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&display=swap" /><!-- taste-skill-ignore: marca -->
   <link rel="preload" as="image" href="assets/avatar.png" />
-  <script>document.documentElement.classList.add("js");</script>
+  <script>document.documentElement.classList.add("js");if(window.matchMedia&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion-ready");</script>
   <link rel="stylesheet" href="css/style.css" />
   <script type="application/ld+json">
   {
@@ -38,12 +38,13 @@
     "name": "Kayke",
     "alternateName": "kayke-dados",
     "jobTitle": "Estudante de Análise de Dados",
+    "description": "Estudante de Python e análise de dados, documentando a jornada de aprendizado no Python-Journey.",
     "url": "https://kayke-dados.github.io/kayke-hub/",
     "sameAs": [
       "https://github.com/kayke-dados",
       "https://www.instagram.com/kayke.dados/"
     ],
-    "knowsAbout": ["Python", "Análise de Dados"]
+    "knowsAbout": ["Python", "Análise de Dados", "Lógica de Programação"]
   }
   </script>
 </head>
@@ -54,200 +55,377 @@
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="#inicio">
-        <img class="brand-avatar" src="assets/avatar.png" alt="" width="30" height="30" decoding="async" />
-        <span class="brand-mark" aria-hidden="true">K.</span>
+        <img class="brand-avatar" src="assets/avatar.png" alt="" width="28" height="28" decoding="async" />
         <span class="brand-name">Kayke Hub</span>
       </a>
       <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu" data-i18n-aria="menu_open">
         <span class="nav-toggle-bar" aria-hidden="true"></span><span class="nav-toggle-bar" aria-hidden="true"></span>
       </button>
       <nav class="nav-menu" id="nav-menu" aria-label="Navegação principal" data-i18n-aria="nav_label">
-        <a class="nav-link" href="#inicio" data-i18n="nav_home">Início</a>
         <a class="nav-link" href="#sobre" data-i18n="nav_about">Sobre</a>
-        <a class="nav-link" href="#jornada" data-i18n="nav_journey">Jornada</a>
         <a class="nav-link" href="#projetos" data-i18n="nav_projects">Projetos</a>
+        <a class="nav-link" href="#jornada" data-i18n="nav_journey">Jornada</a>
+        <a class="nav-link" href="#diario" data-i18n="nav_diary">Diário</a>
+        <a class="nav-link" href="#contato" data-i18n="nav_contact">Contato</a>
         <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language" data-i18n-aria="lang_label">PT</button>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- hero: uma afirmação, não um painel -->
-    <section class="hero" id="inicio" aria-labelledby="nome-titulo">
+    <!-- 1. hero: o nome em duas linhas, texto primeiro -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="hero-inner">
-        <div class="hero-identity">
-          <h1 class="hero-name" id="nome-titulo">Kayke</h1>
-          <p class="hero-role" data-i18n="tagline">Estudando para me tornar <strong>Analista de Dados</strong></p>
-          <p class="hero-intro" data-i18n="hero_intro">Python do zero, com o aprendizado inteiro documentado no Python-Journey — um dia por vez, sem atalhos.</p>
-          <p class="hero-now mono"><span data-i18n="hero_note">85 exercícios resolvidos · 5 capítulos concluídos</span><span class="hero-now-sep" aria-hidden="true"> · </span><span class="spark" data-i18n="hero_note_open">ex105 pendente</span></p>
-          <p class="moto" data-i18n="moto">Consistência &gt; intensidade.</p>
-          <div class="hero-actions">
-            <a class="btn btn-solid" href="https://github.com/kayke-dados" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn" href="https://www.instagram.com/kayke.dados/" target="_blank" rel="noopener">Instagram</a>
+        <h1 class="hero-name" id="hero-title">
+          <span class="hero-line"><span data-i18n="hero_name_1">Kayke</span></span>
+          <span class="hero-line hero-line-accent"><span data-i18n="hero_name_2">Hub</span></span>
+        </h1>
+        <div class="hero-lower">
+          <div class="hero-copy">
+            <p class="hero-role" data-i18n="hero_role">Estudante de Python e análise de dados</p>
+            <p class="sr-only" data-i18n="tagline">Portfólio de Python e dados</p>
+            <p class="hero-intro" data-i18n="hero_intro">Estou construindo meu caminho na tecnologia, um exercício por vez. Aqui ficam meus projetos, minha jornada e o que estou aprendendo agora.</p>
+          </div>
+          <div class="hero-aside">
+            <p class="hero-status"><span data-i18n="hero_status">85 de 86 exercícios · 5 capítulos concluídos · ex105 em aberto</span></p>
+            <div class="hero-actions">
+              <a class="btn btn-solid" href="#projetos" data-i18n="btn_projects">Ver projetos</a>
+              <a class="btn btn-ghost" href="#jornada" data-i18n="btn_journey">Minha jornada</a>
+            </div>
+            <p class="hero-motto" data-i18n="hero_motto">Consistência &gt; intensidade.</p>
           </div>
         </div>
-        <figure class="hero-art">
-          <img src="assets/art/exercicios.svg" alt="Faixa de 86 quadrados: 85 preenchidos e o último em aberto" width="900" height="190" loading="eager" data-i18n-alt="art_exercises_alt" decoding="async" />
-          <figcaption data-i18n="art_exercises_caption">86 exercícios no Python-Journey: 85 resolvidos, 1 em aberto.</figcaption>
-        </figure>
       </div>
     </section>
 
-    <!-- sobre -->
+    <!-- 2. sobre: ficha curta + prosa + caderno de código real -->
     <section class="sobre" id="sobre" aria-labelledby="sobre-title">
-      <h2 id="sobre-title" data-i18n="sobre_title">Sobre</h2>
-      <div class="sobre-columns">
-        <div class="sobre-side">
-          <p class="sobre-fact"><span class="sobre-fact-tag mono" aria-hidden="true">foco</span><span class="sobre-fact-value" data-i18n="fact_focus">Python · análise de dados</span></p>
-          <p class="sobre-fact"><span class="sobre-fact-tag mono" aria-hidden="true">base</span><span class="sobre-fact-value" data-i18n="fact_base">Curso em Vídeo, reorganizado em capítulos</span></p>
-          <p class="sobre-fact"><span class="sobre-fact-tag mono" aria-hidden="true">agora</span><span class="sobre-fact-value" data-i18n="fact_now">capítulo 06 · funções (falta ex105)</span></p>
-          <p class="sobre-fact"><span class="sobre-fact-tag mono" aria-hidden="true">depois</span><span class="sobre-fact-value" data-i18n="fact_next">POO · bancos de dados · análise de dados</span></p>
+      <div class="section-inner">
+        <h2 id="sobre-title" data-i18n="sobre_title">Sobre</h2>
+        <div class="sobre-grid">
+          <dl class="sobre-facts">
+            <div>
+              <dt data-i18n="fact_focus_label">Foco</dt>
+              <dd data-i18n="fact_focus">Python e análise de dados</dd>
+            </div>
+            <div>
+              <dt data-i18n="fact_base_label">Base</dt>
+              <dd data-i18n="fact_base">Curso em Vídeo, em capítulos</dd>
+            </div>
+            <div>
+              <dt data-i18n="fact_now_label">Agora</dt>
+              <dd data-i18n="fact_now">Capítulo 06, funções (ex105 em aberto)</dd>
+            </div>
+            <div>
+              <dt data-i18n="fact_next_label">Depois</dt>
+              <dd data-i18n="fact_next">POO, bancos de dados e análise de dados</dd>
+            </div>
+          </dl>
+          <div class="sobre-body">
+            <img src="assets/avatar.png" alt="Avatar de Kayke no GitHub" width="400" height="400" class="avatar sobre-avatar" data-i18n-alt="avatar_alt" />
+            <p data-i18n="sobre_p1">Sou Kayke. Comecei na programação sem pressa e sem atalhos: cada conceito que estudo vira um exercício resolvido, corrigido e explicado no Python-Journey.</p>
+            <p data-i18n="sobre_p2">Python é onde mais invisto. Sigo a base do <strong>Curso em Vídeo</strong> e organizo tudo em capítulos, na ordem em que aprendo. Hoje são 85 exercícios resolvidos e o capítulo 06, de funções, quase fechado.</p>
+            <p data-i18n="sobre_p3">Meu objetivo é trabalhar com <strong>análise de dados</strong>. No dia a dia, uso Excel, Word e PowerPoint em nível básico; os próximos passos já estão planejados: POO, bancos de dados e análise de dados de verdade.</p>
+          </div>
         </div>
-        <div class="sobre-body">
-          <img src="assets/avatar.png" alt="Avatar de Kayke no GitHub" width="400" height="400" class="avatar sobre-avatar" data-i18n-alt="avatar_alt" />
-          <p data-i18n="sobre_p1">Estou começando na programação. Não tenho uma carreira para exibir: tenho um registro honesto de estudo — cada pasta do repositório é um conceito praticado, corrigido e explicado, na ordem em que aprendi.</p>
-          <p data-i18n="sobre_p2">Python é onde mais invisto. Sigo a base do <strong>Curso em Vídeo</strong>, organizando tudo em capítulos no <a href="https://github.com/kayke-dados/Python-Journey" target="_blank" rel="noopener">Python-Journey</a> — hoje com 85 exercícios resolvidos e o capítulo 06 quase fechado.</p>
-          <p data-i18n="sobre_p3">O objetivo é claro: trabalhar com <strong>análise de dados</strong>. No caminho, vou juntando repertório — Excel, Word e PowerPoint no dia a dia, Windows como ambiente, e os próximos passos já planejados: POO, bancos de dados e análise de dados de verdade.</p>
-        </div>
-      </div>
-      <figure class="caderno">
-        <div class="caderno-bar"><span class="mono">06-funcoes / Ex103.py</span><span class="mono">Python</span></div>
-        <pre><code>def jogador(nome="&lt;desconhecido&gt;", gols=0):
+        <figure class="caderno">
+          <div class="caderno-bar"><span>06-funcoes / Ex103.py</span><span>Python</span></div>
+          <pre><code>def jogador(nome="&lt;desconhecido&gt;", gols=0):
   print(f"O jogador {nome} marcou {gols} gols")
 
 print("-"*15)
 n = str(input("Nome: "))
 gol = str(input("Gols: "))</code></pre>
-        <figcaption data-i18n="code_caption">Trecho real de Ex103 — capítulo 06, funções.</figcaption>
-      </figure>
-    </section>
-
-    <!-- jornada -->
-    <section class="jornada" id="jornada" aria-labelledby="jornada-title">
-      <h2 id="jornada-title" data-i18n="jornada_title">Jornada de aprendizado</h2>
-      <p class="section-intro" data-i18n="jornada_intro">Capítulos do Python-Journey — o número é a quantidade de exercícios resolvidos em cada um.</p>
-      <figure class="mapa">
-        <img src="assets/art/mapa-jornada.svg" alt="Mapa de sete capítulos: cinco concluídos, o sexto em andamento e o sétimo reservado" width="1000" height="210" loading="lazy" data-i18n-alt="art_map_alt" decoding="async" />
-        <figcaption data-i18n="art_map_caption">Mapa dos capítulos — 5 concluídos, 06 em andamento, 07 reservado.</figcaption>
-      </figure>
-      <ol class="trail">
-        <li class="track-row"><span class="track-name" data-i18n="track_1">01 — fundamentos</span><span class="track-count">12</span><span class="track-status" data-i18n="status_done">concluída</span></li>
-        <li class="track-row"><span class="track-name" data-i18n="track_2">02 — condições</span><span class="track-count">16</span><span class="track-status" data-i18n="status_done">concluída</span></li>
-        <li class="track-row"><span class="track-name" data-i18n="track_3">03 — laços e lógica</span><span class="track-count">25</span><span class="track-status" data-i18n="status_done">concluída</span></li>
-        <li class="track-row"><span class="track-name" data-i18n="track_4">04 — listas e tuplas</span><span class="track-count">18</span><span class="track-status" data-i18n="status_done">concluída</span></li>
-        <li class="track-row"><span class="track-name" data-i18n="track_5">05 — dicionários</span><span class="track-count">5</span><span class="track-status" data-i18n="status_done">concluída</span></li>
-        <li class="track-row"><span class="track-name" data-i18n="track_6">06 — funções</span><span class="track-count">9/10</span><span class="track-status" data-i18n="status_partial">em andamento</span></li>
-        <li class="track-row"><span class="track-name" data-i18n="track_7">07 — próximos</span><span class="track-count">—</span><span class="track-status" data-i18n="status_planned">espaço reservado</span></li>
-      </ol>
-      <p class="trail-note" data-i18n="trail_note">Falta apenas um exercício (<code>ex105</code>) para concluir o capítulo 06 — dados atualizados manualmente.</p>
-    </section>
-
-    <!-- projetos -->
-    <section class="projetos" id="projetos" aria-labelledby="projects-title">
-      <h2 id="projects-title" data-i18n="projects_title">Projetos</h2>
-      <p class="section-intro" data-i18n="projects_p1">Projetos reais, com situação e tecnologia de verdade — e o que ainda está por vir, separado com clareza.</p>
-      <div class="proj-grid">
-        <article class="proj proj-highlight">
-          <div class="proj-body">
-          <div class="proj-head">
-            <h3 class="proj-name"><a href="https://github.com/kayke-dados/Python-Journey" target="_blank" rel="noopener" data-i18n="proj_1_name">Python-Journey</a></h3>
-            <span class="proj-status"><span class="spark" aria-hidden="true">●</span><span data-i18n="proj_1_status"> em construção</span></span>
-          </div>
-          <p class="proj-desc" data-i18n="proj_1_desc">85 de 86 exercícios · cinco capítulos concluídos · faltando <code>ex105</code> no capítulo 06</p>
-          <p class="proj-tech"><span class="proj-tech-label mono" data-i18n="proj_tech">stack</span><span class="chip">Python</span></p>
-          <p class="proj-links"><a class="proj-link" href="https://github.com/kayke-dados/Python-Journey" target="_blank" rel="noopener" data-i18n="link_repo">repositório →</a></p>
-          </div>
-          <img class="proj-cover" src="assets/projects/python-journey.svg" alt="Capa ilustrada do Python-Journey com a árvore de capítulos e 85 de 86 exercícios" width="1200" height="675" loading="lazy" data-i18n-alt="cover_journey_alt" decoding="async" />
-        </article>
-        <article class="proj">
-          <div class="proj-body">
-          <div class="proj-head">
-            <h3 class="proj-name"><a href="https://kayke-dados.github.io/kayke-hub/" target="_blank" rel="noopener" data-i18n="proj_2_name">Kayke Hub</a></h3>
-            <span class="proj-status"><span class="spark" aria-hidden="true">●</span><span data-i18n="proj_2_status"> no ar</span></span>
-          </div>
-          <p class="proj-desc" data-i18n="proj_2_desc">Este site — cartão digital estático, publicado no GitHub Pages</p>
-          <p class="proj-tech"><span class="proj-tech-label mono" data-i18n="proj_tech">stack</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></p>
-          <p class="proj-links"><a class="proj-link" href="https://kayke-dados.github.io/kayke-hub/" target="_blank" rel="noopener" data-i18n="link_demo">ver no ar →</a><a class="proj-link" href="https://github.com/kayke-dados/kayke-hub" target="_blank" rel="noopener" data-i18n="link_repo">repositório →</a></p>
-          </div>
-          <img class="proj-cover" src="assets/projects/kayke-hub.svg" alt="Prévia ilustrada do Kayke Hub com o nome Kayke e a chamada do site" width="1200" height="675" loading="lazy" data-i18n-alt="cover_hub_alt" decoding="async" />
-        </article>
-      </div>
-      <h3 class="mini-title" data-i18n="future_projects_title">Em desenvolvimento</h3>
-      <ul class="chips chips-dim" role="list">
-        <li class="chip" data-i18n="future_proj_1">portfólio de dados</li>
-        <li class="chip" data-i18n="future_proj_2">projeto de análise de dados</li>
-        <li class="chip" data-i18n="future_proj_3">painel de indicadores</li>
-      </ul>
-    </section>
-
-    <!-- tecnologias -->
-    <section class="tecnologias" id="tecnologias" aria-labelledby="tech-title">
-      <h2 id="tech-title" data-i18n="tech_title">Tecnologias</h2>
-      <figure class="tech-art">
-        <img src="assets/art/tecnologias.svg" alt="Ilustração de um terminal Python, uma planilha e uma apresentação" width="1200" height="380" loading="lazy" data-i18n-alt="art_tech_alt" decoding="async" />
-        <figcaption data-i18n="art_tech_caption">As ferramentas do dia a dia — Python, planilhas e apresentações.</figcaption>
-      </figure>
-      <div class="tech-block">
-        <h3 class="mini-title" data-i18n="tech_now_title">Conhecimentos atuais</h3>
-        <ul class="tech-groups" role="list">
-          <li class="tech-group"><span class="tech-cat mono" data-i18n="tech_cat_prog">Programação</span><span class="chip">Python</span><span class="chip-note" data-i18n="chip_note_prog">em aprendizado</span></li>
-          <li class="tech-group"><span class="tech-cat mono" data-i18n="tech_cat_system">Sistema e ambiente</span><span class="chip">Windows</span></li>
-          <li class="tech-group"><span class="tech-cat mono" data-i18n="tech_cat_office">Produtividade</span><span class="chip">Excel</span><span class="chip">Word</span><span class="chip">PowerPoint</span><span class="chip-note" data-i18n="chip_note_office">nível básico</span></li>
-        </ul>
-      </div>
-      <div class="tech-block">
-        <h3 class="mini-title" data-i18n="tech_learning_title">No estudar agora</h3>
-        <ul class="chips" role="list">
-          <li class="chip" data-i18n="learn_1">funções · capítulo 06</li>
-          <li class="chip" data-i18n="learn_2">POO · próximo passo</li>
-        </ul>
-      </div>
-      <div class="tech-block">
-        <h3 class="mini-title" data-i18n="future_title">Próximas no radar</h3>
-        <ul class="chips chips-dim" role="list">
-          <li class="chip" data-i18n="future_1">bancos de dados · SQLite</li>
-          <li class="chip" data-i18n="future_2">análise de dados</li>
-          <li class="chip" data-i18n="future_3">web · Flask/Django</li>
-        </ul>
+          <figcaption data-i18n="code_caption">Trecho real do Ex103, capítulo 06: funções.</figcaption>
+        </figure>
       </div>
     </section>
 
-    <!-- redes e contato -->
-    <section class="contato" id="contato" aria-labelledby="contact-title">
-      <h2 id="contact-title" data-i18n="contact_title">Redes e contato</h2>
-      <div class="contact-grid">
-        <div class="contact-copy">
-          <p data-i18n="contact_p1">Este cartão é o meu endereço fixo na internet. Escreva para mim ou me encontre pelas redes:</p>
-          <div class="contact-actions">
-            <a class="contact-link" href="https://github.com/kayke-dados" target="_blank" rel="noopener"><span data-i18n="link_github">GitHub</span><span class="link-desc" data-i18n="link_github_desc">/code e diário de bordo</span></a>
-            <a class="contact-link" href="https://www.instagram.com/kayke.dados/" target="_blank" rel="noopener"><span data-i18n="link_instagram">Instagram</span><span class="link-desc" data-i18n="link_instagram_desc">@kayke.dados</span></a>
-            <a class="contact-link" href="mailto:kayke0812@proton.me"><span data-i18n="link_email">E-mail</span><span class="link-desc" data-i18n="link_email_desc">kayke0812@proton.me</span></a>
-          </div>
+    <!-- 3. projetos: dois projetos reais + o que ainda está por vir + API do GitHub -->
+    <section class="projetos band-surface" id="projetos" aria-labelledby="projects-title">
+      <div class="section-inner">
+        <h2 id="projects-title" data-i18n="projects_title">Projetos</h2>
+        <p class="section-intro" data-i18n="projects_intro">Dois projetos reais, com o que já existe e o que ainda está em construção.</p>
+
+        <div class="proj-list">
+          <article class="proj proj-highlight">
+            <figure class="proj-media">
+              <img src="assets/projects/python-journey.svg" alt="Capa ilustrada do Python-Journey com a árvore de capítulos e 85 de 86 exercícios" width="1200" height="675" loading="lazy" data-i18n-alt="cover_journey_alt" decoding="async" />
+            </figure>
+            <div class="proj-body">
+              <div class="proj-head">
+                <h3 class="proj-name"><a href="https://github.com/kayke-dados/Python-Journey" target="_blank" rel="noopener" data-i18n="proj_1_name">Python-Journey</a></h3>
+                <span class="proj-status"><span class="dot" aria-hidden="true">●</span><span data-i18n="proj_1_status">Em construção</span></span>
+              </div>
+              <p class="proj-desc" data-i18n="proj_1_desc">Meu registro de estudos em Python: cada exercício do Curso em Vídeo, organizado por capítulo, na ordem em que aprendi.</p>
+              <dl class="proj-meta">
+                <div><dt data-i18n="proj_objective_label">Objetivo</dt><dd data-i18n="proj_1_objective">Praticar lógica e estruturas de dados com exercícios pequenos, commitados um por vez.</dd></div>
+                <div><dt data-i18n="proj_tech_label">Tecnologias</dt><dd data-i18n="proj_1_tech">Python</dd></div>
+                <div><dt data-i18n="proj_learned_label">O que aprendi</dt><dd data-i18n="proj_1_learned">Lógica, condições, laços, listas, tuplas, dicionários e funções.</dd></div>
+                <div><dt data-i18n="proj_role_label">Minha participação</dt><dd data-i18n="proj_1_role">Autoria e manutenção: exercícios, organização das pastas e commits.</dd></div>
+              </dl>
+              <p class="proj-links"><a class="proj-link" href="https://github.com/kayke-dados/Python-Journey" target="_blank" rel="noopener" data-i18n="link_repo">repositório →</a></p>
+            </div>
+          </article>
+
+          <article class="proj proj-reverse">
+            <figure class="proj-media">
+              <img src="assets/projects/kayke-hub.svg" alt="Prévia ilustrada do Kayke Hub com o nome Kayke e a chamada do site" width="1200" height="675" loading="lazy" data-i18n-alt="cover_hub_alt" decoding="async" />
+            </figure>
+            <div class="proj-body">
+              <div class="proj-head">
+                <h3 class="proj-name"><a href="https://kayke-dados.github.io/kayke-hub/" target="_blank" rel="noopener" data-i18n="proj_2_name">Kayke Hub</a></h3>
+                <span class="proj-status"><span class="dot" aria-hidden="true">●</span><span data-i18n="proj_2_status">No ar</span></span>
+              </div>
+              <p class="proj-desc" data-i18n="proj_2_desc">Este site: portfólio e diário de aprendizado em uma página estática, publicada no GitHub Pages.</p>
+              <dl class="proj-meta">
+                <div><dt data-i18n="proj_objective_label">Objetivo</dt><dd data-i18n="proj_2_objective">Reunir projetos, jornada e contato em um endereço fixo, sem depender de backend.</dd></div>
+                <div><dt data-i18n="proj_tech_label">Tecnologias</dt><dd data-i18n="proj_2_tech">HTML, CSS e JavaScript</dd></div>
+                <div><dt data-i18n="proj_learned_label">O que aprendi</dt><dd data-i18n="proj_2_learned">HTML semântico, CSS, acessibilidade, i18n e publicação estática.</dd></div>
+                <div><dt data-i18n="proj_role_label">Minha participação</dt><dd data-i18n="proj_2_role">Autoria e manutenção do conteúdo, do design e do código.</dd></div>
+              </dl>
+              <p class="proj-links"><a class="proj-link" href="https://kayke-dados.github.io/kayke-hub/" target="_blank" rel="noopener" data-i18n="link_demo">ver no ar →</a><a class="proj-link" href="https://github.com/kayke-dados/kayke-hub" target="_blank" rel="noopener" data-i18n="link_repo">repositório →</a></p>
+            </div>
+          </article>
         </div>
-        <div class="contact-share">
-          <h3 class="sr-only" data-i18n="share_title">Compartilhar este cartão</h3>
-          <img class="qr" src="assets/qr-code.svg" alt="QR Code para este cartão digital" width="220" height="220" loading="lazy" data-i18n-alt="qr_alt" decoding="async" />
-          <div class="share-actions">
-            <button class="btn btn-solid" id="btn-copy" type="button" data-i18n="btn_copy">Copiar endereço</button>
-            <button class="btn" id="btn-share" type="button" data-i18n="btn_share">Compartilhar</button>
+
+        <div class="future">
+          <h3 data-i18n="future_title">Em desenvolvimento</h3>
+          <p data-i18n="future_intro">Ideias no radar, ainda sem código público.</p>
+          <ul class="future-list">
+            <li data-i18n="future_1">portfólio de dados</li>
+            <li data-i18n="future_2">projeto de análise de dados</li>
+            <li data-i18n="future_3">painel de indicadores</li>
+          </ul>
+        </div>
+
+        <div class="github">
+          <div class="github-head">
+            <h3 data-i18n="github_title">Do GitHub</h3>
+            <p data-i18n="github_intro">Repositórios públicos carregados direto da API do GitHub, com cache local e fallback para o link.</p>
           </div>
-          <p class="share-hint" data-i18n="share_hint">Escaneie o código ou copie o endereço.</p>
+          <div class="github-repos" id="github-repos" data-state="idle" aria-live="polite">
+            <p class="github-status" id="github-status" data-i18n="github_loading">Carregando repositórios públicos…</p>
+          </div>
+          <p class="github-all"><a href="https://github.com/kayke-dados?tab=repositories" target="_blank" rel="noopener" data-i18n="github_all">Ver todos no GitHub →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. jornada: etapas reais + Python Journey capítulo por capítulo -->
+    <section class="jornada" id="jornada" aria-labelledby="jornada-title">
+      <div class="section-inner">
+        <h2 id="jornada-title" data-i18n="jornada_title">Jornada</h2>
+        <p class="section-intro" data-i18n="jornada_intro">O caminho até aqui, sem datas inventadas: cinco capítulos concluídos e o sexto em andamento.</p>
+
+        <ol class="steps">
+          <li class="step">
+            <p class="step-line" data-i18n="step_1_title">Primeiro, os fundamentos.</p>
+            <p class="step-text" data-i18n="step_1_text">Capítulos 01 a 03: 53 exercícios de variáveis, condições e laços.</p>
+          </li>
+          <li class="step">
+            <p class="step-line" data-i18n="step_2_title">Depois, as estruturas.</p>
+            <p class="step-text" data-i18n="step_2_text">Capítulos 04 e 05: 23 exercícios de listas, tuplas e dicionários.</p>
+          </li>
+          <li class="step">
+            <p class="step-line" data-i18n="step_3_title">Agora, as funções.</p>
+            <p class="step-text" data-i18n="step_3_text">Capítulo 06: 9 de 10 exercícios resolvidos; o ex105 está em aberto.</p>
+          </li>
+          <li class="step">
+            <p class="step-line" data-i18n="step_4_title">O próximo passo.</p>
+            <p class="step-text" data-i18n="step_4_text">POO, bancos de dados e análise de dados. O objetivo é trabalhar com dados.</p>
+          </li>
+        </ol>
+
+        <div class="python-journey" id="python-journey" aria-labelledby="pj-title">
+          <div class="pj-head">
+            <h3 id="pj-title" data-i18n="pj_title">Python Journey</h3>
+            <p class="pj-total"><strong>85</strong> / 86 <span data-i18n="pj_total">exercícios resolvidos</span></p>
+          </div>
+          <p class="pj-intro" data-i18n="pj_intro">O registro completo, capítulo por capítulo. Os números são atualizados manualmente.</p>
+          <figure class="exercicios">
+            <img src="assets/art/exercicios.svg" alt="Faixa de 86 quadrados: 85 preenchidos e o último em aberto" width="900" height="190" loading="lazy" data-i18n-alt="art_exercises_alt" decoding="async" />
+            <figcaption data-i18n="art_exercises_caption">86 exercícios no Python-Journey: 85 resolvidos, 1 em aberto.</figcaption>
+          </figure>
+          <div class="progress" role="img" aria-label="85 de 86 exercícios resolvidos" data-i18n-aria="pj_progress_aria">
+            <span class="progress-fill"></span>
+          </div>
+          <figure class="mapa">
+            <img src="assets/art/mapa-jornada.svg" alt="Mapa de sete capítulos: cinco concluídos, o sexto em andamento e o sétimo reservado" width="1000" height="210" loading="lazy" data-i18n-alt="pj_map_alt" decoding="async" />
+            <figcaption data-i18n="pj_map_caption">Mapa dos capítulos: 5 concluídos, 06 em andamento, 07 reservado.</figcaption>
+          </figure>
+
+          <ol class="chapters">
+            <li class="chapter">
+              <div class="chapter-main">
+                <h4 data-i18n="chapter_1_name">Fundamentos</h4>
+                <p data-i18n="chapter_1_desc">Variáveis, tipos, operadores, entrada e saída.</p>
+              </div>
+              <div class="chapter-meta"><span class="chapter-count">12</span><span class="chapter-status" data-i18n="status_done">concluída</span></div>
+            </li>
+            <li class="chapter">
+              <div class="chapter-main">
+                <h4 data-i18n="chapter_2_name">Condições</h4>
+                <p data-i18n="chapter_2_desc">if, elif e else: decisões dentro do programa.</p>
+              </div>
+              <div class="chapter-meta"><span class="chapter-count">16</span><span class="chapter-status" data-i18n="status_done">concluída</span></div>
+            </li>
+            <li class="chapter">
+              <div class="chapter-main">
+                <h4 data-i18n="chapter_3_name">Laços e lógica</h4>
+                <p data-i18n="chapter_3_desc">for, while e break: repetição com critério.</p>
+              </div>
+              <div class="chapter-meta"><span class="chapter-count">25</span><span class="chapter-status" data-i18n="status_done">concluída</span></div>
+            </li>
+            <li class="chapter">
+              <div class="chapter-main">
+                <h4 data-i18n="chapter_4_name">Listas e tuplas</h4>
+                <p data-i18n="chapter_4_desc">Coleções, índices e desempacotamento.</p>
+              </div>
+              <div class="chapter-meta"><span class="chapter-count">18</span><span class="chapter-status" data-i18n="status_done">concluída</span></div>
+            </li>
+            <li class="chapter">
+              <div class="chapter-main">
+                <h4 data-i18n="chapter_5_name">Dicionários</h4>
+                <p data-i18n="chapter_5_desc">Estruturas chave-valor, métodos e iteração.</p>
+              </div>
+              <div class="chapter-meta"><span class="chapter-count">5</span><span class="chapter-status" data-i18n="status_done">concluída</span></div>
+            </li>
+            <li class="chapter is-current">
+              <div class="chapter-main">
+                <h4 data-i18n="chapter_6_name">Funções</h4>
+                <p data-i18n="chapter_6_desc">Parâmetros, retorno e escopo; falta o ex105.</p>
+              </div>
+              <div class="chapter-meta"><span class="chapter-count">9/10</span><span class="chapter-status" data-i18n="status_partial">em andamento</span></div>
+            </li>
+            <li class="chapter is-planned">
+              <div class="chapter-main">
+                <h4 data-i18n="chapter_7_name">Próximos</h4>
+                <p data-i18n="chapter_7_desc">POO, bancos de dados e análise de dados.</p>
+              </div>
+              <div class="chapter-meta"><span class="chapter-count">—</span><span class="chapter-status" data-i18n="status_planned">espaço reservado</span></div>
+            </li>
+          </ol>
+          <p class="pj-note" data-i18n="pj_note">Falta apenas um exercício (ex105) para concluir o capítulo 06; dados atualizados manualmente.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. atualmente: o que está aberto agora, sem currículo -->
+    <section class="agora" id="aprendendo" aria-labelledby="agora-title">
+      <div class="section-inner">
+        <h2 id="agora-title" data-i18n="agora_title">Atualmente</h2>
+        <p class="section-intro" data-i18n="agora_intro">O que está aberto agora, sem transformar estudo em currículo.</p>
+        <ul class="agora-list">
+          <li>
+            <h3 data-i18n="agora_1_title">Python · capítulo 06</h3>
+            <p data-i18n="agora_1_text">Parâmetros, retorno e escopo. O ex105 é o próximo exercício.</p>
+          </li>
+          <li>
+            <h3 data-i18n="agora_2_title">Lógica de programação</h3>
+            <p data-i18n="agora_2_text">Cada exercício do Python-Journey é uma pequena dose de lógica.</p>
+          </li>
+          <li>
+            <h3 data-i18n="agora_3_title">Análise de dados</h3>
+            <p data-i18n="agora_3_text">O objetivo. Os fundamentos entram depois de fechar a base de Python.</p>
+          </li>
+        </ul>
+        <div class="radar">
+          <h3 data-i18n="radar_title">No radar</h3>
+          <ul>
+            <li data-i18n="radar_1">POO</li>
+            <li data-i18n="radar_2">bancos de dados · SQLite</li>
+            <li data-i18n="radar_3">análise de dados</li>
+            <li data-i18n="radar_4">web · Flask/Django</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. diário: marcos reais, sem datas inventadas -->
+    <section class="diario" id="diario" aria-labelledby="diario-title">
+      <div class="section-inner">
+        <h2 id="diario-title" data-i18n="diario_title">Diário</h2>
+        <p class="section-intro" data-i18n="diario_intro">Marcos reais do aprendizado, sem datas inventadas. Novas entradas entram quando acontecem.</p>
+        <div class="diario-list">
+          <article class="entry">
+            <div class="entry-head">
+              <h3 data-i18n="diary_1_title">85 de 86 exercícios resolvidos</h3>
+              <span class="entry-subject" data-i18n="diary_1_subject">Python-Journey</span>
+            </div>
+            <p data-i18n="diary_1_summary">O capítulo 06 chegou a 9 de 10 exercícios; falta o ex105.</p>
+            <p class="entry-learned"><span data-i18n="diary_learned_label">O que aprendi:</span> <span data-i18n="diary_1_learned">Funções com parâmetros opcionais e retorno.</span></p>
+            <p><a href="https://github.com/kayke-dados/Python-Journey" target="_blank" rel="noopener" data-i18n="diary_link">ver no repositório →</a></p>
+          </article>
+          <article class="entry">
+            <div class="entry-head">
+              <h3 data-i18n="diary_2_title">Capítulo 05 concluído: dicionários</h3>
+              <span class="entry-subject" data-i18n="diary_2_subject">Python</span>
+            </div>
+            <p data-i18n="diary_2_summary">Cinco exercícios fecharam o capítulo de dicionários.</p>
+            <p class="entry-learned"><span data-i18n="diary_learned_label">O que aprendi:</span> <span data-i18n="diary_2_learned">Estruturas chave-valor, métodos e iteração.</span></p>
+            <p><a href="https://github.com/kayke-dados/Python-Journey" target="_blank" rel="noopener" data-i18n="diary_link">ver no repositório →</a></p>
+          </article>
+          <article class="entry">
+            <div class="entry-head">
+              <h3 data-i18n="diary_3_title">Kayke Hub no ar</h3>
+              <span class="entry-subject" data-i18n="diary_3_subject">Web</span>
+            </div>
+            <p data-i18n="diary_3_summary">O site foi publicado no GitHub Pages como página estática.</p>
+            <p class="entry-learned"><span data-i18n="diary_learned_label">O que aprendi:</span> <span data-i18n="diary_3_learned">HTML semântico, CSS, JavaScript puro e publicação no Pages.</span></p>
+            <p><a href="https://kayke-dados.github.io/kayke-hub/" target="_blank" rel="noopener" data-i18n="diary_link_live">ver no ar →</a></p>
+          </article>
+        </div>
+        <p class="diario-note" data-i18n="diario_note">Sem comentários, curtidas ou banco de dados: só o registro do que aconteceu.</p>
+      </div>
+    </section>
+
+    <!-- 7. contato: o e-mail como tipo display + compartilhar -->
+    <section class="contato" id="contato" aria-labelledby="contact-title">
+      <div class="section-inner">
+        <div class="contact-top">
+          <h2 id="contact-title" data-i18n="contact_title">Vamos conversar.</h2>
+          <p class="contact-intro" data-i18n="contact_intro">Aberto a conversas sobre Python, dados e aprendizado.</p>
+        </div>
+        <a class="contact-email" href="mailto:kayke0812@proton.me"><span>kayke0812</span><span>@proton.me</span></a>
+        <div class="contact-bottom">
+          <div class="contact-links">
+            <a href="https://github.com/kayke-dados" target="_blank" rel="noopener"><span class="contact-name" data-i18n="link_github">GitHub</span><span class="contact-desc" data-i18n="link_github_desc">/kayke-dados</span></a>
+            <a href="https://www.instagram.com/kayke.dados/" target="_blank" rel="noopener"><span class="contact-name" data-i18n="link_instagram">Instagram</span><span class="contact-desc" data-i18n="link_instagram_desc">@kayke.dados</span></a>
+            <a href="mailto:kayke0812@proton.me"><span class="contact-name" data-i18n="link_email">E-mail</span><span class="contact-desc" data-i18n="link_email_desc">kayke0812@proton.me</span></a>
+          </div>
+          <div class="contact-share">
+            <h3 class="sr-only" data-i18n="share_title">Compartilhar este site</h3>
+            <img class="qr" src="assets/qr-code.svg" alt="QR Code para este site" width="220" height="220" loading="lazy" data-i18n-alt="qr_alt" decoding="async" />
+            <div class="share-actions">
+              <button class="btn btn-solid" id="btn-copy" type="button" data-i18n="btn_copy">Copiar endereço</button>
+              <button class="btn" id="btn-share" type="button" data-i18n="btn_share">Compartilhar</button>
+            </div>
+            <p class="share-hint" data-i18n="share_hint">Escaneie o código ou copie o endereço.</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="footer-inner">
-      <img class="footer-art" src="assets/art/exercicios.svg" alt="" width="900" height="190" loading="lazy" />
-      <p class="footer-brand">Kayke Hub</p>
-      <nav class="footer-links" aria-label="Links do rodapé" data-i18n-aria="footer_nav_label">
-        <a href="#inicio" data-i18n="nav_home">Início</a>
-        <a href="#jornada" data-i18n="nav_journey">Jornada</a>
-        <a href="#projetos" data-i18n="nav_projects">Projetos</a>
-      </nav>
-      <p class="footer-note"><span data-i18n="footer_note">feito no ritmo de quem está aprendendo · </span><span id="year">2026</span></p>
-      <p class="ai-note" data-i18n="ai_note">Código deste site desenvolvido com 100% de auxílio de inteligência artificial — <a href="https://github.com/kayke-dados/kayke-hub" target="_blank" rel="noopener">documentado no repositório</a>.</p>
+    <div class="section-inner">
+      <p class="footer-name">Kayke Hub</p>
+      <div class="footer-grid">
+        <nav class="footer-links" aria-label="Links do rodapé" data-i18n-aria="footer_nav_label">
+          <a href="#inicio" data-i18n="nav_home">Início</a>
+          <a href="#sobre" data-i18n="nav_about">Sobre</a>
+          <a href="#projetos" data-i18n="nav_projects">Projetos</a>
+          <a href="#jornada" data-i18n="nav_journey">Jornada</a>
+          <a href="#diario" data-i18n="nav_diary">Diário</a>
+          <a href="#contato" data-i18n="nav_contact">Contato</a>
+        </nav>
+        <div class="footer-meta">
+          <p class="footer-note"><span data-i18n="footer_note">feito no ritmo de quem está aprendendo · </span><span id="year">2026</span></p>
+          <p class="ai-note" data-i18n="ai_note">Código deste site desenvolvido com 100% de auxílio de inteligência artificial, <a href="https://github.com/kayke-dados/kayke-hub" target="_blank" rel="noopener">documentado no repositório</a>.</p>
+          <a class="back-top" href="#inicio" data-i18n="back_top">Voltar ao topo ↑</a>
+        </div>
+      </div>
     </div>
   </footer>
 
