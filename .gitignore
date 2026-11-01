@@ -1,7 +1,6 @@
 __pycache__/
 *.pyc
+.pytest_cache/
 .taste-skill/
 .superpowers/
-
-# pacote de entrega local (gerado por tools/make_zip.py)
-kayke-dados-cartao-digital.zip
+.vercel/

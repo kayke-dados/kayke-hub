@@ -1,10 +1,13 @@
-"""Geração de assets estáticos do cartão (tooling, sem deps rígidas).
+"""Geração de assets estáticos do Kayke Hub (tooling, sem deps rígidas).
 
-Ruling (ledger Task 1): Pillow não compila em Android/arm64 → og-image usa
-escritor PNG puro-Python (zlib + struct). Avatar baixado direto do GitHub.
-Favicon/QR em SVG (segno puro-Python).
+Lê a URL de produção diretamente de `js/main.js` (fonte única). Assim, ao trocar
+o endereço do site, basta editar o JS e rodar este script de novo.
+
+Sem Pillow: og-image usa escritor PNG puro-Python (zlib + struct). Avatar é
+baixado do GitHub. Favicon e QR são SVG (segno puro-Python).
 """
 import os
+import re
 import struct
 import urllib.request
 import zlib
@@ -13,14 +16,25 @@ import segno
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS = os.path.join(ROOT, "assets")
+MAIN_JS = os.path.join(ROOT, "js", "main.js")
 
-SITE_URL = "https://kayke-dados.github.io/kayke-hub/"
 AVATAR_URL = "https://avatars.githubusercontent.com/u/318036195?s=400&v=4"
 
-BG = (0x14, 0x14, 0x14)
+BG = (0x0B, 0x0E, 0x0C)
+SURFACE = (0x17, 0x1C, 0x18)
 WHITE = (0xFF, 0xFF, 0xFF)
-ACCENT = (0x9B, 0x8A, 0xC4)
-TEXT = (0xE0, 0xD7, 0xFF)
+ACCENT = (0xB9, 0xD9, 0x82)
+ACCENT_2 = (0x84, 0x9D, 0x68)
+TEXT = (0xF0, 0xF1, 0xE9)
+MUTED = (0xA3, 0xAA, 0xA1)
+
+
+def read_site_url():
+    with open(MAIN_JS, encoding="utf-8") as f:
+        match = re.search(r'const SITE_URL = "([^"]+)";', f.read())
+    if not match:
+        raise SystemExit("SITE_URL não encontrado em js/main.js")
+    return match.group(1)
 
 
 def download_avatar(dest):
@@ -30,18 +44,19 @@ def download_avatar(dest):
 def write_favicon(dest):
     svg = (
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
-        '<rect width="64" height="64" rx="12" fill="#141414"/>'
-        '<text x="32" y="44" font-family="monospace" font-size="30" '
-        'font-weight="700" fill="#9b8ac4" text-anchor="middle">K.</text>'
+        '<rect width="64" height="64" rx="10" fill="#0B0E0C"/>'
+        '<rect x="6" y="6" width="52" height="52" rx="8" fill="none" stroke="#293129"/>'
+        '<text x="32" y="45" font-family="monospace" font-size="30" '
+        'font-weight="700" fill="#B9D982" text-anchor="middle">K</text>'
         "</svg>"
     )
     with open(dest, "w", encoding="utf-8") as f:
         f.write(svg)
 
 
-def write_qr(dest):
-    qr = segno.make(SITE_URL, error="m")
-    qr.save(dest, kind="svg", scale=20, border=4, dark="#141414", light="#ffffff")
+def write_qr(dest, site_url):
+    qr = segno.make(site_url, error="m")
+    qr.save(dest, kind="svg", scale=20, border=4, dark="#0B0E0C", light="#ffffff")
     with open(dest, encoding="utf-8") as f:
         content = f.read()
     content = content.replace(
@@ -50,6 +65,42 @@ def write_qr(dest):
     )
     with open(dest, "w", encoding="utf-8") as f:
         f.write(content)
+
+
+# Fonte 5x7 mínima (só o necessário para a imagem social).
+FONT = {
+    " ": ["00000"] * 7,
+    "·": ["00000", "00000", "00100", "00100", "00100", "00000", "00000"],
+    "A": ["01110", "10001", "10001", "11111", "10001", "10001", "10001"],
+    "D": ["11110", "10001", "10001", "10001", "10001", "10001", "11110"],
+    "E": ["11111", "10000", "10000", "11110", "10000", "10000", "11111"],
+    "H": ["10001", "10001", "10001", "11111", "10001", "10001", "10001"],
+    "K": ["10001", "10010", "10100", "11000", "10100", "10010", "10001"],
+    "N": ["10001", "11001", "11001", "10101", "10011", "10011", "10001"],
+    "O": ["01110", "10001", "10001", "10001", "10001", "10001", "01110"],
+    "P": ["11110", "10001", "10001", "11110", "10000", "10000", "10000"],
+    "S": ["01111", "10000", "10000", "01110", "00001", "00001", "11110"],
+    "T": ["11111", "00100", "00100", "00100", "00100", "00100", "00100"],
+    "Y": ["10001", "10001", "01010", "00100", "00100", "00100", "00100"],
+}
+
+
+def text_width(text, scale, spacing=1):
+    return len(text) * 5 * scale + (len(text) - 1) * spacing * scale
+
+
+def draw_text(pix, text, x, y, scale, color, spacing=1):
+    cursor = x
+    for char in text.upper():
+        glyph = FONT.get(char)
+        if glyph:
+            for row, bits in enumerate(glyph):
+                for col, bit in enumerate(bits):
+                    if bit == "1":
+                        px = cursor + col * scale
+                        py = y + row * scale
+                        _rect(pix, px, py, px + scale, py + scale, color)
+        cursor += 5 * scale + spacing * scale
 
 
 def _png_chunks(width, height, rows):
@@ -75,25 +126,30 @@ def _rect(pix, x0, y0, x1, y1, color):
             row[x] = color
 
 
-def generate_og(dest, width=1200, height=630):
-    qr = segno.make(SITE_URL, error="m")
+def generate_og(dest, site_url, width=1200, height=630):
+    qr = segno.make(site_url, error="m")
     matrix = list(qr.matrix)
-    mod = 7
+    mod = 5
     quiet = 4 * mod
     qr_size = (len(matrix) + 8) * mod
-    x0 = 80
-    y0 = (height - qr_size) // 2
+    qr_x = width - 90 - qr_size
+    qr_y = (height - qr_size) // 2
 
     pix = [[BG for _ in range(width)] for _ in range(height)]
-    _rect(pix, 0, 0, 40, height, ACCENT)
-    _rect(pix, x0, y0, x0 + qr_size, y0 + qr_size, WHITE)
+    _rect(pix, 0, 0, 12, height, ACCENT)
+
+    draw_text(pix, "KAYKE", 90, 168, 22, TEXT)
+    _rect(pix, 90, 356, 90 + text_width("KAYKE", 22), 364, ACCENT)
+    draw_text(pix, "PYTHON · DADOS", 90, 400, 8, MUTED)
+    draw_text(pix, "PORTFOLIO EM CONSTRUCAO", 90, 470, 6, ACCENT_2)
+
+    _rect(pix, qr_x - 16, qr_y - 16, qr_x + qr_size + 16, qr_y + qr_size + 16, WHITE)
     for r, row in enumerate(matrix):
         for c, dark in enumerate(row):
             if dark:
-                px = x0 + quiet + c * mod
-                py = y0 + quiet + r * mod
+                px = qr_x + quiet + c * mod
+                py = qr_y + quiet + r * mod
                 _rect(pix, px, py, px + mod, py + mod, BG)
-    _rect(pix, x0 - 2, y0 + qr_size + 48, x0 + qr_size + 2, y0 + qr_size + 54, ACCENT)
 
     rows = []
     for y in range(height):
@@ -106,8 +162,9 @@ def generate_og(dest, width=1200, height=630):
 
 
 if __name__ == "__main__":
+    site_url = read_site_url()
     download_avatar(os.path.join(ASSETS, "avatar.png"))
     write_favicon(os.path.join(ASSETS, "favicon.svg"))
-    write_qr(os.path.join(ASSETS, "qr-code.svg"))
-    generate_og(os.path.join(ASSETS, "og-image.png"))
-    print("assets gerados em", ASSETS)
+    write_qr(os.path.join(ASSETS, "qr-code.svg"), site_url)
+    generate_og(os.path.join(ASSETS, "og-image.png"), site_url)
+    print("assets gerados em", ASSETS, "para", site_url)

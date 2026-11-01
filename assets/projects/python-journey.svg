@@ -1,112 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="Capa ilustrada do Python-Journey com a árvore de capítulos e 85 de 86 exercícios">
-  <title>Capa ilustrada do Python-Journey com a árvore de capítulos e 85 de 86 exercícios</title>
-  <rect width="1200" height="675" fill="#202020"/>
-  <rect x="0.75" y="0.75" width="1198.5" height="673.5" fill="none" stroke="#343434" stroke-width="1.5"/>
-  <rect x="0" y="0" width="10" height="675" fill="#9B8AC4"/>
-  <text x="56" y="66" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="2" fill="#A6A29C">REPOSITÓRIO · PYTHON-JOURNEY</text>
-  <text x="56" y="204" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="104" font-weight="800" letter-spacing="-4" fill="#F5F3EF">Python</text>
-  <text x="56" y="300" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="104" font-weight="800" letter-spacing="-4" fill="#9B8AC4">Journey</text>
-  <text x="56" y="356" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" fill="#F5F3EF">85/86 exercícios resolvidos</text>
-  <text x="56" y="392" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" fill="#A6A29C">6 capítulos + 1 reservado</text>
-  <line x1="56" y1="438" x2="560" y2="438" stroke="#343434"/>
-  <text x="56" y="486" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="17" fill="#A6A29C">um registro honesto, na ordem em que aprendi.</text>
-  <rect x="650" y="66" width="500" height="540" rx="8" fill="#141414" stroke="#343434"/>
-  <text x="700" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="1.4" fill="#A6A29C">06-funcoes /</text>
-  <line x1="700" y1="132" x2="1100" y2="132" stroke="#343434"/>
-  <text x="700" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" fill="#F5F3EF">01-fundamentos</text>
-  <text x="700" y="204" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" fill="#F5F3EF">02-condicoes</text>
-  <text x="700" y="240" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" fill="#F5F3EF">03-lacos-e-logica</text>
-  <text x="700" y="276" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" fill="#F5F3EF">04-listas-e-tuplas</text>
-  <text x="700" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" fill="#F5F3EF">05-dicionarios</text>
-  <text x="700" y="348" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" fill="#9B8AC4">06-funcoes</text>
-  <text x="724" y="384" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" fill="#A6A29C">Ex104 - Validar Inteiro.py</text>
-  <text x="724" y="420" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" fill="#A6A29C">ex105.py</text>
-  <text x="700" y="540" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#A6A29C">ex105 ainda em aberto</text>
-  <circle cx="700" cy="566" r="4" fill="#9B8AC4"/>
-  <rect x="56" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="67" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="78" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="89" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="100" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="111" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="122" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="133" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="144" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="155" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="166" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="177" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="188" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="199" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="210" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="221" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="232" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="243" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="254" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="265" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="276" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="287" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="298" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="309" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="320" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="331" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="342" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="353" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="364" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="375" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="386" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="397" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="408" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="419" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="430" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="441" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="452" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="463" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="474" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="485" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="496" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="507" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="518" y="552" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="56" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="67" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="78" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="89" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="100" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="111" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="122" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="133" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="144" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="155" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="166" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="177" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="188" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="199" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="210" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="221" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="232" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="243" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="254" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="265" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="276" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="287" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="298" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="309" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="320" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="331" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="342" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="353" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="364" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="375" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="386" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="397" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="408" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="419" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="430" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="441" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="452" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="463" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="474" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="485" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="496" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="507" y="563" width="8" height="8" rx="1" fill="#9B8AC4" opacity="0.8"/>
-  <rect x="518" y="563" width="8" height="8" rx="1" fill="none" stroke="#9B8AC4" stroke-width="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Python-Journey: 87 de 87 exercícios em 6 capítulos">
+  <defs>
+    <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#849D68"/>
+      <stop offset="1" stop-color="#B9D982"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="#0B0E0C"/>
+  <rect x="0" y="0" width="14" height="675" fill="#B9D982"/>
+  <g font-family="'JetBrains Mono','SFMono-Regular',monospace" fill="#A3AAA1">
+    <text x="72" y="96" font-size="22" letter-spacing="6" fill="#849D68">PYTHON-JOURNEY</text>
+    <text x="72" y="140" font-size="22" letter-spacing="2">CURSO EM VÍDEO · EM CAPÍTULOS</text>
+  </g>
+  <text x="72" y="290" font-family="'Manrope','Segoe UI',sans-serif" font-size="150" font-weight="800" fill="#F0F1E9" letter-spacing="-6">87<tspan font-size="60" fill="#A3AAA1"> / 87</tspan></text>
+  <text x="72" y="346" font-family="'Inter','Segoe UI',sans-serif" font-size="30" fill="#A3AAA1">exercícios resolvidos, organizados por capítulo</text>
+  <g transform="translate(72 430)">
+    <g fill="url(#bar)">
+      <rect x="0" y="78" width="54" height="94"/>
+      <rect x="110" y="52" width="54" height="120"/>
+      <rect x="220" y="0" width="54" height="172"/>
+      <rect x="330" y="36" width="54" height="136"/>
+      <rect x="440" y="146" width="54" height="26"/>
+      <rect x="550" y="88" width="54" height="84"/>
+    </g>
+    <g font-family="'JetBrains Mono',monospace" font-size="22" fill="#A3AAA1" text-anchor="middle">
+      <text x="27" y="212">12</text>
+      <text x="137" y="212">16</text>
+      <text x="247" y="212">25</text>
+      <text x="357" y="212">18</text>
+      <text x="467" y="212">5</text>
+      <text x="577" y="212">11</text>
+    </g>
+  </g>
+  <g font-family="'Inter','Segoe UI',sans-serif" font-size="22" fill="#A3AAA1">
+    <text x="820" y="470">06-funcoes / Ex105 — funções</text>
+    <text x="820" y="506" fill="#849D68">aprendizado em público</text>
+  </g>
+  <rect x="820" y="530" width="308" height="2" fill="#293129"/>
 </svg>
