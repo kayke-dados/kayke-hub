@@ -16,7 +16,7 @@ O site deixa de ser "o caderno" (v7) e passa a ser **editorial quiet tech**: fun
 - **Python-Journey:** 87 exercícios, 6 capítulos concluídos, capítulo 07 reservado.
   - 01 Fundamentos 12 · 02 Condições 16 · 03 Laços e lógica 25 · 04 Listas e tuplas 18 · 05 Dicionários 5 · 06 Funções 11.
 - **Repositórios públicos:** apenas `Python-Journey`, `kayke-dados` (perfil) e `kayke-hub`.
-- **CalculaFood** e **Marca Aí:** não há repositório público. Entram como "em desenvolvimento", com a descrição dada pelo autor, sem link e sem tecnologia inventada.
+- **Projetos no portfólio:** apenas Python-Journey e Kayke Hub, ambos públicos e com link.
 - **Contato real:** GitHub `/kayke-dados`, Instagram `@kayke.dados`, e-mail `kayke0812@proton.me`.
 
 ## Não-objetivos
@@ -55,7 +55,7 @@ Carregadas via Google Fonts com `preconnect` e `display=swap`.
 2. **Hero** — `KAYKE — PERSONAL PORTFOLIO`, "Construindo minha trajetória na tecnologia.", descrição, "Consistência > intensidade.", CTAs e elemento visual de dados.
 3. **Sobre** — texto do autor + características (aprendizado contínuo, curiosidade, organização).
 4. **Jornada** — três blocos: conheço / estudando / objetivos, mais o painel real do Python-Journey (87/87, capítulos).
-5. **Projetos** — Python-Journey, Kayke Hub (links), CalculaFood e Marca Aí (em desenvolvimento, sem link), em composições diferentes.
+5. **Projetos** — Python-Journey e Kayke Hub, em cards largos alternados (texto e capa).
 6. **Objetivos** — 6 passos futuros, marcados como futuros.
 7. **Contato** — GitHub, Instagram, e-mail; QR, copiar endereço, compartilhar.
 8. **Rodapé** — Kayke, ano automático, redes, navegação secundária e nota de transparência sobre IA.

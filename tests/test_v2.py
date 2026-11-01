@@ -45,12 +45,13 @@ class TestConteudoQuietTech(unittest.TestCase):
         self.assertIn("contagem conferida nos arquivos em 01/11/2026", HTML)
         self.assertNotIn("tempo real", HTML)
 
-    def test_quatro_projetos(self):
+    def test_dois_projetos(self):
         self.assertIn('id="projetos"', HTML)
-        for name in ("proj_1_name", "proj_2_name", "proj_3_name", "proj_4_name"):
+        for name in ("proj_1_name", "proj_2_name"):
             self.assertIn(f'data-i18n="{name}"', HTML)
         self.assertIn("https://github.com/kayke-dados/Python-Journey", HTML)
-        self.assertEqual(HTML.count("Sem repositório público"), 2)
+        for gone in ("CalculaFood", "Marca Aí", "proj_3_name", "proj_4_name"):
+            self.assertNotIn(gone, HTML)
 
     def test_contato_com_email_qr_e_compartilhar(self):
         self.assertIn('id="contato"', HTML)

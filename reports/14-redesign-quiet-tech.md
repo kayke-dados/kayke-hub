@@ -19,7 +19,7 @@ O Kayke Hub deixou de ser "o caderno de exercícios" (v7) e passou a ser um port
 - **Estrutura nova:** Início, Sobre, Jornada (conheço / estudando / objetivos + painel Python-Journey), Projetos, Objetivos e Contato.
 - **Hero editorial** com identificador, título em duas linhas, frase "Consistência > intensidade." e um painel de barras com a contagem real dos capítulos.
 - **Dados atualizados:** 85/86 → **87/87**; 5 → **6 capítulos**; removido o "ex105 em aberto"; data de conferência visível.
-- **Quatro projetos:** Python-Journey e Kayke Hub com links; CalculaFood e Marca Aí como ideias em desenvolvimento, **sem link ou tecnologia inventada**.
+- **Dois projetos:** Python-Journey e Kayke Hub, ambos públicos e com link. O portfólio ficou mais enxuto e verdadeiro.
 - **Barras de domínio removidas:** a jornada mostra o que já existe, o que está em estudo e metas futuras, sem percentuais falsos.
 - **Sem "Diário":** a estrutura pedida no prompt não inclui essa seção; o registro de evolução permanece no Python-Journey.
 
