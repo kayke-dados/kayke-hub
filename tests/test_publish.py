@@ -18,8 +18,9 @@ class TestPublishFiles(unittest.TestCase):
         ):
             self.assertIn(path, TRACKED, f"{path} não rastreado")
 
-    def test_original_prompt_tracked(self):
-        self.assertIn("prompt.md", TRACKED)
+    def test_no_internal_prompt_tracked(self):
+        """O prompt interno não faz parte da apresentação pública."""
+        self.assertNotIn("prompt.md", TRACKED)
 
     def test_no_pycache_tracked(self):
         self.assertFalse([p for p in TRACKED if "__pycache__" in p])
