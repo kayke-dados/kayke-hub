@@ -8,6 +8,7 @@ AVATAR = os.path.join(ROOT, "assets", "avatar.png")
 FAVICON = os.path.join(ROOT, "assets", "favicon.svg")
 QR = os.path.join(ROOT, "assets", "qr-code.svg")
 OG = os.path.join(ROOT, "assets", "og-image.png")
+BANNER = os.path.join(ROOT, "assets", "readme", "banner.svg")
 
 
 class TestAssets(unittest.TestCase):
@@ -26,6 +27,13 @@ class TestAssets(unittest.TestCase):
 
     def test_og_image_exists(self):
         self.assertTrue(os.path.isfile(OG), "assets/og-image.png faltando")
+
+    def test_readme_banner_is_svg(self):
+        self.assertTrue(os.path.isfile(BANNER), "assets/readme/banner.svg faltando")
+        with open(BANNER, encoding="utf-8") as f:
+            content = f.read()
+        self.assertIn("<svg", content)
+        self.assertIn("Kayke", content)
 
     @unittest.skipUnless(helpers.have_pillow(), "Pillow indisponível")
     def test_image_dimensions(self):

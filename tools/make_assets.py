@@ -82,6 +82,13 @@ FONT = {
     "S": ["01111", "10000", "10000", "01110", "00001", "00001", "11110"],
     "T": ["11111", "00100", "00100", "00100", "00100", "00100", "00100"],
     "Y": ["10001", "10001", "01010", "00100", "00100", "00100", "00100"],
+    "C": ["01110", "10001", "10000", "10000", "10000", "10001", "01110"],
+    "F": ["11111", "10000", "10000", "11110", "10000", "10000", "10000"],
+    "I": ["11111", "00100", "00100", "00100", "00100", "00100", "11111"],
+    "L": ["10000", "10000", "10000", "10000", "10000", "10000", "11111"],
+    "M": ["10001", "11011", "10101", "10101", "10001", "10001", "10001"],
+    "R": ["11110", "10001", "10001", "11110", "10100", "10010", "10001"],
+    "U": ["10001", "10001", "10001", "10001", "10001", "10001", "01110"],
 }
 
 
@@ -93,13 +100,14 @@ def draw_text(pix, text, x, y, scale, color, spacing=1):
     cursor = x
     for char in text.upper():
         glyph = FONT.get(char)
-        if glyph:
-            for row, bits in enumerate(glyph):
-                for col, bit in enumerate(bits):
-                    if bit == "1":
-                        px = cursor + col * scale
-                        py = y + row * scale
-                        _rect(pix, px, py, px + scale, py + scale, color)
+        if glyph is None:
+            raise ValueError(f"caractere sem glifo na fonte 5x7: {char!r}")
+        for row, bits in enumerate(glyph):
+            for col, bit in enumerate(bits):
+                if bit == "1":
+                    px = cursor + col * scale
+                    py = y + row * scale
+                    _rect(pix, px, py, px + scale, py + scale, color)
         cursor += 5 * scale + spacing * scale
 
 
@@ -141,7 +149,7 @@ def generate_og(dest, site_url, width=1200, height=630):
     draw_text(pix, "KAYKE", 90, 168, 22, TEXT)
     _rect(pix, 90, 356, 90 + text_width("KAYKE", 22), 364, ACCENT)
     draw_text(pix, "PYTHON · DADOS", 90, 400, 8, MUTED)
-    draw_text(pix, "PORTFOLIO EM CONSTRUCAO", 90, 470, 6, ACCENT_2)
+    draw_text(pix, "PORTFOLIO EM CONSTRUCAO", 90, 470, 6, ACCENT)
 
     _rect(pix, qr_x - 16, qr_y - 16, qr_x + qr_size + 16, qr_y + qr_size + 16, WHITE)
     for r, row in enumerate(matrix):
