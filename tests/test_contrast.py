@@ -5,8 +5,8 @@ import unittest
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSS = os.path.join(ROOT, "css", "style.css")
 
-BG = (0x14, 0x14, 0x14)
-SURFACE = (0x20, 0x20, 0x20)
+BG = (0x0B, 0x0E, 0x0C)
+SURFACE = (0x17, 0x1C, 0x18)
 
 
 def hex_to_rgb(value):
@@ -32,10 +32,7 @@ def token(name):
     with open(CSS, encoding="utf-8") as f:
         css = f.read()
     return hex_to_rgb(
-        re.search(
-            re.escape(name) + r": (#([0-9a-fA-F]{6}))(?![0-9a-fA-F])", css
-        ).group(1)
-        .lower()
+        re.search(re.escape(name) + r": (#([0-9a-fA-F]{6}))(?![0-9a-fA-F])", css).group(1).lower()
     )
 
 
@@ -44,8 +41,8 @@ class TestContrast(unittest.TestCase):
         self.assertGreater(contrast(token("--text"), BG), 4.5)
 
     def test_muted_token_readable_over_ground_and_panel(self):
-        """--muted é usado em texto pequeno: precisa passar 4.5:1 sobre o ground
-        sólido e sobre o painel --surface."""
+        """--muted é usado em texto pequeno: precisa passar 4.5:1 sobre o
+        ground e sobre o painel --surface."""
         muted = token("--muted")
         self.assertGreaterEqual(contrast(muted, BG), 4.5)
         self.assertGreaterEqual(contrast(muted, SURFACE), 4.5)
@@ -56,11 +53,11 @@ class TestContrast(unittest.TestCase):
         self.assertGreaterEqual(contrast(accent, SURFACE), 4.5)
 
     def test_solid_button_text(self):
-        """Botão sólido: texto do ground sobre o ametista."""
+        """Botão primário: texto do ground sobre o verde."""
         self.assertGreater(contrast(BG, token("--accent")), 4.5)
 
     def test_accent_hover_still_readable(self):
-        self.assertGreater(contrast(BG, token("--accent-hover")), 4.5)
+        self.assertGreater(contrast(BG, token("--accent-2")), 4.5)
 
 
 if __name__ == "__main__":

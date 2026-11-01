@@ -100,7 +100,7 @@ class TestHtml(unittest.TestCase):
     def test_data_i18n_present(self):
         _, p = collect()
         self.assertGreaterEqual(len(p.i18n_keys), 20)
-        self.assertIn("tagline", p.i18n_keys)
+        self.assertIn("hero_kicker", p.i18n_keys)
 
     def test_relative_asset_paths(self):
         raw, _ = collect()
@@ -115,15 +115,15 @@ if __name__ == "__main__":
 
 class TestReviewFixes(unittest.TestCase):
     def test_brand_fonts_are_really_loaded(self):
-        """v3: as fontes da nova identidade precisam de <link> real do Google Fonts."""
+        """As fontes da identidade Quiet Tech precisam de <link> real do Google Fonts."""
         raw, _ = collect()
-        self.assertIn("family=IBM+Plex+Mono", raw)
         self.assertIn("family=Manrope", raw)
+        self.assertIn("family=Inter", raw)
+        self.assertIn("family=JetBrains+Mono", raw)
         self.assertIn("display=swap", raw)
 
-    def test_year_span_outside_i18n_span(self):
-        """I2: o <span id=year> não pode ser filho do elemento data-i18n footer_note."""
+    def test_year_exists_and_is_not_i18n_content(self):
+        """O <span id=year> é preenchido pelo JS e não guarda texto traduzível."""
         raw, _ = collect()
-        m = re.search(r'<span data-i18n="footer_note">(.*?)</span>', raw, re.S)
-        self.assertIsNotNone(m)
-        self.assertNotIn('id="year"', m.group(0))
+        self.assertIn('id="year"', raw)
+        self.assertNotIn('data-i18n="year"', raw)

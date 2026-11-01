@@ -48,7 +48,7 @@ class TestI18n(unittest.TestCase):
     def test_required_features_textually(self):
         with open(MAIN, encoding="utf-8") as f:
             src = f.read()
-        for token in ("navigator.clipboard", "execCommand('copy')", "navigator.share", "localStorage", "documentElement.lang"):
+        for token in ("navigator.clipboard", 'execCommand("copy")', "navigator.share", "localStorage", "documentElement.lang"):
             self.assertIn(token, src, f"estrutura ausente: {token}")
 
     def test_en_dict_values_are_all_words(self):

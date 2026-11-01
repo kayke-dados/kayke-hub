@@ -6,14 +6,14 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSS_PATH = os.path.join(ROOT, "css", "style.css")
 
 TOKENS = {
-    "--bg": "#141414",
-    "--surface": "#202020",
-    "--accent": "#9B8AC4",
-    "--accent-hover": "#B0A0D0",
-    "--muted": "#A6A29C",
-    "--text": "#F5F3EF",
-    "--ink": "#F5F3EF",
-    "--border": "#343434",
+    "--bg": "#0B0E0C",
+    "--bg-2": "#111612",
+    "--surface": "#171C18",
+    "--border": "#293129",
+    "--text": "#F0F1E9",
+    "--muted": "#A3AAA1",
+    "--accent": "#B9D982",
+    "--accent-2": "#849D68",
 }
 
 
@@ -33,6 +33,12 @@ class TestCss(unittest.TestCase):
         for var, value in TOKENS.items():
             self.assertIn(f"{var}: {value}", css, f"token {var} com valor errado")
 
+    def test_font_stacks(self):
+        css = css_text()
+        self.assertIn('--display: "Manrope"', css)
+        self.assertIn('--sans: "Inter"', css)
+        self.assertIn('--mono: "JetBrains Mono"', css)
+
     def test_prefers_reduced_motion(self):
         self.assertIn("prefers-reduced-motion", css_text())
 
@@ -48,13 +54,17 @@ class TestCss(unittest.TestCase):
     def test_focus_visible(self):
         self.assertRegex(css_text(), r"focus-visible")
 
-    def test_botao_solido_usa_texto_do_ground_no_hover(self):
+    def test_botao_primario_usa_texto_do_ground_no_hover(self):
         css = css_text()
-        m = re.search(r"\.btn-solid:hover,[^{]*\{([^}]*)\}", css)
-        self.assertIsNotNone(m, "regra .btn-solid:hover ausente")
-        self.assertIn("color: var(--bg)", m.group(1), "hover do botão sólido precisa de texto do ground (contraste AA)")
+        m = re.search(r"\.btn-primary:hover,[^{]*\{([^}]*)\}", css)
+        self.assertIsNotNone(m, "regra .btn-primary:hover ausente")
+        self.assertIn("color: var(--bg)", m.group(1), "hover do botão primário precisa de texto do ground (contraste AA)")
 
     def test_menu_mobile_tem_fallback_sem_js(self):
         css = css_text()
         self.assertIn(".js .nav-toggle", css)
-        self.assertIn(".js .nav-menu", css)
+        self.assertIn(".js .primary-nav", css)
+
+
+if __name__ == "__main__":
+    unittest.main()
