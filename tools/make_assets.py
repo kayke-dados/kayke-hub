@@ -20,13 +20,13 @@ MAIN_JS = os.path.join(ROOT, "js", "main.js")
 
 AVATAR_URL = "https://avatars.githubusercontent.com/u/318036195?s=400&v=4"
 
-BG = (0x0B, 0x0E, 0x0C)
-SURFACE = (0x17, 0x1C, 0x18)
+BG = (0x0B, 0x0D, 0x12)
+SURFACE = (0x15, 0x1A, 0x24)
 WHITE = (0xFF, 0xFF, 0xFF)
-ACCENT = (0xB9, 0xD9, 0x82)
-ACCENT_2 = (0x84, 0x9D, 0x68)
-TEXT = (0xF0, 0xF1, 0xE9)
-MUTED = (0xA3, 0xAA, 0xA1)
+ACCENT = (0xA7, 0x8B, 0xFA)
+ACCENT_2 = (0x7C, 0x5C, 0xC4)
+TEXT = (0xF1, 0xF0, 0xF5)
+MUTED = (0xA1, 0xA1, 0xAA)
 
 
 def read_site_url():
@@ -44,10 +44,10 @@ def download_avatar(dest):
 def write_favicon(dest):
     svg = (
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
-        '<rect width="64" height="64" rx="10" fill="#0B0E0C"/>'
-        '<rect x="6" y="6" width="52" height="52" rx="8" fill="none" stroke="#293129"/>'
+        '<rect width="64" height="64" rx="10" fill="#0B0D12"/>'
+        '<rect x="6" y="6" width="52" height="52" rx="8" fill="none" stroke="#262C38"/>'
         '<text x="32" y="45" font-family="monospace" font-size="30" '
-        'font-weight="700" fill="#B9D982" text-anchor="middle">K</text>'
+        'font-weight="700" fill="#A78BFA" text-anchor="middle">K</text>'
         "</svg>"
     )
     with open(dest, "w", encoding="utf-8") as f:
@@ -56,7 +56,7 @@ def write_favicon(dest):
 
 def write_qr(dest, site_url):
     qr = segno.make(site_url, error="m")
-    qr.save(dest, kind="svg", scale=20, border=4, dark="#0B0E0C", light="#ffffff")
+    qr.save(dest, kind="svg", scale=20, border=4, dark="#0B0D12", light="#ffffff")
     with open(dest, encoding="utf-8") as f:
         content = f.read()
     content = content.replace(

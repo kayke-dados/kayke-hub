@@ -1,16 +1,17 @@
 /* Kayke Hub — Quiet Tech · editorial developer portfolio
    Direção: minimalismo editorial + estética tecnológica.
-   Paleta verde suave como assinatura, fundo quase preto esverdeado. */
+   Paleta grafite profundo com violeta suave como assinatura. */
 
 :root {
-  --bg: #0B0E0C;
-  --bg-2: #111612;
-  --surface: #171C18;
-  --border: #293129;
-  --text: #F0F1E9;
-  --muted: #A3AAA1;
-  --accent: #B9D982;
-  --accent-2: #849D68;
+  --bg: #0B0D12;
+  --bg-2: #10141C;
+  --surface: #151A24;
+  --border: #262C38;
+  --text: #F1F0F5;
+  --muted: #A1A1AA;
+  --accent: #A78BFA;
+  --accent-2: #7C5CC4;
+  --accent-hover: #8B6FDD;
 
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --display: "Manrope", var(--sans);
@@ -326,8 +327,8 @@ ol {
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-  background: var(--accent-2);
-  border-color: var(--accent-2);
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
   color: var(--bg);
 }
 
@@ -347,7 +348,7 @@ ol {
 }
 
 .text-link:hover {
-  color: var(--accent-2);
+  color: var(--text);
   border-bottom-color: var(--accent-2);
 }
 
@@ -377,7 +378,7 @@ section[id] {
 
 .kicker {
   margin: 0 0 0.75rem;
-  color: var(--accent-2);
+  color: var(--accent);
   font-family: var(--mono);
   font-size: 0.75rem;
   font-weight: 500;
@@ -492,7 +493,7 @@ section[id] {
 
 .hero-motto {
   margin: 1.5rem 0 0;
-  color: var(--accent-2);
+  color: var(--accent);
   font-family: var(--mono);
   font-size: 0.8125rem;
   font-weight: 500;
@@ -657,7 +658,7 @@ section[id] {
 }
 
 .facts dt {
-  color: var(--accent-2);
+  color: var(--accent);
   font-family: var(--mono);
   font-size: 0.6875rem;
   letter-spacing: 0.08em;
@@ -884,7 +885,7 @@ section[id] {
 
 .steps li::before {
   content: counter(step, decimal-leading-zero);
-  color: var(--accent-2);
+  color: var(--accent);
   font-family: var(--mono);
   font-size: 0.75rem;
 }
@@ -913,7 +914,7 @@ section[id] {
 
 .project-kind {
   margin: 0 0 0.75rem;
-  color: var(--accent-2);
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
@@ -954,7 +955,7 @@ section[id] {
 }
 
 .project-meta dt {
-  color: var(--accent-2);
+  color: var(--accent);
   font-family: var(--mono);
   font-size: 0.6875rem;
   letter-spacing: 0.08em;
@@ -1069,7 +1070,7 @@ section[id] {
 }
 
 .repo-meta {
-  color: var(--accent-2);
+  color: var(--accent);
   font-family: var(--mono);
   font-size: 0.6875rem;
 }
@@ -1189,7 +1190,7 @@ section[id] {
 
 .footer-note {
   margin: 0.75rem 0 0;
-  color: var(--accent-2);
+  color: var(--accent);
 }
 
 .footer-nav,
@@ -1248,7 +1249,7 @@ section[id] {
 }
 
 .back-top:hover {
-  color: var(--accent-2);
+  color: var(--text);
 }
 
 /* ---- toast ---- */

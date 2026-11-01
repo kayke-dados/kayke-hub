@@ -5,8 +5,8 @@ import unittest
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSS = os.path.join(ROOT, "css", "style.css")
 
-BG = (0x0B, 0x0E, 0x0C)
-SURFACE = (0x17, 0x1C, 0x18)
+BG = (0x0B, 0x0D, 0x12)
+SURFACE = (0x15, 0x1A, 0x24)
 
 
 def hex_to_rgb(value):
@@ -57,7 +57,8 @@ class TestContrast(unittest.TestCase):
         self.assertGreater(contrast(BG, token("--accent")), 4.5)
 
     def test_accent_hover_still_readable(self):
-        self.assertGreater(contrast(BG, token("--accent-2")), 4.5)
+        """O hover interativo precisa manter o texto do ground legível."""
+        self.assertGreater(contrast(BG, token("--accent-hover")), 4.5)
 
 
 if __name__ == "__main__":

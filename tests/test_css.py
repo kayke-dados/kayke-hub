@@ -6,14 +6,15 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSS_PATH = os.path.join(ROOT, "css", "style.css")
 
 TOKENS = {
-    "--bg": "#0B0E0C",
-    "--bg-2": "#111612",
-    "--surface": "#171C18",
-    "--border": "#293129",
-    "--text": "#F0F1E9",
-    "--muted": "#A3AAA1",
-    "--accent": "#B9D982",
-    "--accent-2": "#849D68",
+    "--bg": "#0B0D12",
+    "--bg-2": "#10141C",
+    "--surface": "#151A24",
+    "--border": "#262C38",
+    "--text": "#F1F0F5",
+    "--muted": "#A1A1AA",
+    "--accent": "#A78BFA",
+    "--accent-2": "#7C5CC4",
+    "--accent-hover": "#8B6FDD",
 }
 
 

@@ -5,9 +5,9 @@
 [Site ao vivo](https://kayke-dados.github.io/kayke-hub/) · [Python-Journey](https://github.com/kayke-dados/Python-Journey) · [GitHub](https://github.com/kayke-dados) · [Instagram](https://www.instagram.com/kayke.dados/) · [E-mail](mailto:kayke0812@proton.me)
 
 ![tests](https://github.com/kayke-dados/kayke-hub/actions/workflows/tests.yml/badge.svg)
-![licença](https://img.shields.io/badge/licen%C3%A7a-MIT-0B0E0C?style=flat-square)
+![licença](https://img.shields.io/badge/licen%C3%A7a-MIT-0B0D12?style=flat-square)
 
-Página única, estática e bilíngue. A direção visual é **Quiet Tech — editorial developer portfolio**: fundo quase preto esverdeado, verde suave como assinatura, tipografia expressiva e composição assimétrica com bastante espaço vazio.
+Página única, estática e bilíngue. A direção visual é **Quiet Tech — editorial developer portfolio**: grafite profundo, violeta suave como assinatura, tipografia expressiva e composição assimétrica com bastante espaço vazio.
 
 <p align="center">
   <img src="assets/og-image.png" alt="Prévia social do Kayke Hub" width="640" />
@@ -79,16 +79,16 @@ Paleta Quiet Tech:
 
 | Token | Hex |
 |---|---|
-| `--bg` | `#0B0E0C` |
-| `--bg-2` | `#111612` |
-| `--surface` | `#171C18` |
-| `--border` | `#293129` |
-| `--text` | `#F0F1E9` |
-| `--muted` | `#A3AAA1` |
-| `--accent` | `#B9D982` |
-| `--accent-2` | `#849D68` |
+| `--bg` | `#0B0D12` |
+| `--bg-2` | `#10141C` |
+| `--surface` | `#151A24` |
+| `--border` | `#262C38` |
+| `--text` | `#F1F0F5` |
+| `--muted` | `#A1A1AA` |
+| `--accent` | `#A78BFA` |
+| `--accent-2` | `#7C5CC4` |
 
-O verde aparece com moderação: botões, indicadores, links selecionados e detalhes. Sem gradientes exagerados, sem neon, sem elementos decorativos sem função.
+O violeta aparece com moderação: botões, indicadores, links selecionados e detalhes. Sem gradientes exagerados, sem neon, sem elementos decorativos sem função.
 
 ## Notas honestas
 

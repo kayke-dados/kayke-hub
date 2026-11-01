@@ -1,30 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Prévia do site Kayke Hub">
-  <rect width="1200" height="675" fill="#0B0E0C"/>
-  <rect x="0" y="0" width="14" height="675" fill="#B9D982"/>
+  <rect width="1200" height="675" fill="#0B0D12"/>
+  <rect x="0" y="0" width="14" height="675" fill="#A78BFA"/>
   <g transform="translate(72 64)">
-    <rect x="0" y="0" width="940" height="548" rx="6" fill="#111612" stroke="#293129"/>
-    <rect x="0" y="0" width="940" height="44" rx="6" fill="#171C18"/>
-    <rect x="0" y="22" width="940" height="22" fill="#171C18"/>
-    <g fill="#293129">
+    <rect x="0" y="0" width="940" height="548" rx="6" fill="#10141C" stroke="#262C38"/>
+    <rect x="0" y="0" width="940" height="44" rx="6" fill="#151A24"/>
+    <rect x="0" y="22" width="940" height="22" fill="#151A24"/>
+    <g fill="#262C38">
       <circle cx="26" cy="22" r="5"/>
       <circle cx="46" cy="22" r="5"/>
       <circle cx="66" cy="22" r="5"/>
     </g>
-    <text x="40" y="130" font-family="'JetBrains Mono',monospace" font-size="20" letter-spacing="6" fill="#849D68">KAYKE — PERSONAL PORTFOLIO</text>
-    <text x="40" y="220" font-family="'Manrope','Segoe UI',sans-serif" font-size="72" font-weight="800" fill="#F0F1E9" letter-spacing="-3">Construindo minha</text>
-    <text x="40" y="298" font-family="'Manrope','Segoe UI',sans-serif" font-size="72" font-weight="800" fill="#B9D982" letter-spacing="-3">trajetória na tecnologia.</text>
-    <rect x="40" y="342" width="220" height="52" rx="3" fill="#B9D982"/>
-    <rect x="276" y="342" width="180" height="52" rx="3" fill="none" stroke="#293129"/>
-    <g fill="#A3AAA1" font-family="'Inter','Segoe UI',sans-serif" font-size="20">
+    <text x="40" y="130" font-family="'JetBrains Mono',monospace" font-size="20" letter-spacing="6" fill="#A78BFA">KAYKE — PERSONAL PORTFOLIO</text>
+    <text x="40" y="220" font-family="'Manrope','Segoe UI',sans-serif" font-size="72" font-weight="800" fill="#F1F0F5" letter-spacing="-3">Construindo minha</text>
+    <text x="40" y="298" font-family="'Manrope','Segoe UI',sans-serif" font-size="72" font-weight="800" fill="#A78BFA" letter-spacing="-3">trajetória na tecnologia.</text>
+    <rect x="40" y="342" width="220" height="52" rx="3" fill="#A78BFA"/>
+    <rect x="276" y="342" width="180" height="52" rx="3" fill="none" stroke="#262C38"/>
+    <g fill="#A1A1AA" font-family="'Inter','Segoe UI',sans-serif" font-size="20">
       <text x="40" y="450">portfólio · jornada · projetos · contato</text>
       <text x="40" y="486">HTML, CSS e JavaScript</text>
     </g>
     <g transform="translate(680 400)">
-      <rect x="0" y="120" width="34" height="60" fill="#849D68"/>
-      <rect x="54" y="80" width="34" height="100" fill="#B9D982"/>
-      <rect x="108" y="30" width="34" height="150" fill="#849D68"/>
-      <rect x="162" y="60" width="34" height="120" fill="#B9D982"/>
-      <rect x="216" y="140" width="34" height="40" fill="#849D68"/>
+      <rect x="0" y="120" width="34" height="60" fill="#7C5CC4"/>
+      <rect x="54" y="80" width="34" height="100" fill="#A78BFA"/>
+      <rect x="108" y="30" width="34" height="150" fill="#7C5CC4"/>
+      <rect x="162" y="60" width="34" height="120" fill="#A78BFA"/>
+      <rect x="216" y="140" width="34" height="40" fill="#7C5CC4"/>
     </g>
   </g>
 </svg>
