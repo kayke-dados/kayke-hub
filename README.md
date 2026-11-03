@@ -1,116 +1,285 @@
-::: {align="center"}
-# Kayke Hub
+# Kayke Space
 
-**Construindo minha trajetória na tecnologia.**
+Portfólio profissional de **Kayke** — estudante de Análise de Dados — construído para documentar a trajetória real: história, momento atual, jornada, cursos, projetos, habilidades, experiências, conquistas e objetivos.
 
-Um espaço para conhecer minha história, acompanhar meus estudos,
-explorar meus projetos e descobrir um pouco do que estou construindo na
-área de tecnologia.
+O projeto reformula o **Kayke Hub** (site estático em GitHub Pages) em uma aplicação **Next.js** preparada para crescer, com área administrativa real, banco de dados, autenticação, rascunhos, pré-visualização, histórico de alterações e exportação.
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+- Site público: `/`
+- Área administrativa: `/admin`
+- Stack: **Next.js 15 (App Router) + TypeScript + Supabase + Vercel**
+- Identidade: **Dark Minimalist + Tech** (grafite profundo, azul usado com moderação, tipografia branca/cinza)
 
-🌐 **[Acessar Kayke Hub](https://kayke-dados.github.io/kayke-hub/)** ·
-**[GitHub](https://github.com/kayke-dados)** ·
-**[Instagram](https://www.instagram.com/kayke.dados/)** ·
-**[E-mail](mailto:kayke0812@proton.me)**
-:::
+---
 
-------------------------------------------------------------------------
+## 1. O que foi entregue
 
-## Sobre o Kayke Hub
+### Portfólio público
 
-O Kayke Hub é meu espaço pessoal na internet, desenvolvido para
-apresentar minha trajetória, meus interesses e minha evolução no
-universo da tecnologia.
+1. **Hero** — foto do GitHub, nome, área, momento atual e números reais (87/87 exercícios, 6 capítulos, 10 cursos, 2 projetos).
+2. **História** — texto em primeira pessoa, ficha rápida e link para o Python-Journey.
+3. **Momento atual** — estudo, foco, curso, projeto e próximo objetivo, com data de atualização.
+4. **Jornada** — linha do tempo + calendário de atividades alimentado apenas por registros reais.
+5. **Cursos** — as 10 playlists na ordem fixa, com título real, canal, link, status, progresso e conclusão calculada por `VITE_CURSOS_CONCLUIDOS`.
+6. **Projetos** — cards reais, metadados e páginas próprias em `/projetos/[slug]`.
+7. **Habilidades** — separação honesta entre “em aprendizado”, “conhecimento desenvolvido” e “aplicado em projetos”, sem níveis inventados.
+8. **Experiências** — estado vazio elegante, pronto para a primeira oportunidade (inclusive de outras áreas).
+9. **Conquistas e objetivos** — fatos separados de metas, com horizontes de curto, médio e longo prazo.
+10. **Contato** — canais reais: e-mail, GitHub e Instagram.
 
-Mais do que um portfólio, é uma forma de compartilhar minha jornada de
-aprendizado, apresentar aquilo que estou desenvolvendo e manter minhas
-principais informações reunidas em um único lugar.
+### Área administrativa
 
-O projeto possui uma identidade visual própria, com uma proposta
-minimalista, moderna e tecnológica, priorizando uma experiência simples
-e agradável em computadores e dispositivos móveis.
+- Login com Supabase Auth (e-mail e senha), restrito a `ADMIN_EMAIL`.
+- Rotas protegidas por middleware **e** verificação de sessão em cada operação no servidor.
+- CRUD de: cursos, projetos, jornada, experiências, conquistas, objetivos, história e momento atual.
+- **Rascunho / publicado / fora do ar**. Rascunhos nunca aparecem no público.
+- **Pré-visualização** desktop e mobile antes de publicar.
+- **Histórico de alterações** independente da linha do tempo (criação, edição, publicação, retirada, exclusão).
+- **Exportação JSON** completa e **CSV** por seção, sem senhas, tokens ou segredos.
+- Registro automático de ações administrativas no histórico.
 
-## O que você encontra aqui
+### SEO, acessibilidade e desempenho
 
--   **Apresentação:** um pouco sobre mim, meus interesses e meus
-    objetivos.
--   **Minha jornada:** informações sobre meus estudos e conhecimentos em
-    desenvolvimento.
--   **Projetos:** trabalhos e experiências que fazem parte da minha
-    evolução.
--   **Tecnologia:** meus interesses em programação e análise de dados.
--   **Contato:** links para acompanhar meu trabalho e entrar em contato.
+- Metadata, Open Graph, Twitter Cards, canonical, JSON-LD `Person`, sitemap e robots.
+- `noindex` na área administrativa e em rascunhos.
+- HTML semântico, skip link, foco visível, navegação por teclado, `aria-*`, `prefers-reduced-motion`.
+- Layout responsivo (celular, tablet, desktop) e estados de carregamento/erro/vazio.
+- Imagens locais, fontes com `display=swap`, JS enxuto e cache de assets na Vercel.
 
-## Tecnologias utilizadas
+---
 
-O projeto utiliza tecnologias web para construir uma experiência leve,
-responsiva e funcional.
+## 2. As 5 etapas do trabalho
 
-  Tecnologia   Utilização
-  ------------ --------------------------------------------
-  HTML5        Estrutura e organização do conteúdo
-  CSS3         Identidade visual, layout e responsividade
-  JavaScript   Interações e funcionalidades
-  Python       Ferramentas auxiliares de desenvolvimento
+| Etapa | Entrega |
+|---|---|
+| **1. Auditoria e arquitetura** | Clone e análise do `kayke-hub`, tecnologias, problemas, dados reais do GitHub/playlists e decisão da stack. |
+| **2. Fundação e design system** | Next.js, TypeScript, tokens, layout, componentes base, modelo de dados e conteúdo inicial real. |
+| **3. Portfólio público** | Todas as seções, progresso dos cursos, linha do tempo, calendário, projetos, SEO e responsividade. |
+| **4. Dados e administração** | Supabase (schema + RLS), autenticação, CRUD, rascunhos, publicação, prévia, histórico e exportação. |
+| **5. Qualidade e publicação** | Testes, build, revisão de acessibilidade/segurança, documentação de deploy e manutenção. |
 
-O site utiliza uma estrutura estática, sem depender de frameworks para
-sua execução.
+---
 
-## Minha trajetória
+## 3. Estrutura do projeto
 
-Atualmente, estou construindo meus conhecimentos em programação, com
-foco nos fundamentos da lógica e no aprendizado de Python.
+```
+kayke-space/
+├── src/
+│   ├── app/
+│   │   ├── (site)/                 # páginas públicas (header/footer)
+│   │   │   ├── (home)/
+│   │   │   │   ├── page.tsx        # portfólio
+│   │   │   │   └── loading.tsx     # carregamento da home
+│   │   │   └── projetos/[slug]/    # detalhe do projeto
+│   │   ├── admin/
+│   │   │   ├── login/              # login real
+│   │   │   ├── actions.ts          # server actions (CRUD, auth, histórico)
+│   │   │   └── (panel)/            # painel protegido
+│   │   ├── api/admin/export/       # rotas JSON e CSV autenticadas
+│   │   ├── globals.css             # design system + admin
+│   │   ├── layout.tsx              # metadata, fontes, html/body
+│   │   ├── robots.ts
+│   │   └── sitemap.ts
+│   ├── components/                 # seções públicas e navegação
+│   ├── lib/
+│   │   ├── seed.ts                 # conteúdo real de fallback
+│   │   ├── data.ts                 # leitura pública/admin no Supabase
+│   │   ├── courses.ts              # VITE_CURSOS_CONCLUIDOS
+│   │   ├── entities.ts             # configuração dos formulários
+│   │   ├── export.ts               # CSV/JSON
+│   │   ├── auth.ts                 # sessão e autorização
+│   │   ├── activity.ts             # histórico
+│   │   └── supabase/               # clients server/middleware
+│   └── middleware.ts               # proteção de /admin
+├── supabase/
+│   ├── schema.sql                  # tabelas, RLS, triggers, índices
+│   └── seed.sql                    # conteúdo inicial real
+├── public/assets/                  # avatar, favicon, OG e capas
+├── tests/                          # testes de lógica (node:test)
+├── .env.example
+├── next.config.ts
+├── vercel.json
+└── package.json
+```
 
-Tenho interesse especial na área de tecnologia e pretendo direcionar
-meus estudos futuramente para a Análise de Dados.
+---
 
-Um dos registros dessa jornada é o repositório
-[Python-Journey](https://github.com/kayke-dados/Python-Journey), onde
-organizo exercícios e conteúdos estudados durante meu aprendizado de
-Python.
+## 4. Rodar localmente
 
-Acredito que aprender é um processo contínuo e que cada projeto
-representa uma oportunidade de evoluir.
+Requisitos: **Node.js 22.6+** (os testes usam `--experimental-strip-types`) e npm.
 
-## O que o Kayke Hub representa para mim
+```bash
+npm install
+cp .env.example .env.local
+npm run dev
+```
 
-Este site também tem uma finalidade pessoal: reunir minha trajetória em
-um só lugar e me ajudar a acompanhar minha própria evolução.
+Abra `http://localhost:3000`.
 
-Utilizo o Kayke Hub como um ponto de referência para organizar minha
-apresentação, registrar meus aprendizados, acompanhar meus projetos e
-manter meus objetivos acessíveis.
+Sem Supabase configurado, o site público funciona normalmente com o conteúdo de `src/lib/seed.ts`. A área `/admin` mostra as instruções de configuração — **nada é simulado**.
 
-Quero que ele cresça junto comigo, acompanhando minhas novas
-experiências e conhecimentos ao longo do tempo.
+### Scripts
 
-## Sobre o desenvolvimento
+```bash
+npm run dev         # desenvolvimento
+npm run build       # build de produção
+npm start           # servir o build
+npm run typecheck   # TypeScript
+npm test            # testes de lógica
+npm run check       # typecheck + testes + build
+```
 
-O Kayke Hub foi desenvolvido com o auxílio de ferramentas de
-inteligência artificial.
+> Os scripts chamam o Next e o TypeScript pelo caminho em `node_modules` para também funcionarem em ambientes sem symlinks de binários (como Termux/Android).
 
-A utilização dessas ferramentas faz parte do meu processo de aprendizado
-e desenvolvimento. Busco manter transparência sobre a origem do código,
-sem atribuir a mim uma autoria manual que não corresponde ao processo de
-criação.
+---
 
-## Vamos nos conectar?
+## 5. Variáveis de ambiente
 
-Você pode acompanhar minha jornada e conhecer mais sobre meus estudos
-pelos canais abaixo.
+| Variável | Onde | Para que serve |
+|---|---|---|
+| `VITE_CURSOS_CONCLUIDOS` | Vercel / `.env.local` | Número inteiro de 0 a 10. Define quantos cursos da ordem fixa estão concluídos. Ausente/inválido = 0. |
+| `NEXT_PUBLIC_SITE_URL` | Vercel / `.env.local` | URL pública usada em canonical, Open Graph e sitemap. Em produção, use a URL real da Vercel; sem ela, o padrão é `http://localhost:3000`. |
+| `NEXT_PUBLIC_SUPABASE_URL` | Vercel / `.env.local` | URL do projeto Supabase. |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Vercel / `.env.local` | Chave anon pública do Supabase (protegida por RLS). |
+| `ADMIN_EMAIL` | Vercel / `.env.local` | E-mail do único administrador autorizado. |
 
--   **GitHub:** [kayke-dados](https://github.com/kayke-dados)
--   **Instagram:**
-    [@kayke.dados](https://www.instagram.com/kayke.dados/)
--   **E-mail:** <kayke0812@proton.me>
+> `NEXT_PUBLIC_*` e `VITE_*` chegam ao navegador. **Nunca** coloque a `service_role` key ou qualquer segredo em variáveis com esses prefixos.
+>
+> `NEXT_PUBLIC_SITE_URL` é usada no build para canonical, Open Graph e `robots.txt`. Defina-a antes de `npm run build` ou do deploy na Vercel.
 
-------------------------------------------------------------------------
+### Cursos
 
-::: {align="center"}
-`<sub>`{=html}Kayke Hub --- Um espaço para aprender, construir e
-evoluir.`</sub>`{=html}
-:::
+A conclusão sempre segue a ordem:
+
+- `0` = nenhum concluído
+- `1` = primeiro concluído
+- `2` = primeiros dois concluídos
+- …
+- `10` = todos concluídos
+
+O site calcula automaticamente quantidade concluída, restante, porcentagem, status por card e a barra de progresso. Alterações em variáveis `VITE_` exigem **novo build/deploy** na Vercel.
+
+---
+
+## 6. Configurar o Supabase (necessário para o admin)
+
+1. Crie um projeto em [supabase.com](https://supabase.com).
+2. No **SQL Editor**, execute o conteúdo de `supabase/schema.sql`.
+3. Execute `supabase/seed.sql` para começar com o conteúdo real (opcional).
+4. Em **Authentication → Users**, crie o usuário administrador com o e-mail definido em `ADMIN_EMAIL` e uma senha forte.
+5. Confirme que o e-mail está em `public.admin_users` (o schema já insere `kayke0812@proton.me`; ajuste se necessário).
+6. Em **Project Settings → API**, copie `Project URL` e `anon public key` para as variáveis da Vercel.
+7. Faça o deploy. Acesse `/admin` e entre com o usuário criado.
+
+### Segurança
+
+- **RLS ativo** em todas as tabelas.
+- Público lê apenas `published` (perfil, momento atual e cursos são públicos).
+- Administração só passa em `public.is_admin()`, que compara o e-mail do JWT com `admin_users`.
+- Middleware bloqueia `/admin` sem sessão válida.
+- Cada server action verifica a sessão novamente antes de gravar.
+- O histórico é somente leitura para o admin; não é editável pela interface.
+- Senhas, tokens e chaves nunca são exportados nem enviados ao frontend.
+
+---
+
+## 7. Publicar na Vercel
+
+1. Envie o projeto para o GitHub.
+2. Na Vercel: **Add New → Project → Import Git Repository**.
+3. O preset é detectado automaticamente como **Next.js**. Build: `npm run build`.
+4. Configure as variáveis da seção 5 (Production e Preview, se desejar).
+5. Depois do primeiro deploy, copie a URL final e atualize `NEXT_PUBLIC_SITE_URL`.
+6. Faça um novo deploy para canonical, Open Graph e sitemap refletirem a URL.
+7. Commits na branch principal disparam novos deploys automaticamente.
+
+### Checklist pós-deploy
+
+- [ ] `/` abre e mostra o conteúdo real.
+- [ ] `/projetos/python-journey` abre.
+- [ ] `/sitemap.xml` e `/robots.txt` respondem.
+- [ ] `/admin` redireciona para `/admin/login` (com Supabase configurado).
+- [ ] Login funciona apenas com o e-mail autorizado.
+- [ ] Um rascunho não aparece no site público.
+- [ ] Publicar/retirar do ar reflete no site após revalidação.
+- [ ] Exportação JSON e CSV baixam autenticadas.
+- [ ] `VITE_CURSOS_CONCLUIDOS` altera o progresso após novo deploy.
+
+---
+
+## 8. Como atualizar o conteúdo
+
+Tudo pelo painel `/admin`:
+
+| Seção | O que faz |
+|---|---|
+| Cursos | Edita título, canal, link e observações. Os 10 cursos são fixos: não há criação nem exclusão pelo painel. A ordem e a conclusão continuam fixas. |
+| Projetos | Cria/edita projetos, ferramentas, imagem, links, data e status. |
+| Jornada | Registra aprendizados, conquistas, projetos, experiências e objetivos. Alimenta timeline e calendário. |
+| Experiências | Registra empresa, cargo, período, atividades, ferramentas, aprendizados e resultados. |
+| Conquistas | Certificações, cursos, projetos, marcos acadêmicos e profissionais. |
+| Objetivos | Metas de curto, médio e longo prazo. |
+| História | Nome, bio, história, avatar e canais de contato. |
+| Momento atual | Estudo, foco, curso, projeto e próximo objetivo. |
+| Histórico | Consulta das alterações administrativas. |
+| Exportar | Backup JSON e CSV por seção. |
+
+Fluxo recomendado: **criar como rascunho → pré-visualizar desktop/mobile → publicar**.
+
+---
+
+## 9. Modelo de dados
+
+| Tabela | Conteúdo |
+|---|---|
+| `profile` | Perfil público (singleton). |
+| `current_status` | Momento atual (singleton). |
+| `courses` | 10 cursos, posição única de 1 a 10. |
+| `projects` | Projetos com slug único, ferramentas e links. |
+| `journey_entries` | Linha do tempo/calendário, com origem manual ou automática. |
+| `experiences` | Experiências profissionais. |
+| `achievements` | Conquistas reais. |
+| `goals` | Objetivos por horizonte. |
+| `activity_log` | Histórico administrativo com antes/depois. |
+| `admin_users` | Allowlist de e-mails administradores. |
+
+---
+
+## 10. Testes e verificação
+
+```bash
+npm test
+npm run typecheck
+npm run build
+```
+
+Cobertura atual dos testes de lógica:
+
+- validação de `VITE_CURSOS_CONCLUIDOS` (0–10, inválidos = 0);
+- cálculo de concluídos, restantes, porcentagem e status;
+- ordem fixa das 10 playlists;
+- geração e escape de CSV;
+- validação de formulários, URLs, tags e slug;
+- conteúdo inicial sem experiências fictícias e sem datas futuras.
+
+Limitações desta entrega:
+
+- **Não há importação/restauração de backup** (fora do escopo solicitado).
+- A área administrativa depende de um projeto Supabase configurado.
+- A conclusão dos cursos é centralizada na variável de ambiente, não editável pelo painel.
+- Os testes exigem Node 22.6+ por usarem TypeScript nativo; o build da Vercel não executa os testes.
+
+---
+
+## 11. Decisões de arquitetura
+
+- **Next.js App Router**: SSR para SEO, server actions para operações autenticadas e middleware para proteger `/admin`.
+- **Supabase**: banco relacional, autenticação e RLS sem manter servidor próprio. A proteção acontece no banco e no servidor, não só na interface.
+- **Conteúdo de fallback**: o site público não depende do banco para funcionar; se o Supabase falhar, o seed real mantém a página de pé.
+- **CSS próprio**: a identidade editorial não foi trocada por um template genérico; os tokens ficam em `globals.css`.
+- **Sem excesso de infraestrutura**: uma tabela por seção, um histórico e uma allowlist. Sem filas, cache externo ou microsserviços.
+
+---
+
+## 12. Transparência
+
+O código foi desenvolvido com auxílio de inteligência artificial, a partir de decisões e conteúdo do Kayke. Nenhuma experiência, certificação, projeto ou data foi inventada: o conteúdo inicial vem do repositório existente, da API pública do GitHub e dos títulos reais das playlists.

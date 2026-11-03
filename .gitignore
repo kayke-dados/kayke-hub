@@ -1,6 +1,10 @@
-__pycache__/
-*.pyc
-.pytest_cache/
-.taste-skill/
-.superpowers/
-.vercel/
+node_modules
+.next
+out
+.env
+.env.local
+.env*.local
+*.tsbuildinfo
+.DS_Store
+.vercel
+coverage

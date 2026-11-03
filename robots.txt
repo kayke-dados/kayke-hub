@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://kayke-dados.github.io/kayke-hub/sitemap.xml
