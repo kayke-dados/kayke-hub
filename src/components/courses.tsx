@@ -1,4 +1,5 @@
 import type { CourseProgress } from "@/lib/types";
+import { getCourseMedia } from "@/lib/course-media";
 
 export function Courses({ progress }: { progress: CourseProgress }) {
   return (
@@ -40,6 +41,7 @@ export function Courses({ progress }: { progress: CourseProgress }) {
         <ol className="course-list">
           {progress.courses.map((course) => {
             const isNext = !course.completed && course.position === progress.completed + 1;
+            const media = getCourseMedia(course);
             return (
               <li
                 className="course-row reveal"
@@ -50,19 +52,51 @@ export function Courses({ progress }: { progress: CourseProgress }) {
                 <span className="course-number">
                   {String(course.position).padStart(2, "0")}
                 </span>
+                {media ? (
+                  <a
+                    className="course-media"
+                    href={media.firstVideoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Assistir ao primeiro vídeo de ${course.title}`}
+                  >
+                    <img
+                      src={media.thumbnailUrl}
+                      alt=""
+                      width={320}
+                      height={180}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
+                ) : (
+                  <span className="course-media course-media--empty" aria-hidden="true" />
+                )}
                 <div className="course-main">
                   <h3 className="course-title">{course.title}</h3>
                   <p className="course-channel">{course.channel}</p>
                 </div>
                 <span className="course-status">{course.statusLabel}</span>
-                <a
-                  className="course-link"
-                  href={course.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Playlist <span aria-hidden="true">↗</span>
-                </a>
+                <div className="course-actions">
+                  {media ? (
+                    <a
+                      className="course-link"
+                      href={media.firstVideoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Assistir <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : null}
+                  <a
+                    className="course-link"
+                    href={course.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Playlist <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
               </li>
             );
           })}

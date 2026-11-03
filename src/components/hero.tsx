@@ -13,12 +13,37 @@ export function Hero({ profile, currentStatus, progress, projectCount }: HeroPro
     <section className="hero" id="inicio" aria-labelledby="hero-title">
       <div className="wrap hero-grid">
         <div>
+          <div className="hero-identity reveal">
+            <img
+              className="hero-avatar"
+              src={profile.avatar_url}
+              alt=""
+              aria-hidden="true"
+              width={44}
+              height={44}
+            />
+            <div className="hero-identity-text">
+              <p className="hero-name">{profile.name}</p>
+              <p className="hero-role">{profile.headline}</p>
+            </div>
+            <div className="hero-identity-links">
+              <a
+                href={profile.github_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+              <a href={`mailto:${profile.email}`}>E-mail</a>
+            </div>
+          </div>
           <h1 className="hero-title" id="hero-title">
             Aprendendo a ler dados.
           </h1>
           <p className="hero-lead">
-            Sou Kayke, estudante de Análise de Dados. Aprendo Python resolvendo exercícios e
-            registro aqui o que já entendi, o que estudo agora e o que ainda falta.
+            Comecei pelos fundamentos da programação e encontrei no Python a forma mais direta
+            de aprender praticando. Aqui registro o que já entendi, o que estudo agora e o que
+            ainda falta.
           </p>
           <div className="hero-actions">
             <a className="btn btn-primary" href="#projetos">
@@ -31,17 +56,7 @@ export function Hero({ profile, currentStatus, progress, projectCount }: HeroPro
         </div>
 
         <aside className="hero-note reveal" aria-label="Nota do autor">
-          <img
-            className="hero-mark"
-            src={profile.avatar_url}
-            alt=""
-            aria-hidden="true"
-            width={56}
-            height={56}
-          />
-          <p className="hero-quote">
-            “Cada conceito que estudo vira um exercício resolvido no Python-Journey.”
-          </p>
+          <p className="hero-quote">Estudo, pratico e registro — na ordem em que aprendo.</p>
           <p className="hero-note-now">Agora: {currentStatus.studying}.</p>
           <div className="hero-note-foot">
             <span>{profile.name}</span>

@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { buildCourseProgress, parseCompletedCourses } from "../src/lib/courses.ts";
 import { seedCourses } from "../src/lib/seed.ts";
+import { getCourseMedia } from "../src/lib/course-media.ts";
 
 test("parseCompletedCourses aceita inteiros de 0 a 10", () => {
   assert.equal(parseCompletedCourses("0"), 0);
@@ -54,4 +55,18 @@ test("buildCourseProgress mantém a ordem fixa", () => {
     progress.courses.map((course) => course.position),
     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   );
+});
+
+test("todas as playlists têm miniatura e link para o primeiro vídeo", () => {
+  const medias = seedCourses.map((course) => getCourseMedia(course));
+  assert.equal(medias.every(Boolean), true);
+  medias.forEach((media) => {
+    assert.ok(media);
+    assert.match(media.thumbnailUrl, /^https:\/\/i\.ytimg\.com\/vi\/[\w-]{11}\/mqdefault\.jpg$/);
+    assert.match(media.firstVideoUrl, /^https:\/\/www\.youtube\.com\/watch\?v=[\w-]{11}&list=/);
+  });
+});
+
+test("getCourseMedia retorna null para playlist desconhecida", () => {
+  assert.equal(getCourseMedia({ url: "https://www.youtube.com/playlist?list=PLdesconhecida" }), null);
 });
