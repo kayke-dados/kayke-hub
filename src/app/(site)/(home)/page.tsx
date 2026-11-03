@@ -1,11 +1,8 @@
 import { Hero } from "@/components/hero";
 import { Story } from "@/components/story";
 import { Journey } from "@/components/journey";
-import { Courses } from "@/components/courses";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
-import { Experiences } from "@/components/experiences";
-import { Achievements } from "@/components/achievements";
 import { Contact } from "@/components/contact";
 import { getSiteContent } from "@/lib/data";
 import { buildCourseProgress, COURSE_ENV } from "@/lib/courses";
@@ -42,19 +39,11 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Hero
-        profile={content.profile}
-        currentStatus={content.currentStatus}
-        progress={progress}
-        projectCount={content.projects.length}
-      />
-      <Story profile={content.profile} status={content.currentStatus} />
-      <Journey entries={content.journey} />
-      <Courses progress={progress} />
+      <Hero profile={content.profile} projects={content.projects} />
       <Projects projects={content.projects} />
-      <Skills />
-      <Experiences experiences={content.experiences} />
-      <Achievements achievements={content.achievements} goals={content.goals} />
+      <Story profile={content.profile} status={content.currentStatus} />
+      <Skills progress={progress} projectCount={content.projects.length} />
+      <Journey entries={content.journey} />
       <Contact profile={content.profile} />
     </>
   );

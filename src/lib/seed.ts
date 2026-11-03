@@ -347,16 +347,19 @@ export const seedContent: SiteContent = {
 export const skills = [
   {
     group: "Em aprendizado",
+    level: "em estudo",
     description: "Conteúdos em estudo agora, sem nível de proficiência atribuído.",
     items: ["Python", "Lógica de programação", "Fundamentos de programação"],
   },
   {
-    group: "Conhecimento desenvolvido",
+    group: "Já pratiquei",
+    level: "base",
     description: "Base construída com estudo e prática registrada.",
     items: ["Excel básico", "Informática", "Git e GitHub"],
   },
   {
     group: "Aplicado em projetos",
+    level: "em prática",
     description: "Usado de fato em algo publicado ou documentado.",
     items: ["Python (exercícios)", "HTML, CSS e JavaScript (este site)", "Documentação"],
   },

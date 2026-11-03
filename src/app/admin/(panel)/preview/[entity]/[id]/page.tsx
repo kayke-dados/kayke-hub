@@ -72,11 +72,15 @@ export default async function PreviewPage({
       <div className="preview-frame" data-device={isMobile ? "mobile" : "desktop"}>
         {entity === "projects" ? (
           <article className="project-card">
-            <div className="project-body">
-              <p className="project-kind">Projeto</p>
-              <h3 className="project-name">{String(row.name)}</h3>
-              <p className="project-desc">{String(row.description)}</p>
-              <dl className="project-meta">
+            {row.image_url ? (
+              <figure className="project-card-media">
+                <img src={String(row.image_url)} alt={`Capa de ${String(row.name)}`} />
+              </figure>
+            ) : null}
+            <div className="project-card-body">
+              <h3 className="project-card-title">{String(row.name)}</h3>
+              <p className="project-card-desc">{String(row.description)}</p>
+              <dl className="facts">
                 <div>
                   <dt>Objetivo</dt>
                   <dd>{String(row.objective || "—")}</dd>
@@ -91,11 +95,6 @@ export default async function PreviewPage({
                 </div>
               </dl>
             </div>
-            {row.image_url ? (
-              <figure className="project-media">
-                <img src={String(row.image_url)} alt={`Capa de ${String(row.name)}`} />
-              </figure>
-            ) : null}
           </article>
         ) : null}
 

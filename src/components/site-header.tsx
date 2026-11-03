@@ -3,12 +3,19 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
-const links = [
+interface NavLink {
+  label: string;
+  id?: string;
+  href?: string;
+}
+
+const links: NavLink[] = [
   { label: "Início", id: "inicio" },
-  { label: "Sobre", id: "historia" },
-  { label: "Jornada", id: "jornada" },
-  { label: "Cursos", id: "cursos" },
   { label: "Projetos", id: "projetos" },
+  { label: "Sobre", id: "historia" },
+  { label: "Habilidades", id: "habilidades" },
+  { label: "Jornada", id: "jornada" },
+  { label: "Cursos", id: "cursos", href: "/cursos" },
   { label: "Contato", id: "contato" },
 ];
 
@@ -29,14 +36,20 @@ export function SiteHeader() {
 
   useEffect(() => {
     if (!isHome) {
-      setActive(pathname.startsWith("/projetos") ? "projetos" : "");
+      setActive(
+        pathname.startsWith("/projetos")
+          ? "projetos"
+          : pathname.startsWith("/cursos")
+            ? "cursos"
+            : "",
+      );
       return;
     }
 
     setActive("inicio");
     if (!("IntersectionObserver" in window)) return;
     const sections = links
-      .map((link) => document.getElementById(link.id))
+      .map((link) => (link.id ? document.getElementById(link.id) : null))
       .filter((el): el is HTMLElement => Boolean(el));
     if (!sections.length) return;
 
@@ -119,9 +132,9 @@ export function SiteHeader() {
         <nav className="primary-nav" id="nav-menu" aria-label="Navegação principal" ref={navRef}>
           {links.map((link) => (
             <a
-              key={link.id}
+              key={link.id ?? link.href}
               className={`nav-link${active === link.id ? " is-active" : ""}`}
-              href={`/#${link.id}`}
+              href={link.href ?? `/#${link.id}`}
               aria-current={active === link.id ? "location" : undefined}
               onClick={() => setOpen(false)}
             >

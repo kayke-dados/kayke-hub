@@ -10,10 +10,11 @@ export function SiteFooter({ profile }: { profile: Profile }) {
       <div className="wrap footer-grid">
         <nav className="footer-nav" aria-label="Navegação secundária">
           <a href="/#inicio">Início</a>
-          <a href="/#historia">Sobre</a>
-          <a href="/#jornada">Jornada</a>
-          <a href="/#cursos">Cursos</a>
           <a href="/#projetos">Projetos</a>
+          <a href="/#historia">Sobre</a>
+          <a href="/#habilidades">Habilidades</a>
+          <a href="/#jornada">Jornada</a>
+          <a href="/cursos">Cursos</a>
           <a href="/#contato">Contato</a>
         </nav>
         <div className="footer-social">

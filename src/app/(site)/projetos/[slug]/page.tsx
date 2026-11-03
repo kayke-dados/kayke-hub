@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPublishedProject } from "@/lib/data";
 import { formatDate } from "@/lib/format";
+import {
+  getProjectNotes,
+  getProjectResult,
+  getProjectScreenshots,
+} from "@/lib/project-highlights";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -29,6 +34,10 @@ export default async function ProjectPage({ params }: PageProps) {
   const project = await getPublishedProject(slug);
   if (!project) notFound();
 
+  const notes = getProjectNotes(project);
+  const result = getProjectResult(project);
+  const screenshots = getProjectScreenshots(project);
+
   return (
     <article>
       <div className="wrap detail-hero">
@@ -37,31 +46,32 @@ export default async function ProjectPage({ params }: PageProps) {
         </a>
         <h1 className="detail-title">{project.name}</h1>
         <p className="detail-lead">{project.description}</p>
+        {result ? (
+          <p className="detail-result">
+            <span>Resultado</span>
+            {result}
+          </p>
+        ) : null}
       </div>
-
-      {project.image_url ? (
-        <div className="wrap">
-          <figure className="detail-cover">
-            <img
-              src={project.image_url}
-              alt={`Capa do projeto ${project.name}`}
-              width={1200}
-              height={675}
-            />
-          </figure>
-        </div>
-      ) : null}
 
       <div className="wrap detail-grid">
         <div>
           <div className="detail-block">
-            <h2>Objetivo</h2>
-            <p>{project.objective || "Objetivo ainda não registrado."}</p>
-          </div>
-          <div className="detail-block">
-            <h2>Problema trabalhado</h2>
+            <h2>Problema</h2>
             <p>{project.problem || "Problema ainda não registrado."}</p>
           </div>
+          {notes ? (
+            <div className="detail-block">
+              <h2>O que foi feito</h2>
+              <p>{notes.done}</p>
+            </div>
+          ) : null}
+          {notes ? (
+            <div className="detail-block">
+              <h2>Descobertas</h2>
+              <p>{notes.findings}</p>
+            </div>
+          ) : null}
           <div className="detail-block">
             <h2>Ferramentas</h2>
             {project.tools.length ? (
@@ -122,6 +132,27 @@ export default async function ProjectPage({ params }: PageProps) {
           </dl>
         </aside>
       </div>
+
+      {screenshots.length ? (
+        <div className="wrap detail-gallery">
+          <h2>Registro visual</h2>
+          <div className="detail-gallery-grid">
+            {screenshots.map((screenshot) => (
+              <figure key={screenshot.src}>
+                <img
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  width={screenshot.width}
+                  height={screenshot.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>{screenshot.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      ) : null}
     </article>
   );
 }

@@ -9,7 +9,7 @@ export function Story({
   profile: Profile;
   status: CurrentStatus;
 }) {
-  const paragraphs = profile.story.split(/\n{2,}/).filter(Boolean);
+  const presentation = profile.story.split(/\n{2,}/).filter(Boolean)[0] ?? profile.story;
 
   return (
     <section className="section" id="historia" aria-labelledby="historia-title">
@@ -19,16 +19,13 @@ export function Story({
             O ponto de partida.
           </h2>
           <p className="section-intro">
-            Como comecei, o que já pratiquei e onde estou agora — sem inventar experiência
-            que ainda não tenho.
+            Quem sou, o que estou estudando e para onde quero ir.
           </p>
         </div>
 
         <div className="story-grid">
           <div className="story-text reveal">
-            {paragraphs.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+            <p>{presentation}</p>
           </div>
 
           <aside className="story-aside reveal" id="momento" aria-label="Momento atual">
@@ -41,8 +38,16 @@ export function Story({
                 <dd>{status.current_course}</dd>
               </div>
               <div>
+                <dt>Objetivo</dt>
+                <dd>Trabalhar com Análise de Dados</dd>
+              </div>
+              <div>
                 <dt>Próximo passo</dt>
                 <dd>{status.next_goal}</dd>
+              </div>
+              <div>
+                <dt>Experiência</dt>
+                <dd>Ainda não registrada</dd>
               </div>
               <div>
                 <dt>Registro</dt>
