@@ -9,7 +9,6 @@ export default function SiteError({
 }) {
   return (
     <div className="wrap" style={{ paddingBlock: "5rem" }}>
-      <p className="kicker">Erro</p>
       <h1 className="section-title">Não foi possível carregar esta página.</h1>
       <p className="section-intro">
         Algo falhou ao buscar o conteúdo. Tente novamente; se o problema continuar, o site

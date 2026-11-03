@@ -35,7 +35,6 @@ export default async function ProjectPage({ params }: PageProps) {
         <a className="detail-back" href="/#projetos">
           <span aria-hidden="true">←</span> Voltar para projetos
         </a>
-        <p className="kicker">Projeto</p>
         <h1 className="detail-title">{project.name}</h1>
         <p className="detail-lead">{project.description}</p>
       </div>

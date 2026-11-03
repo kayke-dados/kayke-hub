@@ -2,25 +2,24 @@ import type { Experience } from "@/lib/types";
 
 export function Experiences({ experiences }: { experiences: Experience[] }) {
   return (
-    <section className="section" id="experiencias" aria-labelledby="experiencias-title">
+    <section className="section section--tone" id="experiencias" aria-labelledby="experiencias-title">
       <div className="wrap">
         <div className="section-head">
-          <p className="kicker">07 — Experiências</p>
           <h2 className="section-title" id="experiencias-title">
-            Experiências profissionais.
+            A primeira experiência.
           </h2>
           <p className="section-intro">
-            Um espaço preparado para acompanhar a carreira. Competências transferíveis de
-            outras áreas também têm valor aqui.
+            Um espaço reservado para a carreira. Competências de outras áreas também contam
+            quando a primeira oportunidade chegar.
           </p>
         </div>
 
         {experiences.length === 0 ? (
-          <div className="empty-state">
-            <strong>A primeira experiência ainda está por vir.</strong>
+          <div className="empty-state reveal">
+            <strong>Ainda não há experiência profissional registrada.</strong>
             <p>
-              Esta seção está pronta para registrar empresa, cargo, período, atividades,
-              ferramentas, aprendizados e resultados reais quando eles existirem.
+              Estou construindo a base primeiro. Quando a primeira oportunidade acontecer,
+              ela aparece aqui com contexto, atividades e resultados reais.
             </p>
           </div>
         ) : (

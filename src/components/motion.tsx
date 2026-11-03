@@ -12,6 +12,15 @@ export function Motion() {
     const targets = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
     if (!targets.length) return;
 
+    const counters = new Map<Element, number>();
+    targets.forEach((el) => {
+      const parent = el.parentElement;
+      if (!parent) return;
+      const index = counters.get(parent) ?? 0;
+      counters.set(parent, index + 1);
+      el.style.transitionDelay = `${Math.min(index * 70, 280)}ms`;
+    });
+
     if (!("IntersectionObserver" in window)) {
       targets.forEach((el) => el.classList.add("in"));
       return;

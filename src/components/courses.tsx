@@ -1,18 +1,16 @@
 import type { CourseProgress } from "@/lib/types";
-import { COURSE_ENV } from "@/lib/courses";
 
 export function Courses({ progress }: { progress: CourseProgress }) {
   return (
     <section className="section" id="cursos" aria-labelledby="cursos-title">
       <div className="wrap">
         <div className="section-head">
-          <p className="kicker">04 — Cursos</p>
           <h2 className="section-title" id="cursos-title">
             A trilha, em ordem.
           </h2>
           <p className="section-intro">
-            Dez playlists reais, na sequência em que pretendo estudá-las. A conclusão é
-            controlada por uma única variável de ambiente e sempre respeita a ordem.
+            Dez playlists gratuitas, na sequência em que estou estudando. Sem pular etapas:
+            o progresso anda da primeira para a última.
           </p>
         </div>
 
@@ -21,7 +19,7 @@ export function Courses({ progress }: { progress: CourseProgress }) {
             {progress.completed}
             <span>/{progress.courses.length}</span>
           </p>
-          <div>
+          <div className="course-progress-main">
             <div
               className="course-progress-bar"
               role="progressbar"
@@ -36,65 +34,39 @@ export function Courses({ progress }: { progress: CourseProgress }) {
               {progress.percent}% da trilha · {progress.remaining} restantes
             </p>
           </div>
-          <p className="course-progress-meta">
-            {COURSE_ENV}
-            <br />
-            {progress.completed} concluído(s)
-          </p>
+          <p className="course-progress-meta">cursos concluídos</p>
         </div>
 
-        <div className="course-grid">
+        <ol className="course-list">
           {progress.courses.map((course) => {
             const isNext = !course.completed && course.position === progress.completed + 1;
             return (
-              <article
-                className="course-card reveal"
+              <li
+                className="course-row reveal"
                 key={course.id}
                 data-completed={course.completed}
                 data-next={isNext}
               >
-                <div className="course-top">
-                  <span className="course-number">
-                    {String(course.position).padStart(2, "0")}
-                  </span>
-                  <span
-                    className={`badge ${
-                      course.completed
-                        ? "badge--success"
-                        : isNext
-                          ? "badge--accent"
-                          : ""
-                    }`}
-                  >
-                    {course.completed ? "✓ " : ""}
-                    {course.statusLabel}
-                  </span>
+                <span className="course-number">
+                  {String(course.position).padStart(2, "0")}
+                </span>
+                <div className="course-main">
+                  <h3 className="course-title">{course.title}</h3>
+                  <p className="course-channel">{course.channel}</p>
                 </div>
-                <h3 className="course-title">{course.title}</h3>
-                <p className="course-channel">{course.channel}</p>
-                <div className="course-foot">
-                  <a
-                    className="course-link"
-                    href={course.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Abrir playlist <span aria-hidden="true">↗</span>
-                  </a>
-                  <span className="course-number">
-                    {course.completed ? "concluído" : "pendente"}
-                  </span>
-                </div>
-              </article>
+                <span className="course-status">{course.statusLabel}</span>
+                <a
+                  className="course-link"
+                  href={course.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Playlist <span aria-hidden="true">↗</span>
+                </a>
+              </li>
             );
           })}
-        </div>
-
-        <p className="course-note">
-          Para atualizar a conclusão, altere <code>{COURSE_ENV}</code> na Vercel (0 a 10) e
-          faça um novo deploy. Variáveis com prefixo <code>VITE_</code> são públicas e nunca
-          devem guardar segredos.
-        </p>
+        </ol>
       </div>
     </section>
   );

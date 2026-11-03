@@ -1,7 +1,6 @@
 export default function SiteLoading() {
   return (
     <div className="wrap" style={{ paddingBlock: "5rem" }} aria-busy="true" aria-live="polite">
-      <p className="kicker">Carregando</p>
       <div
         style={{
           height: "2.5rem",

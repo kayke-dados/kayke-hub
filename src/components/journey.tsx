@@ -53,19 +53,17 @@ function buildCalendar(entries: JourneyEntry[]) {
 
 export function Journey({ entries }: { entries: JourneyEntry[] }) {
   const calendar = buildCalendar(entries);
-  const recent = entries.slice(0, 5);
 
   return (
-    <section className="section" id="jornada" aria-labelledby="jornada-title">
+    <section className="section section--tone" id="jornada" aria-labelledby="jornada-title">
       <div className="wrap">
         <div className="section-head">
-          <p className="kicker">03 — Jornada</p>
           <h2 className="section-title" id="jornada-title">
             A evolução, registrada.
           </h2>
           <p className="section-intro">
-            Linha do tempo e calendário alimentados por registros reais. Nada é gerado
-            aleatoriamente para preencher espaço.
+            Datas, cursos e projetos que já aconteceram. O calendário acompanha os mesmos
+            registros da linha do tempo.
           </p>
         </div>
 
@@ -75,8 +73,7 @@ export function Journey({ entries }: { entries: JourneyEntry[] }) {
               <div className="empty-state">
                 <strong>Ainda não há registros publicados.</strong>
                 <p>
-                  O primeiro registro da jornada aparecerá aqui assim que for criado no painel
-                  administrativo.
+                  O primeiro registro da jornada aparece aqui assim que for criado no painel.
                 </p>
               </div>
             ) : (
@@ -88,14 +85,10 @@ export function Journey({ entries }: { entries: JourneyEntry[] }) {
                     </time>
                     <h3 className="timeline-title">{entry.title}</h3>
                     <p className="timeline-desc">{entry.description}</p>
-                    <div className="achievement-meta">
-                      <span className="badge badge--accent">
-                        {categoryLabels[entry.category]}
-                      </span>
-                      {entry.source === "auto" ? (
-                        <span className="badge">Automático</span>
-                      ) : null}
-                    </div>
+                    <p className="timeline-meta">
+                      {categoryLabels[entry.category]}
+                      {entry.source === "auto" ? " · registrado automaticamente" : null}
+                    </p>
                     {entry.notes ? <p className="timeline-notes">{entry.notes}</p> : null}
                   </li>
                 ))}
@@ -105,7 +98,7 @@ export function Journey({ entries }: { entries: JourneyEntry[] }) {
 
           <aside className="calendar-card reveal" aria-label="Calendário de atividades">
             <div className="calendar-head">
-              <h3>Calendário de atividades</h3>
+              <h3>Calendário</h3>
               <span>
                 {formatDate(toKey(calendar.start))} — {formatDate(toKey(calendar.end))}
               </span>
@@ -133,7 +126,7 @@ export function Journey({ entries }: { entries: JourneyEntry[] }) {
               </div>
             </div>
             <div className="calendar-legend">
-              <span>{calendar.total} registros</span>
+              <span>Atividade</span>
               <ul aria-hidden="true">
                 <li data-level="0" />
                 <li data-level="1" />
@@ -141,16 +134,9 @@ export function Journey({ entries }: { entries: JourneyEntry[] }) {
                 <li data-level="3" />
               </ul>
             </div>
-            {recent.length > 0 ? (
-              <ul className="calendar-list">
-                {recent.map((entry) => (
-                  <li key={entry.id}>
-                    <span>{entry.title}</span>
-                    <time dateTime={entry.entry_date}>{formatDate(entry.entry_date)}</time>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
+            <p className="calendar-total">
+              <strong>{calendar.total}</strong> registros na jornada
+            </p>
           </aside>
         </div>
       </div>

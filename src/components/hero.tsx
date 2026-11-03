@@ -13,71 +13,60 @@ export function Hero({ profile, currentStatus, progress, projectCount }: HeroPro
     <section className="hero" id="inicio" aria-labelledby="hero-title">
       <div className="wrap hero-grid">
         <div>
-          <p className="kicker">Portfólio · Análise de Dados</p>
           <h1 className="hero-title" id="hero-title">
-            Construindo minha
-            <br />
-            trajetória em <span className="accent">dados</span>.
+            Aprendendo a ler dados.
           </h1>
           <p className="hero-lead">
-            {profile.bio} Estou documentando o começo de verdade: o que já aprendi, o que estou
-            estudando agora e o que ainda quero construir.
+            Sou Kayke, estudante de Análise de Dados. Aprendo Python resolvendo exercícios e
+            registro aqui o que já entendi, o que estudo agora e o que ainda falta.
           </p>
           <div className="hero-actions">
             <a className="btn btn-primary" href="#projetos">
               Ver projetos <span aria-hidden="true">→</span>
             </a>
-            <a className="btn btn-ghost" href="#jornada">
-              Minha jornada
+            <a className="hero-link" href="#jornada">
+              Acompanhar a jornada <span aria-hidden="true">→</span>
             </a>
           </div>
-          <ul className="hero-facts">
-            <li>
-              {pythonJourney.exercises}/{pythonJourney.total} exercícios
-            </li>
-            <li>{pythonJourney.chapters} capítulos</li>
-            <li>{progress.courses.length} cursos na trilha</li>
-            <li>{projectCount} projetos públicos</li>
-          </ul>
-          <p className="hero-motto">Consistência &gt; intensidade.</p>
         </div>
 
-        <aside className="hero-card reveal" aria-label="Resumo do perfil">
-          <figure className="portrait">
-            <img
-              src={profile.avatar_url}
-              alt={`Foto de perfil de ${profile.name} no GitHub`}
-              width={400}
-              height={400}
-            />
-            <span className="portrait-status">Em formação</span>
-          </figure>
-          <div className="hero-card-body">
-            <p className="hero-card-name">{profile.name}</p>
-            <p className="hero-card-role">{profile.headline}</p>
-            <div className="hero-card-grid">
-              <div className="hero-stat">
-                <strong>
-                  {pythonJourney.exercises}/{pythonJourney.total}
-                </strong>
-                <span>Exercícios</span>
-              </div>
-              <div className="hero-stat">
-                <strong>{pythonJourney.chapters}</strong>
-                <span>Capítulos</span>
-              </div>
-              <div className="hero-stat">
-                <strong>{progress.completed}/10</strong>
-                <span>Cursos</span>
-              </div>
-              <div className="hero-stat">
-                <strong>{projectCount}</strong>
-                <span>Projetos</span>
-              </div>
-            </div>
-            <p className="current-updated">Foco atual: {currentStatus.focus}</p>
+        <aside className="hero-note reveal" aria-label="Nota do autor">
+          <img
+            className="hero-mark"
+            src={profile.avatar_url}
+            alt=""
+            aria-hidden="true"
+            width={56}
+            height={56}
+          />
+          <p className="hero-quote">
+            “Cada conceito que estudo vira um exercício resolvido no Python-Journey.”
+          </p>
+          <p className="hero-note-now">Agora: {currentStatus.studying}.</p>
+          <div className="hero-note-foot">
+            <span>{profile.name}</span>
+            <span>{currentStatus.focus} · em formação</span>
           </div>
         </aside>
+      </div>
+
+      <div className="wrap hero-ledger" aria-label="Números da jornada">
+        <div>
+          <strong>{pythonJourney.exercises}</strong>
+          <span>exercícios resolvidos</span>
+        </div>
+        <div>
+          <strong>{pythonJourney.chapters}</strong>
+          <span>capítulos de Python</span>
+        </div>
+        <div>
+          <strong>{progress.courses.length}</strong>
+          <span>cursos na trilha</span>
+        </div>
+        <div>
+          <strong>{projectCount}</strong>
+          <span>projetos publicados</span>
+        </div>
       </div>
     </section>
   );

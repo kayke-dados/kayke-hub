@@ -1,5 +1,5 @@
 import { Hero } from "@/components/hero";
-import { Story, CurrentMoment } from "@/components/story";
+import { Story } from "@/components/story";
 import { Journey } from "@/components/journey";
 import { Courses } from "@/components/courses";
 import { Projects } from "@/components/projects";
@@ -48,8 +48,7 @@ export default async function HomePage() {
         progress={progress}
         projectCount={content.projects.length}
       />
-      <Story profile={content.profile} />
-      <CurrentMoment status={content.currentStatus} />
+      <Story profile={content.profile} status={content.currentStatus} />
       <Journey entries={content.journey} />
       <Courses progress={progress} />
       <Projects projects={content.projects} />

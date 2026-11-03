@@ -3,16 +3,15 @@ import { formatDate } from "@/lib/format";
 
 export function Projects({ projects }: { projects: Project[] }) {
   return (
-    <section className="section" id="projetos" aria-labelledby="projetos-title">
+    <section className="section section--tone" id="projetos" aria-labelledby="projetos-title">
       <div className="wrap">
         <div className="section-head">
-          <p className="kicker">05 — Projetos</p>
           <h2 className="section-title" id="projetos-title">
-            O que estou construindo.
+            O que já construí.
           </h2>
           <p className="section-intro">
-            Projetos reais, com contexto e links. Quando ainda não existir um projeto novo, o
-            espaço fica reservado — sem preencher com ficção.
+            Projetos publicados, com contexto, ferramentas e links. O que ainda não existe
+            não entra aqui.
           </p>
         </div>
 
@@ -20,16 +19,26 @@ export function Projects({ projects }: { projects: Project[] }) {
           <div className="empty-state">
             <strong>Os primeiros projetos estão a caminho.</strong>
             <p>
-              Esta seção está pronta para receber os trabalhos assim que forem publicados pelo
-              painel administrativo.
+              Esta seção recebe os trabalhos assim que forem publicados pelo painel.
             </p>
           </div>
         ) : (
           <div className="project-grid">
             {projects.map((project) => (
               <article className="project-card reveal" key={project.id}>
+                <figure className="project-media">
+                  {project.image_url ? (
+                    <img
+                      src={project.image_url}
+                      alt={`Capa do projeto ${project.name}`}
+                      width={1200}
+                      height={675}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : null}
+                </figure>
                 <div className="project-body">
-                  <p className="project-kind">Projeto publicado</p>
                   <h3 className="project-name">
                     <a href={`/projetos/${project.slug}`}>{project.name}</a>
                   </h3>
@@ -52,7 +61,7 @@ export function Projects({ projects }: { projects: Project[] }) {
                   </dl>
                   <p className="project-links">
                     <a className="text-link" href={`/projetos/${project.slug}`}>
-                      ver detalhes →
+                      Ver detalhes →
                     </a>
                     {project.github_url ? (
                       <a
@@ -61,7 +70,7 @@ export function Projects({ projects }: { projects: Project[] }) {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        repositório ↗
+                        Repositório ↗
                       </a>
                     ) : null}
                     {project.demo_url ? (
@@ -71,23 +80,11 @@ export function Projects({ projects }: { projects: Project[] }) {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        demonstração ↗
+                        Demonstração ↗
                       </a>
                     ) : null}
                   </p>
                 </div>
-                <figure className="project-media">
-                  {project.image_url ? (
-                    <img
-                      src={project.image_url}
-                      alt={`Capa do projeto ${project.name}`}
-                      width={1200}
-                      height={675}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ) : null}
-                </figure>
               </article>
             ))}
           </div>
